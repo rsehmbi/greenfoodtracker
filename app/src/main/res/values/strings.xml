@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Green Food Tracker</string>
+    <string name="title_activity_about_page">AboutPageActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="intro_description_percentage">What percentage of these foods is in your weekly diet?</string>
+    <string name="intro_description_number">What number of times do you eat these foods per week?</string>
+    <string-array name="food_array">
+        <item>Lamb</item>
+        <item>Beef</item>
+        <item>Cheese</item>
+        <item>Pork</item>
+        <item>Farmed Salmon</item>
+        <item>Turkey</item>
+        <item>Chicken</item>
+        <item>Canned Tuna</item>
+        <item>Eggs</item>
+        <item>Potatoes</item>
+        <item>Rice</item>
+        <item>Peanut Butter</item>
+        <item>Nuts</item>
+        <item>Yogurt</item>
+        <item>Broccoli</item>
+        <item>Tofu</item>
+        <item>Dry Beans</item>
+        <item>Milk (2%)</item>
+        <item>Tomatoes</item>
+        <item>Lentils</item>
+    </string-array>
+</resources>
