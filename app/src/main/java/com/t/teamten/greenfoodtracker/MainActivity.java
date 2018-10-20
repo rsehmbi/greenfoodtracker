@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         mResultsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //submit result function, load up the values in each and send it to the next activity.
-
+                CalculatorActivityData sendToResultsActivity;
             }
         });
 
