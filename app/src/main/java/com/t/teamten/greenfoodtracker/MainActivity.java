@@ -2,6 +2,7 @@ package com.t.teamten.greenfoodtracker;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,58 +29,25 @@ public class MainActivity extends AppCompatActivity {
     private static final int SET_TO_PERCENT = 0;
     private int switchStatus = SET_TO_PERCENT;
     // for use in determining how data is entered by the user
-    private ArrayList<Spinner> populateSpinnerArray() { //this function allows for looping code in the spinners.
-        ArrayList<Spinner> populatedArray = new ArrayList<>();
-        Spinner spinner1 = findViewById(R.id.spinner1);
-        populatedArray.add(spinner1);
-        Spinner spinner2 = findViewById(R.id.spinner2);
-        populatedArray.add(spinner2);
-        Spinner spinner3 = findViewById(R.id.spinner3);
-        populatedArray.add(spinner3);
-        Spinner spinner4 = findViewById(R.id.spinner4);
-        populatedArray.add(spinner4);
-        Spinner spinner5 = findViewById(R.id.spinner5);
-        populatedArray.add(spinner5);
-        Spinner spinner6 = findViewById(R.id.spinner6);
-        populatedArray.add(spinner6);
-        Spinner spinner7 = findViewById(R.id.spinner7);
-        populatedArray.add(spinner7);
-
-        return populatedArray;
-    }
-
-    private ArrayList<EditText> populateEditTextArray() {
-        ArrayList<EditText> populatedArray = new ArrayList<>();
-        EditText editText1 = findViewById(R.id.editText1);
-        populatedArray.add(editText1);
-        EditText editText2 = findViewById(R.id.editText2);
-        populatedArray.add(editText2);
-        EditText editText3 = findViewById(R.id.editText3);
-        populatedArray.add(editText3);
-        EditText editText4 = findViewById(R.id.editText4);
-        populatedArray.add(editText4);
-        EditText editText5 = findViewById(R.id.editText5);
-        populatedArray.add(editText5);
-        EditText editText6 = findViewById(R.id.editText6);
-        populatedArray.add(editText6);
-        EditText editText7 = findViewById(R.id.editText7);
-        populatedArray.add(editText7);
-
-        return populatedArray;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mSpinnerArray = new ArrayList<>();
+        mEditTextArray = new MainActivityArrayHandler(this).populateEditTextArray();
+        mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
 
         mResultsButton = findViewById(R.id.resultsButton);
         mResultsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //submit result function, load up the values in each and send it to the next activity.
                 CalculatorActivityData sendToResultsActivity;
+                Integer editTextValue;
+                String spinnerValue;
+                Pair<String, Integer> resultPair;
+                for (int i = 0; i < MAX_DROPDOWNS; i++) {
+                    editTextValue = Integer.valueOf(mEditTextArray.get(i).toString());
+                }
             }
         });
 
@@ -99,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mSpinnerArray = populateSpinnerArray();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.food_array, android.R.layout.simple_spinner_dropdown_item);
         for(Spinner currentSpinner : mSpinnerArray) { //sets the items to be listed in each drop down menu
             currentSpinner.setAdapter(adapter);
