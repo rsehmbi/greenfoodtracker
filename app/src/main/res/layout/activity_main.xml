@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editText16"
+        android:id="@+id/editText7"
         android:layout_width="102dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.841" />
 
     <Spinner
-        android:id="@+id/spinner16"
+        android:id="@+id/spinner7"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.873" />
 
     <Spinner
-        android:id="@+id/spinner13"
+        android:id="@+id/spinner6"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <EditText
-        android:id="@+id/editText13"
+        android:id="@+id/editText6"
         android:layout_width="102dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.685" />
 
     <EditText
-        android:id="@+id/editText14"
+        android:id="@+id/editText5"
         android:layout_width="102dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.546" />
 
     <Spinner
-        android:id="@+id/spinner14"
+        android:id="@+id/spinner5"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.492" />
 
     <Spinner
-        android:id="@+id/spinner15"
+        android:id="@+id/spinner4"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -114,7 +114,7 @@
         app:layout_constraintVertical_bias="0.535" />
 
     <EditText
-        android:id="@+id/editText15"
+        android:id="@+id/editText4"
         android:layout_width="102dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
@@ -251,7 +251,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText1"
         android:layout_width="102dp"
         android:layout_height="29dp"
         android:layout_marginStart="8dp"
