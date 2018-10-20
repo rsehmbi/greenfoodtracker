@@ -22,4 +22,9 @@ public class Food {
     public int getNumberOfConsumptionPerWeek() {
         return numberOfConsumptionPerWeek;
     }
+
+    public String getFoodInFoInString() {
+        String foodInformation = foodName + ", " + carbonPerKg + ", " + numberOfConsumptionPerWeek;
+        return foodInformation;
+    }
 }
