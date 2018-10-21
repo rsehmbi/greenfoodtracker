@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,18 +23,79 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Spinner> mSpinnerArray;
     private ArrayList<EditText> mEditTextArray;
     private Button mResultsButton;
+    private Button mAddButton;
+    private Button mSubtractButton;
     private static final int SET_TO_NUMBER = 1;
     private static final int SET_TO_PERCENT = 0;
     private int switchStatus = SET_TO_PERCENT;
     public static final String DATA_PASSED = "ResultStoredAsObject";
     // for use in determining how data is entered by the user
+    private LinkedList<Spinner> hiddenSpinnerQueue;
+    private LinkedList<EditText> hiddenEditTextQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        hiddenSpinnerQueue = new LinkedList<>();
+        hiddenEditTextQueue = new LinkedList<>();
+
         mEditTextArray = new MainActivityArrayHandler(this).populateEditTextArray();
         mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
+        mAddButton = findViewById(R.id.addButton);
+        mSubtractButton = findViewById(R.id.removeButton);
+
+        //load saved settings from csv here
+
+        for (int i = mEditTextArray.size() - 1; i > 0; i--) { //starts at 1, ignores the first
+            if (mEditTextArray.get(i).getText().toString().isEmpty() && !mEditTextArray.isEmpty()) {
+                mEditTextArray.get(i).setVisibility(View.GONE);
+                mSpinnerArray.get(i).setVisibility(View.GONE);
+                hiddenEditTextQueue.add(mEditTextArray.get(i));
+                hiddenSpinnerQueue.add(mSpinnerArray.get(i)); //queue is FIFO
+            }
+            else {
+                break;
+            }
+        }
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.food_array, android.R.layout.simple_spinner_dropdown_item);
+        for(Spinner currentSpinner : mSpinnerArray) { //sets the items to be listed in each drop down menu
+            currentSpinner.setAdapter(adapter);
+        }
+        
+        mIntroText = findViewById(R.id.introInstructionText);
+        mDataEntrySwapSwitch = findViewById(R.id.dataEntrySwapSwitch);
+
+        mAddButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (hiddenEditTextQueue.isEmpty() || hiddenSpinnerQueue.isEmpty()) {
+                    return;
+                }
+                else {
+                    EditText editTextFront = hiddenEditTextQueue.removeLast();
+                    Spinner spinnerFront = hiddenSpinnerQueue.removeLast();
+                    editTextFront.setVisibility(View.VISIBLE);
+                    spinnerFront.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        mSubtractButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                for (int i = mEditTextArray.size() - 1; i > 0; i--) { //starts at (7), ignores the first
+                    if (mEditTextArray.get(i).getVisibility() == View.VISIBLE) {
+                        mEditTextArray.get(i).setVisibility(View.GONE);
+                        mSpinnerArray.get(i).setVisibility(View.GONE);
+                        mEditTextArray.get(i).setText("");
+                        hiddenEditTextQueue.add(mEditTextArray.get(i));
+                        hiddenSpinnerQueue.add(mSpinnerArray.get(i)); //queue is FIFO
+                        break;
+                    }
+
+                }
+            }
+        });
 
         mResultsButton = findViewById(R.id.resultsButton);
         mResultsButton.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 CalculatorActivityData sendToResultsActivity;
                 Integer editTextValue;
                 String spinnerValue;
-                ArrayList<Pair> pairArraySentToActivity = new ArrayList<>();
+                ArrayList<Pair<String, Integer>> pairArraySentToActivity = new ArrayList<>();
                 Pair<String, Integer> resultPair;
                 for (int i = 0; i < MAX_DROPDOWNS; i++) {
                     if (!mEditTextArray.get(i).getText().toString().isEmpty() &&
@@ -63,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mIntroText = findViewById(R.id.introInstructionText);
-        mDataEntrySwapSwitch = findViewById(R.id.dataEntrySwapSwitch);
         mDataEntrySwapSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -78,10 +138,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.food_array, android.R.layout.simple_spinner_dropdown_item);
-        for(Spinner currentSpinner : mSpinnerArray) { //sets the items to be listed in each drop down menu
-            currentSpinner.setAdapter(adapter);
-        }
     }
 }

@@ -12,6 +12,11 @@ public class MainActivityArrayHandler {
         this.activity = activity;
     }
 
+    public void addElement(int index) {
+
+
+    }
+
     public ArrayList<Spinner> populateSpinnerArray() { //this function allows for looping code in the spinners.
         ArrayList<Spinner> populatedArray = new ArrayList<>();
         Spinner spinner1 = activity.findViewById(R.id.spinner1);

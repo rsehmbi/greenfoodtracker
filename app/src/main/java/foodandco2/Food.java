@@ -1,9 +1,14 @@
 package foodandco2;
 
+
 public class Food {
     private String foodName;
     private double carbonPerKg;
     private int numberOfConsumptionPerWeek;
+
+    public void setNumberOfConsumptionPerWeek(int consumption) {
+        this.numberOfConsumptionPerWeek = consumption;
+    }
 
     public Food(String foodName, double carbonPerKg, int numberOfConsumptionPerWeek) {
         this.foodName = foodName;

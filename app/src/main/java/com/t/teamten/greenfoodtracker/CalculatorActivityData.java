@@ -6,17 +6,25 @@ import android.util.Pair;
 import java.util.ArrayList;
 
 public class CalculatorActivityData implements Parcelable {
-    private Pair<String, Integer> foodEntryPair;
-    private ArrayList<Pair> listFoodPairs;
+    private ArrayList<Pair<String, Integer>> listFoodPairs;
     private int switchStatus;
 
-    CalculatorActivityData(ArrayList<Pair> listFoodPairs, int switchStatus) {
+    CalculatorActivityData(ArrayList<Pair<String, Integer>> listFoodPairs, int switchStatus) {
         this.listFoodPairs = listFoodPairs;
         this.switchStatus = switchStatus;
     }
 
-    protected CalculatorActivityData(Parcel in) {
-        switchStatus = in.readInt();
+    private CalculatorActivityData(Parcel in) {
+        this.switchStatus = in.readInt();
+        final int size = in.readInt();
+        listFoodPairs = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            String first = in.readString();
+            Integer second = in.readInt();
+            Pair<String, Integer> addPair = new Pair(first, second);
+            listFoodPairs.add(addPair);
+        }
+
     }
 
     public static final Creator<CalculatorActivityData> CREATOR = new Creator<CalculatorActivityData>() {
@@ -41,6 +49,10 @@ public class CalculatorActivityData implements Parcelable {
         return pairAtIndex;
     }
 
+    public ArrayList<Pair<String, Integer>> getArrayListOfPair() {
+        return this.listFoodPairs;
+    }
+
     public int getSwitchStatus() {
         return this.switchStatus;
     }
@@ -53,5 +65,13 @@ public class CalculatorActivityData implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(switchStatus);
+        final int size = this.listFoodPairs.size();
+        dest.writeInt(size);
+        if (size > 0) {
+            for (Pair<String, Integer> currentPair : listFoodPairs) {
+                dest.writeString(currentPair.first);
+                dest.writeInt(currentPair.second);
+            }
+        }
     }
 }
