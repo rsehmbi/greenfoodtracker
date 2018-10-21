@@ -11,11 +11,7 @@ public class MainActivityArrayHandler {
     public MainActivityArrayHandler(Activity activity) {
         this.activity = activity;
     }
-
-    public void addElement(int index) {
-
-
-    }
+    
 
     public ArrayList<Spinner> populateSpinnerArray() { //this function allows for looping code in the spinners.
         ArrayList<Spinner> populatedArray = new ArrayList<>();

@@ -2,9 +2,6 @@ package com.t.teamten.greenfoodtracker;
 
 import android.app.Activity;
 import android.util.Pair;
-import android.widget.TextView;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
