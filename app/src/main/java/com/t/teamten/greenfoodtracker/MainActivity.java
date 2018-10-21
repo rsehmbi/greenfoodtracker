@@ -1,5 +1,6 @@
 package com.t.teamten.greenfoodtracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Pair;
@@ -38,25 +39,40 @@ public class MainActivity extends AppCompatActivity {
         mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
 
         mResultsButton = findViewById(R.id.resultsButton);
-        mResultsButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //submit result function, load up the values in each and send it to the next activity.
-                CalculatorActivityData sendToResultsActivity;
-                Integer editTextValue;
-                String spinnerValue;
-                Pair<String, Integer> resultPair;
-                for (int i = 0; i < MAX_DROPDOWNS; i++) {
-                    editTextValue = Integer.valueOf(mEditTextArray.get(i).toString());
-                }
-            }
-        });
+
 
         mIntroText = findViewById(R.id.introInstructionText);
         mDataEntrySwapSwitch = findViewById(R.id.dataEntrySwapSwitch);
         mDataEntrySwapSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+                if (isChecked) {mResultsButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        //submit result function, load up the values in each and send it to the next activity.
+                        CalculatorActivityData sendToResultsActivity;
+                        Integer editTextValue;
+                        String spinnerValue;
+                        ArrayList<Pair> pairArraySentToActivity = new ArrayList<>();
+                        Pair<String, Integer> resultPair;
+                        for (int i = 0; i < MAX_DROPDOWNS; i++) {
+                            if (!mEditTextArray.get(i).getText().toString().isEmpty() &&
+                                    !mSpinnerArray.get(i).getSelectedItem().toString().isEmpty()
+                                    && mEditTextArray.get(i).getText() != null) {
+                                //unentered edittexts and spinners will not be added to the array
+
+                                editTextValue = Integer.valueOf(mEditTextArray.get(i).getText().toString());
+                                spinnerValue = mSpinnerArray.get(i).getSelectedItem().toString();
+                                resultPair = new Pair<>(spinnerValue, editTextValue);
+                                pairArraySentToActivity.add(resultPair);
+                            }
+                        }
+                        sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
+                        Intent intent = new Intent(MainActivity.this, Result_Page.class);
+                        intent.putExtra("DATA_PASSED", sendToResultsActivity);
+                        startActivity(intent);
+                    }
+                });
+
                     mIntroText.setText(R.string.intro_description_percentage);
                     switchStatus = SET_TO_PERCENT;
                 }
@@ -72,4 +88,5 @@ public class MainActivity extends AppCompatActivity {
             currentSpinner.setAdapter(adapter);
         }
     }
+
 }

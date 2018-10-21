@@ -8,23 +8,11 @@
     <string-array name="food_array">
         <item>Lamb</item>
         <item>Beef</item>
-        <item>Cheese</item>
         <item>Pork</item>
-        <item>Farmed Salmon</item>
-        <item>Turkey</item>
         <item>Chicken</item>
-        <item>Canned Tuna</item>
+        <item>Beans</item>
+        <item>Fish</item>
         <item>Eggs</item>
-        <item>Potatoes</item>
-        <item>Rice</item>
-        <item>Peanut Butter</item>
-        <item>Nuts</item>
-        <item>Yogurt</item>
-        <item>Broccoli</item>
-        <item>Tofu</item>
-        <item>Dry Beans</item>
-        <item>Milk (2%)</item>
-        <item>Tomatoes</item>
-        <item>Lentils</item>
+        <item>Vegetables</item>
     </string-array>
 </resources>
