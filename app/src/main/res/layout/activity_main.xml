@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editText16"
+        android:id="@+id/editText7"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.841" />
 
     <Spinner
-        android:id="@+id/spinner16"
+        android:id="@+id/spinner7"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.873" />
 
     <Spinner
-        android:id="@+id/spinner13"
+        android:id="@+id/spinner6"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -52,11 +52,11 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <EditText
-        android:id="@+id/editText13"
+        android:id="@+id/editText6"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -69,11 +69,11 @@
         app:layout_constraintVertical_bias="0.685" />
 
     <EditText
-        android:id="@+id/editText14"
+        android:id="@+id/editText5"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.546" />
 
     <Spinner
-        android:id="@+id/spinner14"
+        android:id="@+id/spinner5"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.492" />
 
     <Spinner
-        android:id="@+id/spinner15"
+        android:id="@+id/spinner4"
         android:layout_width="226dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
@@ -114,11 +114,11 @@
         app:layout_constraintVertical_bias="0.535" />
 
     <EditText
-        android:id="@+id/editText15"
+        android:id="@+id/editText4"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -147,9 +147,9 @@
     <EditText
         android:id="@+id/editText3"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -178,9 +178,9 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
@@ -212,12 +212,15 @@
         android:id="@+id/dataEntrySwapSwitch"
         android:layout_width="348dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="Choose between times per week, or percentage!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -251,11 +254,11 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText1"
         android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
