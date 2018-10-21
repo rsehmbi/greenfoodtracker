@@ -1,5 +1,6 @@
 package com.t.teamten.greenfoodtracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Pair;
@@ -11,10 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import com.t.teamten.greenfoodtracker.R;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int SET_TO_NUMBER = 1;
     private static final int SET_TO_PERCENT = 0;
     private int switchStatus = SET_TO_PERCENT;
+    public static final String DATA_PASSED = "ResultStoredAsObject";
     // for use in determining how data is entered by the user
 
     @Override
@@ -44,10 +42,24 @@ public class MainActivity extends AppCompatActivity {
                 CalculatorActivityData sendToResultsActivity;
                 Integer editTextValue;
                 String spinnerValue;
+                ArrayList<Pair> pairArraySentToActivity = new ArrayList<>();
                 Pair<String, Integer> resultPair;
                 for (int i = 0; i < MAX_DROPDOWNS; i++) {
-                    editTextValue = Integer.valueOf(mEditTextArray.get(i).toString());
+                    if (!mEditTextArray.get(i).getText().toString().isEmpty() &&
+                            !mSpinnerArray.get(i).getSelectedItem().toString().isEmpty()
+                            && mEditTextArray.get(i).getText() != null) {
+                        //unentered edittexts and spinners will not be added to the array
+
+                        editTextValue = Integer.valueOf(mEditTextArray.get(i).getText().toString());
+                        spinnerValue = mSpinnerArray.get(i).getSelectedItem().toString();
+                        resultPair = new Pair<>(spinnerValue, editTextValue);
+                        pairArraySentToActivity.add(resultPair);
+                    }
                 }
+                sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
+                Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
+                intent.putExtra(DATA_PASSED, sendToResultsActivity);
+                startActivity(intent);
             }
         });
 
