@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultScreenSecond">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_view_result2_1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/result2_intro"/>
+
+        <TextView
+            android:id="@+id/text_view_result2_info"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/heading"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@+id/text_view_result2_1"/>
+
+        <LinearLayout
+            android:id="@+id/groupMeals"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:weightSum="3"
+            android:layout_below="@+id/text_view_result2_info">
+
+            <Button
+                android:id="@+id/button_view_1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text = "@string/meal1" />
+
+            <Button
+                android:id="@+id/button_view_2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text = "@string/meal2" />
+
+            <Button
+                android:id="@+id/button_view_3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text = "@string/meal3"/>
+        </LinearLayout>>
+
+
+        <lecho.lib.hellocharts.view.PieChartView
+            android:id="@+id/chart"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:layout_below="@+id/groupMeals"/>
+
+        <TextView
+            android:id="@+id/text_view_result2_2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/chart"/>
+        <TextView
+            android:id="@+id/text_view_result2_3"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/text_view_result2_2"/>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -16,4 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+    <Button
+        android:id="@+id/nextPage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text = "next"/>
+
+
 </android.support.constraint.ConstraintLayout>
