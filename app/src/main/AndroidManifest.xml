@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResultScreenFirst"></activity>
+        <activity android:name=".ResultScreenFirst" />
+        <activity android:name=".LoginUser"></activity>
     </application>
 
 </manifest>
