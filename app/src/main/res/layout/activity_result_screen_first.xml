@@ -16,12 +16,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <Button
         android:id="@+id/nextPage"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_below = "@+id/resultTextView"
+        android:layout_alignParentRight="true"
         android:text = "next"/>
 
 
