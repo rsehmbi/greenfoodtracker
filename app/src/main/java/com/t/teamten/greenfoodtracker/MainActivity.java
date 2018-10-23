@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int SET_TO_NUMBER = 1;
     private static final int SET_TO_PERCENT = 0;
     private int switchStatus = SET_TO_PERCENT;
-    public static final String DATA_PASSED = "ResultStoredAsObject";
+    public static final String DATA_PASSED_FROM_MAINACTIVITY = "ResultStoredAsObject";
     // for use in determining how data is entered by the user
     private LinkedList<Spinner> hiddenSpinnerQueue;
     private LinkedList<EditText> hiddenEditTextQueue;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
                 Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
-                intent.putExtra(DATA_PASSED, sendToResultsActivity);
+                intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
             }
         });
