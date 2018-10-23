@@ -14,6 +14,7 @@ public class CalculatorActivityData implements Parcelable {
         this.switchStatus = switchStatus;
     }
 
+
     private CalculatorActivityData(Parcel in) {
         this.switchStatus = in.readInt();
         final int size = in.readInt();
@@ -39,6 +40,7 @@ public class CalculatorActivityData implements Parcelable {
         }
     };
 
+
     public Pair getPairAtIndex(int index) {
         Pair<String, Integer> pairAtIndex;
         if (index < 0 || index > this.listFoodPairs.size()) {
@@ -47,6 +49,10 @@ public class CalculatorActivityData implements Parcelable {
         }
         pairAtIndex = listFoodPairs.get(index);
         return pairAtIndex;
+    }
+
+    public int getArrayListSize() {
+        return this.listFoodPairs.size();
     }
 
     public ArrayList<Pair<String, Integer>> getArrayListOfPair() {

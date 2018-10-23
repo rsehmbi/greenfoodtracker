@@ -17,7 +17,7 @@ import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int MAX_DROPDOWNS = 7;
+    private static final int MAX_DROPDOWNS = 7; // from the UI elements.
     private TextView mIntroText;
     private Switch mDataEntrySwapSwitch;
     private ArrayList<Spinner> mSpinnerArray;
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //queue implemented as java's linkedlist data type.
         hiddenSpinnerQueue = new LinkedList<>();
         hiddenEditTextQueue = new LinkedList<>();
 

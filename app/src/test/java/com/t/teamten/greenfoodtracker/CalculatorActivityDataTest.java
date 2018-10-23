@@ -1,13 +1,19 @@
 package com.t.teamten.greenfoodtracker;
 
-
 import android.util.Pair;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
+
+@RunWith(RobolectricTestRunner.class)
+@Config(constants = BuildConfig.class, sdk = 27)
 
 public class CalculatorActivityDataTest {
 
@@ -22,9 +28,9 @@ public class CalculatorActivityDataTest {
         testArray.add(testPair2);
         testArray.add(testPair3);
         CalculatorActivityData testData = new CalculatorActivityData(testArray, switchstatus);
-        assertEquals(testData.getPairAtIndex(1).first, "Second");
-        assertEquals(testData.getPairAtIndex(2).second, 322);
-        assertEquals(testData.getPairAtIndex(22).first, "ERROR");
+        assertEquals("Second", testData.getPairAtIndex(1).first);
+        assertEquals(322, testData.getPairAtIndex(2).second);
+        assertEquals("ERROR",testData.getPairAtIndex(22).first);
 
     }
 
@@ -51,7 +57,7 @@ public class CalculatorActivityDataTest {
             }
         }
 
-        assertEquals(isEqual, true);
+        assertTrue(isEqual);
     }
 
     @Test
@@ -65,7 +71,7 @@ public class CalculatorActivityDataTest {
         testArray.add(testPair2);
         testArray.add(testPair3);
         CalculatorActivityData testData = new CalculatorActivityData(testArray, switchstatus);
-        assertEquals(testData.getSwitchStatus(), 0);
+        assertEquals(0, testData.getSwitchStatus());
     }
 
     @Test
@@ -75,6 +81,6 @@ public class CalculatorActivityDataTest {
         int switchstatus = 0;
         testArray.add(testPair1);
         CalculatorActivityData testData = new CalculatorActivityData(testArray, switchstatus);
-        assertEquals(testData.describeContents(), 0);
+        assertEquals(0, testData.describeContents());
     }
 }
