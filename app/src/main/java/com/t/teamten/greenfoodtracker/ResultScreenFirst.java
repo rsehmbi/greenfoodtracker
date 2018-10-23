@@ -1,5 +1,6 @@
 package com.t.teamten.greenfoodtracker;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,12 +13,14 @@ import foodandco2.Food;
 
 public class ResultScreenFirst extends AppCompatActivity {
     private TextView testText;
+    public static Context resultScreenFirstContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_screen_first);
+        resultScreenFirstContext = getApplicationContext();
         Intent userInputActivity = getIntent();
-        CalculatorActivityData userInput = userInputActivity.getParcelableExtra(MainActivity.DATA_PASSED);
+        CalculatorActivityData userInput = userInputActivity.getParcelableExtra(MainActivity.DATA_PASSED_FROM_MAINACTIVITY);
         ArrayList<Food> foodArray = new ArrayList<>();
         int calculatorWhichTypeOfMetric = userInput.getSwitchStatus();
         try {
