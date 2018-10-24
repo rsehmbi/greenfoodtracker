@@ -14,6 +14,7 @@ public class ResultScreenFirstDataHandler {
     public ResultScreenFirstDataHandler(Activity activity) {
         this.activity = activity;
     }
+
     public double getCarbonConsumptionFromName(List<Food> foods, String name) {
         for (Food currentFood : foods) {
             if (currentFood.getFoodName().equalsIgnoreCase(name)) {

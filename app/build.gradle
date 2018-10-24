@@ -21,6 +21,11 @@ android {
             includeAndroidResources = true
         }
     }
+
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+
 }
 
 dependencies {
@@ -31,5 +36,5 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:3.6.1'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
 }
