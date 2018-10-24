@@ -25,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private Button mResultsButton;
     private Button mAddButton;
     private Button mSubtractButton;
-    private static final int SET_TO_NUMBER = 1;
-    private static final int SET_TO_PERCENT = 0;
-    private int switchStatus = SET_TO_PERCENT;
     public static final String DATA_PASSED_FROM_MAINACTIVITY = "ResultStoredAsObject";
     // for use in determining how data is entered by the user
     private LinkedList<Spinner> hiddenSpinnerQueue;
@@ -66,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         }
         
         mIntroText = findViewById(R.id.introInstructionText);
-        mDataEntrySwapSwitch = findViewById(R.id.dataEntrySwapSwitch);
 
         mAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -119,25 +115,12 @@ public class MainActivity extends AppCompatActivity {
                         pairArraySentToActivity.add(resultPair);
                     }
                 }
-                sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
+                sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity);
                 Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
                 intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
             }
         });
 
-        mDataEntrySwapSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mIntroText.setText(R.string.intro_description_percentage);
-                    switchStatus = SET_TO_PERCENT;
-                }
-                else {
-                    mIntroText.setText(R.string.intro_description_number);
-                    switchStatus = SET_TO_NUMBER;
-                }
-            }
-        });
     }
 }
