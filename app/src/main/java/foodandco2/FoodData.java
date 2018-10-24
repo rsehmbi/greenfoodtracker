@@ -1,47 +1,43 @@
 package foodandco2;
 
-import java.io.File;
-import java.io.FileWriter;
+import android.content.Context;
+import android.content.res.Resources;
+
+import com.t.teamten.greenfoodtracker.R;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class FoodData {
-    private final String csvFilePath = "foodtable.csv";
+    private Context context;
+    //private final String csvFileName = "foodtable.csv";
     private List<Food> foodList = new ArrayList<>();
 
-    public FoodData() throws IOException {
-        saveCsvToList();
+    public FoodData(Context context) throws IOException {
+        this.context = context;
+        saveCsvFileToList();
     }
 
-    public void saveCsvToList() throws IOException {
-        File csvFile = new File(csvFilePath);
-        Scanner scanner = new Scanner(csvFile);
+    public void saveCsvFileToList() throws IOException {
+        Resources resources = context.getResources();
+        InputStream csvFile = resources.openRawResource(R.raw.foodtable);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(csvFile));
 
-        while(scanner.hasNextLine()) {
-            String[] currentLine = scanner.nextLine().split(", ");
-            String foodName = currentLine[0];
-            double carbonPerKg = Double.valueOf(currentLine[1]);
-            int numberOfConsumptionPerWeek = Integer.valueOf(currentLine[2]);
+        String currentline;
+        while((currentline = reader.readLine()) != null) {
+            String[] currentLineSplitByComma = currentline.split(", ");
+            String foodName = currentLineSplitByComma[0];
+            double carbonPerKg = Double.valueOf(currentLineSplitByComma[1]);
 
-            Food food = new Food(foodName, carbonPerKg, numberOfConsumptionPerWeek);
+            Food food = new Food(foodName, carbonPerKg);
             foodList.add(food);
         }
-    }
 
-    public void upDateCsv() throws IOException {
-        FileWriter fileWriter = new FileWriter(csvFilePath, false);
-        for(Food food: foodList) {
-            fileWriter.write(food.getFoodInFoInString());
-            fileWriter.write(System.lineSeparator());
-        }
-    }
-
-    public Food getCarbonPerKgByFoodName(String foodName) {
-        int indexOfFoodList = foodList.indexOf(foodName);
-        Food pickedFood = foodList.get(indexOfFoodList);
-        return pickedFood;
+        csvFile.close();
     }
 
     public List<Food> getFoodList() {
