@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginUser extends AppCompatActivity {
 
@@ -24,13 +25,25 @@ public class LoginUser extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NextPage();
+
+                if(Name.getText().toString()!= null ) {
+                    NextPage();
+                }
+                else {
+                    if(Name.getText()==null) {
+                        Toast.makeText(LoginUser.this, "Empty Name", Toast.LENGTH_SHORT).show();
+                    }
+                    if(Age.getText()!= null){
+                        Toast.makeText(LoginUser.this, "Empty Age", Toast.LENGTH_SHORT).show();
+                    }
+                    }
+
             }
         });
     }
     public void NextPage()
     {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,HomeScreen.class);
         startActivity (intent);
     }
 
