@@ -12,8 +12,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import userdata.UserData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private LinkedList<Spinner> hiddenSpinnerQueue;
     private LinkedList<EditText> hiddenEditTextQueue;
 
+    private UserData userData;//
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
         mAddButton = findViewById(R.id.addButton);
         mSubtractButton = findViewById(R.id.removeButton);
+
+        userData = new UserData(this.getApplicationContext()); ///
 
         //load saved settings from csv here
 
@@ -102,10 +110,10 @@ public class MainActivity extends AppCompatActivity {
         mResultsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //submit result function, load up the values in each and send it to the next activity.
-                CalculatorActivityData sendToResultsActivity;
+                //CalculatorActivityData sendToResultsActivity;
                 Integer editTextValue;
                 String spinnerValue;
-                ArrayList<Pair<String, Integer>> pairArraySentToActivity = new ArrayList<>();
+                //ArrayList<Pair<String, Integer>> pairArraySentToActivity = new ArrayList<>();
                 Pair<String, Integer> resultPair;
                 for (int i = 0; i < MAX_DROPDOWNS; i++) {
                     if (!mEditTextArray.get(i).getText().toString().isEmpty() &&
@@ -115,13 +123,20 @@ public class MainActivity extends AppCompatActivity {
 
                         editTextValue = Integer.valueOf(mEditTextArray.get(i).getText().toString());
                         spinnerValue = mSpinnerArray.get(i).getSelectedItem().toString();
-                        resultPair = new Pair<>(spinnerValue, editTextValue);
-                        pairArraySentToActivity.add(resultPair);
+                        //resultPair = new Pair<>(spinnerValue, editTextValue);
+                        //pairArraySentToActivity.add(resultPair);
+                        userData.addUserList(spinnerValue, editTextValue); //
                     }
                 }
-                sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
+
+                try { ////////////
+                    userData.overWriteCsvFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
                 Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
-                intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
+                //intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
             }
         });
