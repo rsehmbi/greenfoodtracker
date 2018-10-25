@@ -3,7 +3,7 @@ package com.t.teamten.greenfoodtracker;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class fact {
+public class fact{
 
     private String[] textdata;
     private int intcount;
@@ -11,12 +11,12 @@ public class fact {
     fact()
     {
         textdata = new String[intcount];
-        intcount=0;
+        intcount = 0;
     }
 
-    public void init(int count)
+    public void inititializingarray(int index)
     {
-        this.textdata = new String[count];
+        this.textdata = new String[index];
     }
     public String getTextdata(int index) {
         return textdata[index];
