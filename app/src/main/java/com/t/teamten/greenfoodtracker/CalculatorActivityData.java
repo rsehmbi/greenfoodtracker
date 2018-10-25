@@ -51,6 +51,8 @@ public class CalculatorActivityData implements Parcelable {
         return pairAtIndex;
     }
 
+
+
     public int getArrayListSize() {
         return this.listFoodPairs.size();
     }

@@ -20,8 +20,7 @@
         android:id="@+id/nextPage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below = "@+id/resultTextView"
-        android:layout_alignParentRight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:text = "next"/>
 
 

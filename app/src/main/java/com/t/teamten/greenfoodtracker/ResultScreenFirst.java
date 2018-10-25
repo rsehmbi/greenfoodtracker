@@ -1,9 +1,8 @@
 package com.t.teamten.greenfoodtracker;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import foodandco2.Food;
 import userdata.UserData;
 
 public class ResultScreenFirst extends AppCompatActivity {

@@ -2,35 +2,89 @@ package com.t.teamten.greenfoodtracker;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import foodandco2.Food;
+import foodandco2.FoodData;
 import lecho.lib.hellocharts.model.PieChartData;
 import lecho.lib.hellocharts.model.SliceValue;
 import lecho.lib.hellocharts.view.PieChartView;
+import userdata.UserData;
 
 import static android.widget.Toast.LENGTH_SHORT;
-
 public class ResultScreenSecond extends AppCompatActivity {
 
     PieChartView pieChartView;
     TextView mResView;
     TextView intro;
     TextView resultText;
+    private UserData userDietPlan;
+    private FoodData foodData;
+    private TextView testing;
+    List<Pair<String, Integer>> lists = new ArrayList<>();
+    List<Pair<String, Integer>> newlist = new ArrayList<>();
+    private List<Food> foodList = new ArrayList<>();
+    private double totalAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_screen_second);
+
+        //get users info
+        userDietPlan = new UserData(this.getApplicationContext());
+
+        //lists = userDietPlan.getUserList();
+
+        try {
+            userDietPlan.saveCsvFileToList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        lists = userDietPlan.getUserList();
+
+        //get food data from csv
+        try {
+            foodData = new FoodData(this.getApplicationContext());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        foodList = foodData.getFoodList();
+
+
+        NewPlanCalculator newCalculator = new NewPlanCalculator(lists,foodList);
+        totalAmount = newCalculator.calculateNewMealPlan();
+
+        //testing
+        MealPlan newPlan = new MealPlan(lists);
+        newlist = newPlan.veggOnlyPlan();
+        testing = (TextView)findViewById(R.id.testing);
+        String testString="";
+       // String testString= totalAmount + "\n";
+        for(Pair<String, Integer> pair: lists) {
+            testString = testString + pair.first + ", " + pair.second + "\n";
+        }
+/*        for (Food food : foodList){
+            testString = testString + food.getFoodName() + ", " + food.getCarbonPerKg()+ "\n";
+        }*/
+
+        testing.setText(testString);
+
+
+
+
+
 
         mResView = (TextView)findViewById(R.id.text_view_result2_2);
         intro = (TextView)findViewById(R.id.text_view_result2_info);
@@ -52,11 +106,15 @@ public class ResultScreenSecond extends AppCompatActivity {
         final Button button1 = findViewById(R.id.button_view_1);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                int co2e = 30;
+                MealPlan newPlan = new MealPlan(lists);
+                newlist = newPlan.meatEaterPlan();
+                NewPlanCalculator newCalculator = new NewPlanCalculator(newlist,foodList);
+                double amount = newCalculator.calculateNewMealPlan();
+                int co2e = (int)amount;
                 creatPieChart(R.string.meal1,co2e);
                 mResView.setText("You choose Meat-Eater Plan!");
-                printResult();
+                double saved = totalAmount - amount;
+                printResult(saved);
             }
 
         });
@@ -64,11 +122,15 @@ public class ResultScreenSecond extends AppCompatActivity {
         final Button button2 = findViewById(R.id.button_view_2);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                int co2e = 20;
+                MealPlan newPlan = new MealPlan(lists);
+                newlist = newPlan.lowMeatPlan();
+                NewPlanCalculator newCalculator = new NewPlanCalculator(newlist,foodList);
+                double amount = newCalculator.calculateNewMealPlan();
+                int co2e = (int)amount;
                 creatPieChart(R.string.meal2,co2e);
                 mResView.setText("You choose Low Eater Plan!");
-                printResult();
+                double saved = totalAmount - amount;
+                printResult(saved);
 
             }
 
@@ -76,11 +138,26 @@ public class ResultScreenSecond extends AppCompatActivity {
         final Button button3 = findViewById(R.id.button_view_3);
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                int co2e = 10;
+                MealPlan newPlan = new MealPlan(lists);
+                newlist = newPlan.veggOnlyPlan();
+                NewPlanCalculator newCalculator = new NewPlanCalculator(newlist,foodList);
+                double amount = newCalculator.calculateNewMealPlan();
+                int co2e = (int)amount;
                 creatPieChart(R.string.meal3,co2e);
                 mResView.setText("You choose Plant-based Plan!");
-                printResult();
+                double saved = totalAmount - amount;
+                printResult(saved);
+            }
+
+        });
+
+        //button to next page
+        final Button next = findViewById(R.id.toMainPage);
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ResultScreenSecond.this,MainActivity.class);
+                startActivity(intent);
             }
 
         });
@@ -90,7 +167,7 @@ public class ResultScreenSecond extends AppCompatActivity {
     public void creatPieChart(int meal, int co2Val){
         String new_meal = getResources().getString(meal);
         List pieData = new ArrayList<>();
-        pieData.add(new SliceValue(60, Color.RED).setLabel("Your plan"));
+        pieData.add(new SliceValue(((int) totalAmount), Color.RED).setLabel("Your plan"));
         pieData.add(new SliceValue(co2Val, Color.BLUE).setLabel(new_meal));
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true).setValueLabelTextSize(12);
@@ -98,8 +175,8 @@ public class ResultScreenSecond extends AppCompatActivity {
 
     }
 
-    public void printResult(){
-        String result = "By changing your meal plan to XX you have reduced XX kg of CO2e!\n" +
+    public void printResult(double saved){
+        String result = "By changing your meal plan to XX you have reduced" + saved + "kg of CO2e!\n" +
                 "if the residents in Metro Vancouver made the same change," +
                 "the CO2e will reduced XX kg!";
         resultText = (TextView)findViewById(R.id.text_view_result2_3);
