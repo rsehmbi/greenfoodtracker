@@ -18,13 +18,13 @@ public class ResultScreenFirstDataHandler {
     public ArrayList<Food> populateListOfFoodFromInput(CalculatorActivityData userInput) throws IOException {
         ArrayList<Pair<String, Integer>> pairList = userInput.getArrayListOfPair();
         ArrayList<Food> returnList = new ArrayList<>();
-        FoodData foodData = new FoodData();
+        //FoodData foodData = new FoodData();
         for (Pair<String, Integer> currentPair : pairList) {
             String name = currentPair.first;
             Integer consumption = currentPair.second;
-            Food currentFood = foodData.getCarbonPerKgByFoodName(name);
-            currentFood.setNumberOfConsumptionPerWeek(consumption);
-            returnList.add(currentFood);
+            //Food currentFood = foodData.getCarbonPerKgByFoodName(name);
+            //currentFood.setNumberOfConsumptionPerWeek(consumption);
+            //returnList.add(currentFood);
         }
 
         return returnList;
