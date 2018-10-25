@@ -53,7 +53,7 @@ public class ResultScreenFirst extends AppCompatActivity {
             Integer total_emission = (int) total_emission(userInput);
             Integer km_driven = total_emission*9/2;
 
-            equvalence.setText("Driving " + km_driven.toString() + " on road");
+            equvalence.setText("Driving " + km_driven.toString() + "km on road");
             Integer hours_of_air_condition = total_emission/2;
             equvalence1.setText("Keeping air condition on for " +
             hours_of_air_condition.toString() + " hours");
@@ -110,7 +110,7 @@ public class ResultScreenFirst extends AppCompatActivity {
         BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year kg");
         BarData barData = new BarData(X_food_name, Y_emission);
         emission_chart.setData(barData);
-        emission_chart.setDescription("This is your carbon emission per year based on your current diet");
+
 
     }
 
