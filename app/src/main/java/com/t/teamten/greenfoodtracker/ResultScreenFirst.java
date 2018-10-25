@@ -56,7 +56,7 @@ public class ResultScreenFirst extends AppCompatActivity {
             equvalence.setText("Driving " + km_driven.toString() + "km on road");
             Integer hours_of_air_condition = total_emission/2;
             equvalence1.setText("Keeping air condition on for " +
-            hours_of_air_condition.toString() + " hours");
+                    hours_of_air_condition.toString() + " hours");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,8 +64,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         mNext_Activity.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
-                startActivity(intent);
+              //  Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
+              //  startActivity(intent);
             }
 
         });
