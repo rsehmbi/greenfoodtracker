@@ -28,6 +28,8 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.Facts:
                         Toast.makeText(HomeScreen.this,"Facts",Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(HomeScreen.this,FactsActivity.class);
+                        startActivity(intent3);
                         break;
                     case R.id.About:
                         Toast.makeText(HomeScreen.this,"About",Toast.LENGTH_SHORT).show();
