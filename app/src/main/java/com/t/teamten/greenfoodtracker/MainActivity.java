@@ -1,5 +1,6 @@
 package com.t.teamten.greenfoodtracker;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +12,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import userdata.UserData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     // for use in determining how data is entered by the user
     private LinkedList<Spinner> hiddenSpinnerQueue;
     private LinkedList<EditText> hiddenEditTextQueue;
+    private UserData userdata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
         mAddButton = findViewById(R.id.addButton);
         mSubtractButton = findViewById(R.id.removeButton);
-
-
-        //load saved settings from csv here
+        final Context context = this.getApplicationContext();
 
         for (int i = mEditTextArray.size() - 1; i > 0; i--) { //starts at 1, ignores the first
             if (mEditTextArray.get(i).getText().toString().isEmpty() && !mEditTextArray.isEmpty()) {
@@ -116,6 +120,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity);
+                userdata = new UserData(context);
+                for (Pair currentPair : sendToResultsActivity.getArrayListOfPair()) {
+                    userdata.addUserList(currentPair.first.toString(), (int) currentPair.second);
+                }
+
+                try {
+                    userdata.overWriteCsvFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                
                 Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
                 intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
