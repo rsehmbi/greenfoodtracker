@@ -33,6 +33,7 @@ public class ResultScreenFirst extends AppCompatActivity {
         emission_chart = findViewById(R.id.emission_bar_chart);
         equvalence = findViewById(R.id.km_driven);
         equvalence1 = findViewById(R.id.another_one);
+        mNext_Activity = findViewById(R.id.go_to_next_activity);
         final CalculatorActivityData userInput = getIntent().getParcelableExtra(MainActivity.DATA_PASSED_FROM_MAINACTIVITY);
 
         try {
@@ -41,74 +42,77 @@ public class ResultScreenFirst extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        mNext_Activity.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                try {
-                    generate_graph(userInput);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
 
         try {
-            Double total_emission = total_emission(userInput);
-            Double km_drivern = total_emission*9.0/2.3;
-            equvalence.setText(" Driving" + km_driven_toString() + " on road");
-            Double hours_of_air_condition = total_emission/2.394;
-            equvalence1.setText("Keeping air condition on for ") +
-            hours_of_air_condition.toString() + " hours";
+            generate_graph(userInput);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Integer total_emission = (int) total_emission(userInput);
+            Integer km_driven = total_emission*9/2;
+
+            equvalence.setText("Driving " + km_driven.toString() + " on road");
+            Integer hours_of_air_condition = total_emission/2;
+            equvalence1.setText("Keeping air condition on for " +
+            hours_of_air_condition.toString() + " hours");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         mNext_Activity.setOnClickListener(new View.OnClickListener()
-
         {
-
             public void onClick(View v) {
-
                 //Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
                 //startActivity(intent);
-
             }
 
         });
 
     }
 
+    public double total_emission(CalculatorActivityData userInput) throws IOException {
+        double total = 0.0;
+        for (int i = 0; i < userInput.getArrayListSize(); i++) {
+            total = total + calculations(userInput, foodData.getFoodList()).get(i);
+        }
+
+        return total;
+    }
+
     public ArrayList<Double> calculations(CalculatorActivityData userInput, List<Food> listOfFoods) throws IOException {
-        double data;
+        double data_to_add;
         double food;
         ArrayList<Double> Data = new ArrayList<>();
         for (int i = 0; i < userInput.getArrayListSize(); i++) {
             double input_percentage = Double.valueOf((Integer)userInput.getPairAtIndex(i).second);
             food = new ResultScreenFirstDataHandler(this).getCarbonConsumptionFromName(listOfFoods, userInput.getPairAtIndex(i).first.toString());
-            data = 1.8 * (input_percentage / 100) * 365 * food; // calculates the co2 impact(?)
-            Data.add(data);
+            data_to_add = 1.8 * (input_percentage / 100) * 365 * food; // calculates the co2 impact(?)
+            Data.add(data_to_add);
         }
         return Data;
     }
 
     public void generate_graph(CalculatorActivityData userInput) throws IOException {
         ArrayList<String> X_food_name = new ArrayList<>();
-        for(int i = 0; i < userInput.getArrayListSize(); i++)
+        ArrayList<BarEntry> Y_barEntries = new ArrayList<>();
+
+        for (int i = 0; i < userInput.getArrayListSize(); i++)
             X_food_name.add(userInput.getPairAtIndex(i).first.toString());
-        ArrayList<BarEntry> barEntries= new ArrayList<>();
-        ArrayList<Double> calculated_data = new ArrayList<>();
-        for (int i = 0; i<calculations(userInput, foodData.getFoodList()).size();i++)
-            calculated_data.add(calculations(userInput, foodData.getFoodList()).get(i));
-        for(int i = 0; i<userInput.getArrayListSize();i++)
-        {
-            float value = 1.0f * calculated_data.get(i).floatValue();
-            barEntries.add(new BarEntry(value,i));
+
+        for (int i = 0; i < userInput.getArrayListSize(); i++) {
+            float value = 1.0f * calculations(userInput,foodData.getFoodList()).get(i).floatValue();
+            Y_barEntries.add(new BarEntry(value, i));
         }
 
-        BarDataSet barDataSet = new BarDataSet(barEntries,"CO2 Emission per Year (kg)");
-        BarData barData = new BarData(X_food_name,barDataSet);
+        BarChart emission_chart = (BarChart) findViewById(R.id.emission_bar_chart);
+        BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year kg");
+        BarData barData = new BarData(X_food_name, Y_emission);
         emission_chart.setData(barData);
-        emission_chart.setDescription("");
-        emission_chart.notifyDataSetChanged();
+        emission_chart.setDescription("This is your carbon emission per year based on your current diet");
+
     }
+
+
 }
