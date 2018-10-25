@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         for(Spinner currentSpinner : mSpinnerArray) { //sets the items to be listed in each drop down menu
             currentSpinner.setAdapter(adapter);
         }
-        
+
         mIntroText = findViewById(R.id.introInstructionText);
 
         mAddButton.setOnClickListener(new View.OnClickListener() {

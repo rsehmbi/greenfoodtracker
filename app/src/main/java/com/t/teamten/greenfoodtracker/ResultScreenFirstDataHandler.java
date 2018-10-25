@@ -1,13 +1,10 @@
 package com.t.teamten.greenfoodtracker;
 
 import android.app.Activity;
-import android.util.Pair;
-import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import foodandco2.Food;
-import foodandco2.FoodData;
 
 public class ResultScreenFirstDataHandler {
     private Activity activity;

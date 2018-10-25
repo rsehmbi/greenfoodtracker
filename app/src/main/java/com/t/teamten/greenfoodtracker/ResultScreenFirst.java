@@ -1,13 +1,9 @@
 package com.t.teamten.greenfoodtracker;
 
-import android.content.Context;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Pair;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -22,7 +18,6 @@ import foodandco2.Food;
 import foodandco2.FoodData;
 
 public class ResultScreenFirst extends AppCompatActivity {
-    private TextView testText;
     private Button mMeat;
     private Button mLow_Meat;
     private Button mPlant;
@@ -35,9 +30,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         mMeat = findViewById(R.id.Meat_Eater_Plan);
         mLow_Meat = findViewById(R.id.Low_Meat_Plan);
         mPlant = findViewById(R.id.Plant_Based_Plan);
-        //testText = findViewById(R.id.resultTextView);
+
         final CalculatorActivityData userInput = getIntent().getParcelableExtra(MainActivity.DATA_PASSED_FROM_MAINACTIVITY);
-        //int calculatorWhichTypeOfMetric = userInput.getSwitchStatus();
         try {
             foodData = new FoodData(this.getApplicationContext());
         } catch (IOException e) {
@@ -74,21 +68,6 @@ public class ResultScreenFirst extends AppCompatActivity {
                 }
             }
         });
-
-        //testText = findViewById(R.id.resultTextView);
-        String testDataString = "";
-        //testText.setText(testDataString);
-        ArrayList<Double> data = new ArrayList<>();
-//        for (int i = 0; i < userInput.getArrayListSize(); i++) {
-//            try {
-//                data.add(calculations(userInput).get(i));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-        //testText.setText(testDataString);
-
     }
 
     public ArrayList<Double> calculations(CalculatorActivityData userInput, List<Food> listOfFoods) throws IOException {
@@ -101,8 +80,6 @@ public class ResultScreenFirst extends AppCompatActivity {
             data = 4 * input_percentage * 52 * food; // calculates the co2 impact(?)
             Data.add(data);
         }
-
-
         return Data;
     }
 
