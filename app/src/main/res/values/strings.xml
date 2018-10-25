@@ -21,8 +21,8 @@
     <string name = "meal1">Meat-Eater Plan</string>
     <string name = "meal2">Low Meat Plan</string>
     <string name = "meal3">Plant-based Plan</string>
-    <string name = "mealPlansInfo">Plan1: Meat_Eater Plan: changing 50% of lamb to chicken\n
-        Plan2: Low Meat Plan: changing 50% of lamb to vegetable\n
+    <string name = "mealPlansInfo">Plan1: Meat_Eater Plan: changing 50% of lamb and beef to chicken\n
+        Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
         Plan3: Plant-Based plan: change all meat to vegetable
     </string>
 </resources>

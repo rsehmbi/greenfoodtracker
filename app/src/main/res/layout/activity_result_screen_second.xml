@@ -16,7 +16,8 @@
             android:id="@+id/text_view_result2_1"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/result2_intro"/>
+            android:text="@string/result2_intro"
+            android:textSize="18dp"/>
 
         <TextView
             android:id="@+id/text_view_result2_info"
@@ -24,7 +25,8 @@
             android:layout_width="wrap_content"
             android:text="@string/heading"
             android:textColor="@color/colorPrimary"
-            android:layout_below="@+id/text_view_result2_1"/>
+            android:layout_below="@+id/text_view_result2_1"
+            android:layout_marginTop="5dp"/>
 
         <LinearLayout
             android:id="@+id/groupMeals"
@@ -32,13 +34,15 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:weightSum="3"
-            android:layout_below="@+id/text_view_result2_info">
+            android:layout_below="@+id/text_view_result2_info"
+            android:layout_marginTop="10dp">
 
             <Button
                 android:id="@+id/button_view_1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:text = "@string/meal1" />
 
             <Button
@@ -46,6 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:text = "@string/meal2" />
 
             <Button
@@ -53,6 +58,7 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:text = "@string/meal3"/>
         </LinearLayout>
 
@@ -61,7 +67,7 @@
             android:id="@+id/chart"
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_below="@+id/groupMeals"
             android:layout_marginTop="10dp"/>
 
@@ -69,23 +75,28 @@
             android:id="@+id/text_view_result2_2"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_below="@+id/chart"/>
+            android:layout_below="@+id/chart"
+            android:layout_marginTop="10dp"
+            android:textSize="17dp"/>
         <TextView
             android:id="@+id/text_view_result2_3"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_below="@+id/text_view_result2_2"/>
+            android:layout_below="@+id/text_view_result2_2"
+            android:textSize="17dp"/>
 
         <TextView
             android:id="@+id/testing"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_below="@+id/text_view_result2_3"/>
+            android:layout_below="@+id/text_view_result2_3"
+            android:layout_marginTop="10dp"/>
     </RelativeLayout>
     <Button
         android:id="@+id/toMainPage"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text = "next"/>
+        app:layout_constraintRight_toRightOf="parent"
+        android:text = "Go Back"/>
 </android.support.constraint.ConstraintLayout>

@@ -169,8 +169,8 @@ public class ResultScreenSecond extends AppCompatActivity {
     public void creatPieChart(int meal, int co2Val){
         String new_meal = getResources().getString(meal);
         List pieData = new ArrayList<>();
-        pieData.add(new SliceValue(((int) totalAmount), Color.RED).setLabel("Your plan"));
-        pieData.add(new SliceValue(co2Val, Color.BLUE).setLabel(new_meal));
+        pieData.add(new SliceValue(((int) totalAmount), Color.BLUE).setLabel("Your plan"));
+        pieData.add(new SliceValue(co2Val, Color.GREEN).setLabel(new_meal));
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true).setValueLabelTextSize(12);
         pieChartView.setPieChartData(pieChartData);
@@ -178,9 +178,10 @@ public class ResultScreenSecond extends AppCompatActivity {
     }
 
     public void printResult(double saved,double metroSaved){
-        String result = "By changing your meal plan to XX you have reduced" + (int)saved + "kg of CO2e!\n" +
+        String result = "By changing your meal plan you have reduced " + (int)saved + " kg of CO2e!\n" +
                 "if the residents in Metro Vancouver made the same change," +
-                "the CO2e will reduced"+(int)metroSaved+" million kg!";
+                "the CO2e will reduced by "+(int)metroSaved+" million kg!\n"+
+                "This is equivalent to saving "+ (int)(metroSaved/23)+ " trees!";
         resultText = (TextView)findViewById(R.id.text_view_result2_3);
         resultText.setText(result);
     }
