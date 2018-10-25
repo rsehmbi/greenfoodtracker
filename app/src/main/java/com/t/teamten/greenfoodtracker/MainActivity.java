@@ -7,17 +7,12 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
-
-import userdata.UserData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,15 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private Button mResultsButton;
     private Button mAddButton;
     private Button mSubtractButton;
-    private static final int SET_TO_NUMBER = 1;
-    private static final int SET_TO_PERCENT = 0;
-    private int switchStatus = SET_TO_PERCENT;
     public static final String DATA_PASSED_FROM_MAINACTIVITY = "ResultStoredAsObject";
     // for use in determining how data is entered by the user
     private LinkedList<Spinner> hiddenSpinnerQueue;
     private LinkedList<EditText> hiddenEditTextQueue;
-
-    private UserData userData;//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
         mAddButton = findViewById(R.id.addButton);
         mSubtractButton = findViewById(R.id.removeButton);
-
-        userData = new UserData(this.getApplicationContext()); ///
 
         //load saved settings from csv here
 
@@ -72,9 +60,8 @@ public class MainActivity extends AppCompatActivity {
         for(Spinner currentSpinner : mSpinnerArray) { //sets the items to be listed in each drop down menu
             currentSpinner.setAdapter(adapter);
         }
-        
+
         mIntroText = findViewById(R.id.introInstructionText);
-        mDataEntrySwapSwitch = findViewById(R.id.dataEntrySwapSwitch);
 
         mAddButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -110,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
         mResultsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //submit result function, load up the values in each and send it to the next activity.
-                //CalculatorActivityData sendToResultsActivity;
+                CalculatorActivityData sendToResultsActivity;
                 Integer editTextValue;
                 String spinnerValue;
-                //ArrayList<Pair<String, Integer>> pairArraySentToActivity = new ArrayList<>();
+                ArrayList<Pair<String, Integer>> pairArraySentToActivity = new ArrayList<>();
                 Pair<String, Integer> resultPair;
                 for (int i = 0; i < MAX_DROPDOWNS; i++) {
                     if (!mEditTextArray.get(i).getText().toString().isEmpty() &&
@@ -123,36 +110,16 @@ public class MainActivity extends AppCompatActivity {
 
                         editTextValue = Integer.valueOf(mEditTextArray.get(i).getText().toString());
                         spinnerValue = mSpinnerArray.get(i).getSelectedItem().toString();
-                        //resultPair = new Pair<>(spinnerValue, editTextValue);
-                        //pairArraySentToActivity.add(resultPair);
-                        userData.addUserList(spinnerValue, editTextValue); //
+                        resultPair = new Pair<>(spinnerValue, editTextValue);
+                        pairArraySentToActivity.add(resultPair);
                     }
                 }
-
-                try { ////////////
-                    userData.overWriteCsvFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                //sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
+                sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity);
                 Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
-                //intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
+                intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
             }
         });
 
-        mDataEntrySwapSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    mIntroText.setText(R.string.intro_description_percentage);
-                    switchStatus = SET_TO_PERCENT;
-                }
-                else {
-                    mIntroText.setText(R.string.intro_description_number);
-                    switchStatus = SET_TO_NUMBER;
-                }
-            }
-        });
     }
 }
