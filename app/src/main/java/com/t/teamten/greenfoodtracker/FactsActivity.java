@@ -79,26 +79,4 @@ public class FactsActivity extends AppCompatActivity {
         Collections.shuffle(Arrays.asList(textdata));
     }
 
-   /* private void pickrandomfacts() {
-
-        ArrayList<String> fivefacts = new ArrayList<String>();
-        Collections.shuffle(list);
-        for(int i=0;i<5;i++)
-        {
-            fivefacts.add(list.get(i));
-        }
-        final String thefunfact=fivefacts.get(0);
-        TextView factsview =(TextView) findViewById(R.id.factsID);
-        factsview.setText(thefunfact);
-    }
-
-    private void readStringfromfile() {
-
-        Scanner scan = new Scanner(getResources().openRawResource(R.raw.factstextfile));
-        while (scan.hasNextLine()) {
-            String fact = scan.next();
-            list.add(fact);
-        }
-        scan.close();
-    }*/
 }
