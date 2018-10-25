@@ -120,9 +120,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 sendToResultsActivity = new CalculatorActivityData(pairArraySentToActivity, switchStatus);
-                Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
-                intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
-                startActivity(intent);
+               // Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
+               // intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
+               // startActivity(intent);
             }
         });
 
