@@ -31,8 +31,8 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.About:
                         Toast.makeText(HomeScreen.this,"About",Toast.LENGTH_SHORT).show();
-                        //Intent intent = new Intent(HomeScreen.this,AboutActivity.class);
-                        // startActivity(intent);
+                        Intent intent2 = new Intent(HomeScreen.this,aboutactivity.class);
+                        startActivity(intent2);
                         break;
                 }
                 return true;
