@@ -20,26 +20,24 @@ public class LoginUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_user);
-
-
         myprefs = getPreferences(MODE_PRIVATE);
-
+        final loginactivity login = new loginactivity();
         iniialization();
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    String name = Name.getText().toString();
-                    int age = Integer.parseInt(Age.getText().toString());
+                    login.setUsername(Name.getText().toString());
+                    login.setAge(Integer.parseInt(Age.getText().toString()));
                     SharedPreferences.Editor editor = myprefs.edit();
-                    editor.putString("namekey",name);
-                    editor.putInt("agekey",age);
+                    editor.putString("namekey",login.getUsername());
+                    editor.putInt("agekey",login.getAge());
                     editor.commit();
-                   if (!validateAge(age) || !validateName(name))
+                   if (!login.validateAge(login.getAge()) || !login.validateName(login.getUsername()))
                    {
                        Toast.makeText(LoginUser.this,"Enter a valid creditials",Toast.LENGTH_SHORT).show();
                    }
-                   else if (validateAge(age) && validateName(name)) {
+                   else if (login.validateAge(login.getAge()) && login.validateName(login.getUsername())) {
                        NextPage();
                    }
 
@@ -47,14 +45,7 @@ public class LoginUser extends AppCompatActivity {
         });
     }
 
-    public boolean validateName(String nametobevalidated)
-    {
-        return nametobevalidated.length() >= 1 ;
-    }
-    public boolean validateAge(int agetobevalidated)
-    {
-        return agetobevalidated <= 100 && agetobevalidated > 0 ;
-    }
+
     private void iniialization()
     {
         Name = (EditText) findViewById(R.id.NameID);

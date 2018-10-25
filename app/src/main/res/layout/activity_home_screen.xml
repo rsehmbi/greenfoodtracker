@@ -7,9 +7,6 @@
     tools:context=".MainActivity"
     >
 
-
-
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_view"
         android:layout_width="match_parent"

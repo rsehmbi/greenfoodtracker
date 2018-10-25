@@ -24,15 +24,15 @@ public class FactsActivity extends AppCompatActivity {
 
     InputStream inputStream;
     BufferedReader bufferedReader;
-    int intcount=0;
-    int current;
 
-    String[] textdata;
+   // int current;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
-
+        final fact f1= new fact();
         textView =(TextView) findViewById(R.id.factsID);
 
         streamcountlines = this.getResources().openRawResource(R.raw.factstextfile);
@@ -41,7 +41,7 @@ public class FactsActivity extends AppCompatActivity {
         try{
 
             while(readcounlines.readLine() != null){
-                intcount++;
+                f1.setIntcount(f1.getIntcount()+1);//intcount++;
 
             }
         }catch (Exception e){
@@ -51,32 +51,32 @@ public class FactsActivity extends AppCompatActivity {
         inputStream = this.getResources().openRawResource(R.raw.factstextfile);
         bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
-        textdata = new String[intcount];
-
+        //textdata = new String[intcount];
+        f1.init(f1.getIntcount());
         try {
-            for(int i = 0 ; i < intcount;i++){
-                textdata[i]=bufferedReader.readLine();
+            for(int i = 0 ; i < f1.getIntcount();i++){
+                f1.setTextdata(bufferedReader.readLine(),i);//textdata[i]=bufferedReader.readLine();
             }
         }catch (Exception f ){
                 f.printStackTrace();
         }
 
-        textView.setText(textdata[0]);
-        current=0;
+        textView.setText(f1.getTextdata(0));//textdata[0]);
+       // current=0;
         button = (Button)findViewById(R.id.RefreshID);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pickRandomFacts();
-                textView.setText(textdata[0]);
+                f1.pickRandomFacts();
+                textView.setText(f1.getTextdata(0));//textdata[0]);
             }
         });
 
 
     }
 
-    private void pickRandomFacts() {
-        Collections.shuffle(Arrays.asList(textdata));
-    }
+   // private void pickRandomFacts() {
+     //   Collections.shuffle(Arrays.asList(textdata));
+   // }
 
 }
