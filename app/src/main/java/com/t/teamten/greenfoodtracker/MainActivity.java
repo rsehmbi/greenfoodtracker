@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mAddButton = findViewById(R.id.addButton);
         mSubtractButton = findViewById(R.id.removeButton);
 
+
         //load saved settings from csv here
 
         for (int i = mEditTextArray.size() - 1; i > 0; i--) { //starts at 1, ignores the first

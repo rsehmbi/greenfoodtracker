@@ -2,6 +2,7 @@ package com.t.teamten.greenfoodtracker;
 
 import android.util.Pair;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
