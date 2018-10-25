@@ -64,8 +64,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         mNext_Activity.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                //Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
-                //startActivity(intent);
+                Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
+                startActivity(intent);
             }
 
         });

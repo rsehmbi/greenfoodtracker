@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                
+
                 Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
                 intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
