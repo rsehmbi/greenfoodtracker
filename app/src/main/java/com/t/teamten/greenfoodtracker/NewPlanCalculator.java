@@ -29,4 +29,10 @@ public class NewPlanCalculator {
         }
         return total;
     }
+    public double calculationForMetro(double user){
+        double result = 2.463 * 0.9 * user * 52;
+        return result;
+    }
+
+
 }

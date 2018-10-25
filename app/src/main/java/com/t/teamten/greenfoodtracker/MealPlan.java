@@ -34,64 +34,50 @@ public class MealPlan {
         return empty;
     }
     public List<Pair<String, Integer>>  meatEaterPlan() {
-        boolean lamb = false;
-        int addToChickenWithLamb = 0;
-        int addToEmptyChicken = 0;
         List<Pair<String, Integer>> newList = new ArrayList<>();
+        int totalMeat = 0;
         for(Pair<String, Integer> pair: lists) {
-            if(pair.first.equals("Lamb")){
-                int newAmountLamb = pair.second/2;
-                addToChickenWithLamb = newAmountLamb;
-                newList.add(new Pair<String, Integer>("Lamb",newAmountLamb));
-                lamb = true;
+            if(pair.first.equals("Lamb")||pair.first.equals("Beef")) {
+                int add = pair.second/2;
+                totalMeat = totalMeat + add;
+                newList.add(new Pair<String, Integer>(pair.first,add));
             }
             else if(pair.first.equals("Chicken")){
-                int currChicken = pair.second;
-                int addLamb = 0;
-                if(lamb==true){
-                    addLamb = addToChickenWithLamb;
-                }
-                int addToChicken = addLamb;
-                int newAmountChicken = currChicken + addToChicken;
-                newList.add(new Pair<String, Integer>("Chicken",newAmountChicken));
-            }
+                int curr = pair.second;
+                int add = 0;
 
+                add= totalMeat;
+                int addToVege = add;
+                int newAmountVege = curr + addToVege;
+                newList.add(new Pair<String, Integer>("Chicken",newAmountVege));
+            }
             else{
                 newList.add(pair);
             }
-
-
         }
-        //if user does not eat chicken
-        if(chickenEmpty()) {
-            addToEmptyChicken = addToChickenWithLamb ;
-            newList.add(new Pair<String, Integer>("Chicken",addToEmptyChicken));
+        if(chickenEmpty()){
+            newList.add(new Pair<String, Integer>("Chicken",totalMeat));
         }
-
         return newList;
 
     }
 
     public List<Pair<String, Integer>>  lowMeatPlan() {
-        boolean lamb = false;
-        int addToVegeWithLamb = 0;
-        int addToEmptyVege = 0;
         List<Pair<String, Integer>> newList = new ArrayList<>();
+        int totalMeat = 0;
         for(Pair<String, Integer> pair: lists) {
-            if(pair.first.equals("Lamb")){
-                int newAmountLamb = pair.second/2;
-                addToVegeWithLamb = newAmountLamb;
-                newList.add(new Pair<String, Integer>("Lamb",newAmountLamb));
-                lamb = true;
+            if(pair.first.equals("Lamb")||pair.first.equals("Beef")) {
+                int add = pair.second/2;
+                totalMeat = totalMeat + add;
+                newList.add(new Pair<String, Integer>(pair.first,add));
             }
             else if(pair.first.equals("Vegetables")){
-                int currVege = pair.second;
-                int addLamb = 0;
-                if(lamb==true){
-                    addLamb = addToVegeWithLamb;
-                }
-                int addToVege = addLamb;
-                int newAmountVege = currVege + addToVege;
+                int curr = pair.second;
+                int add = 0;
+
+                add = totalMeat;
+                int addToVege = add;
+                int newAmountVege = curr + addToVege;
                 newList.add(new Pair<String, Integer>("Vegetables",newAmountVege));
             }
             else{
@@ -99,10 +85,8 @@ public class MealPlan {
             }
         }
         if(vegeEmpty()){
-            addToEmptyVege= addToVegeWithLamb ;
-            newList.add(new Pair<String, Integer>("Vegetables",addToEmptyVege));
+            newList.add(new Pair<String, Integer>("Vegetables",totalMeat));
         }
-
         return newList;
 
     }

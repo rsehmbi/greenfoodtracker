@@ -62,7 +62,8 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:gravity="center"
-            android:layout_below="@+id/groupMeals"/>
+            android:layout_below="@+id/groupMeals"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/text_view_result2_2"

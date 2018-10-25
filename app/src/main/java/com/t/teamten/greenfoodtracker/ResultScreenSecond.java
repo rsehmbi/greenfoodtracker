@@ -67,21 +67,20 @@ public class ResultScreenSecond extends AppCompatActivity {
         totalAmount = newCalculator.calculateNewMealPlan();
 
         //testing
-        MealPlan newPlan = new MealPlan(lists);
-        newlist = newPlan.veggOnlyPlan();
-        testing = (TextView)findViewById(R.id.testing);
+        //MealPlan newPlan = new MealPlan(lists);
+        //newlist = newPlan.lowMeatPlan();
+
+/*        testing = (TextView)findViewById(R.id.testing);
         String testString="";
        // String testString= totalAmount + "\n";
-        for(Pair<String, Integer> pair: lists) {
+        for(Pair<String, Integer> pair: newlist) {
             testString = testString + pair.first + ", " + pair.second + "\n";
         }
-/*        for (Food food : foodList){
+*//*        for (Food food : foodList){
             testString = testString + food.getFoodName() + ", " + food.getCarbonPerKg()+ "\n";
-        }*/
+        }*//*
 
-        testing.setText(testString);
-
-
+        testing.setText(testString);*/
 
 
 
@@ -114,7 +113,8 @@ public class ResultScreenSecond extends AppCompatActivity {
                 creatPieChart(R.string.meal1,co2e);
                 mResView.setText("You choose Meat-Eater Plan!");
                 double saved = totalAmount - amount;
-                printResult(saved);
+                double metroSaved = newCalculator.calculationForMetro(saved);
+                printResult(saved,metroSaved);
             }
 
         });
@@ -130,7 +130,8 @@ public class ResultScreenSecond extends AppCompatActivity {
                 creatPieChart(R.string.meal2,co2e);
                 mResView.setText("You choose Low Eater Plan!");
                 double saved = totalAmount - amount;
-                printResult(saved);
+                double metroSaved = newCalculator.calculationForMetro(saved);
+                printResult(saved,metroSaved);
 
             }
 
@@ -146,7 +147,8 @@ public class ResultScreenSecond extends AppCompatActivity {
                 creatPieChart(R.string.meal3,co2e);
                 mResView.setText("You choose Plant-based Plan!");
                 double saved = totalAmount - amount;
-                printResult(saved);
+                double metroSaved = newCalculator.calculationForMetro(saved);
+                printResult(saved,metroSaved);
             }
 
         });
@@ -175,10 +177,10 @@ public class ResultScreenSecond extends AppCompatActivity {
 
     }
 
-    public void printResult(double saved){
-        String result = "By changing your meal plan to XX you have reduced" + saved + "kg of CO2e!\n" +
+    public void printResult(double saved,double metroSaved){
+        String result = "By changing your meal plan to XX you have reduced" + (int)saved + "kg of CO2e!\n" +
                 "if the residents in Metro Vancouver made the same change," +
-                "the CO2e will reduced XX kg!";
+                "the CO2e will reduced"+(int)metroSaved+" million kg!";
         resultText = (TextView)findViewById(R.id.text_view_result2_3);
         resultText.setText(result);
     }
