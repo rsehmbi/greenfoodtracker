@@ -112,6 +112,20 @@ public class ResultScreenFirst extends AppCompatActivity {
         emission_chart.setData(barData);
 
 
+
+
+        //button to next page
+        final Button next = findViewById(R.id.nextPage);
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ResultScreenFirst.this,ResultScreenSecond.class);
+                startActivity(intent);
+            }
+
+        });
+
+
     }
 
 
