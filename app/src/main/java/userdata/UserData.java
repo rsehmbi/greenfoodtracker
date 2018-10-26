@@ -6,6 +6,7 @@ import android.util.Pair;
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,9 @@ public class UserData {
         if(!userList.isEmpty()) {
             userList.clear();
         }
-        BufferedReader reader = new BufferedReader(new InputStreamReader(context.openFileInput(CSVFILNAME)));
+
+        InputStreamReader inputStreamReader = new InputStreamReader(context.openFileInput(CSVFILNAME));
+        BufferedReader reader = new BufferedReader(inputStreamReader);
         String currentLine;
         while((currentLine = reader.readLine()) != null) {
             String[] currentLineSplitByComma = currentLine.split(", ");

@@ -13,8 +13,7 @@ public class FoodTest {
     public void testFoodInitialize() {
         String foodName = "Pasta";
         double carbonPerKg =  11.2;
-        int numberOfConsumptionPerWeek = 2;
-        testFood = new Food(foodName, carbonPerKg, numberOfConsumptionPerWeek);
+        testFood = new Food(foodName, carbonPerKg);
     }
 
     @Test
@@ -29,18 +28,5 @@ public class FoodTest {
         double expectedCarbonPerKg = 11.2;
         double actualCarbonPerKg = testFood.getCarbonPerKg();
         assertEquals(expectedCarbonPerKg, actualCarbonPerKg, 0.1);
-    }
-
-    @Test
-    public void testGetNumberOfConsumptionPerWeek() {
-        int expectedNumberOfConsumptionPerWeek = 2;
-        int actualNumberOfConsumptionPerWeek = testFood.getNumberOfConsumptionPerWeek();
-        assertEquals(expectedNumberOfConsumptionPerWeek, actualNumberOfConsumptionPerWeek);
-    }
-
-    @Ignore
-    @Test // add later
-    public void testGetInfoInString() {
-        testFood.getFoodInFoInString();
     }
 }
