@@ -10,12 +10,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+/*Creates csv file of User inputs for food consumptions and stores them into
+* the device's internal memory. This class can read and write to the file and
+* also it can return the user's data in List<Pair<String, Integer>>  where
+* the String is name of the food and Integer number of consumption per week*/
 
 public class UserData {
     private final String CSVFILNAME = "userdiettable.csv";
     private Context context;
     private UserData user;
-    List<Pair<String, Integer>> userList;
+    private List<Pair<String, Integer>> userList;
 
     public UserData(Context context) {
         this.context = context;

@@ -3,7 +3,6 @@ package foodandco2;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.t.teamten.greenfoodtracker.MainActivity;
 import com.t.teamten.greenfoodtracker.R;
 
 import java.io.BufferedReader;
@@ -12,6 +11,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+/*This is a class that can access the csv foodtable located the raw folder. and this class
+* can only read the file and stores them into list<Food>*/
 
 public class FoodData {
     private Context context;
