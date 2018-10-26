@@ -13,8 +13,7 @@ public class FoodTest {/*
     public void testFoodInitialize() {
         String foodName = "Pasta";
         double carbonPerKg =  11.2;
-        int numberOfConsumptionPerWeek = 2;
-        testFood = new Food(foodName, carbonPerKg, numberOfConsumptionPerWeek);
+        testFood = new Food(foodName, carbonPerKg);
     }
 
     @Test

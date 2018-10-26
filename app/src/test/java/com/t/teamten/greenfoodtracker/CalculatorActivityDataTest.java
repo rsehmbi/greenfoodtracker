@@ -2,29 +2,30 @@ package com.t.teamten.greenfoodtracker;
 
 import android.util.Pair;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 27)
 
 public class CalculatorActivityDataTest {
 
+
+
     @Test
     public void getPairAtIndex() {
         ArrayList<Pair<String, Integer>> testArray = new ArrayList<>();
+
         Pair<String, Integer> testPair1 = new Pair<>("String", 55);
         Pair<String, Integer> testPair2 = new Pair<>("Second", 0);
         Pair<String, Integer> testPair3 = new Pair<>("Third", 322);
-        int switchstatus = 0;
         testArray.add(testPair1);
         testArray.add(testPair2);
         testArray.add(testPair3);
@@ -41,7 +42,6 @@ public class CalculatorActivityDataTest {
         Pair<String, Integer> testPair1 = new Pair<>("String", 55);
         Pair<String, Integer> testPair2 = new Pair<>("Second", 0);
         Pair<String, Integer> testPair3 = new Pair<>("Third", 322);
-        int switchstatus = 0;
         testArray.add(testPair1);
         testArray.add(testPair2);
         testArray.add(testPair3);
@@ -66,7 +66,6 @@ public class CalculatorActivityDataTest {
     public void describeContents() {
         ArrayList<Pair<String, Integer>> testArray = new ArrayList<>();
         Pair<String, Integer> testPair1 = new Pair<>("String", 55);
-        int switchstatus = 0;
         testArray.add(testPair1);
         CalculatorActivityData testData = new CalculatorActivityData(testArray);
         assertEquals(0, testData.describeContents());

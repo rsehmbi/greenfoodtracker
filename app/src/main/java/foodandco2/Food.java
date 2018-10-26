@@ -1,6 +1,7 @@
 package foodandco2;
 
-
+/*This is a class for simple abstraction of Food store name of the food
+ and its Carbon emission per kilogram */
 public class Food {
     private String foodName;
     private double carbonPerKg;
@@ -16,11 +17,5 @@ public class Food {
 
     public double getCarbonPerKg() {
         return carbonPerKg;
-    }
-
-
-    public String getFoodInFoInString() {
-        String foodInformation = foodName + ", " + carbonPerKg + "\n";
-        return foodInformation;
     }
 }
