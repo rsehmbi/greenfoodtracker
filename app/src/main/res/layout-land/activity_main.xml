@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e2ffe6"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:imeOptions="actionDone"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/spinner7"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
@@ -43,6 +45,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintStart_toEndOf="@+id/spinner6"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -54,6 +57,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintStart_toEndOf="@+id/spinner5"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
@@ -83,6 +87,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintStart_toEndOf="@+id/spinner4"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -103,6 +108,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintStart_toEndOf="@+id/spinner3"
         app:layout_constraintTop_toBottomOf="@+id/editText1" />
 
@@ -123,6 +129,7 @@
         android:layout_marginTop="31dp"
         android:ems="10"
         android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintStart_toEndOf="@+id/spinner2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -175,6 +182,7 @@
         android:layout_marginStart="12dp"
         android:ems="10"
         android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintStart_toEndOf="@+id/spinner1"
         app:layout_constraintTop_toBottomOf="@+id/introInstructionText" />
 

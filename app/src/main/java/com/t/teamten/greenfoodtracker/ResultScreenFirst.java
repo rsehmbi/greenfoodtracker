@@ -56,7 +56,7 @@ public class ResultScreenFirst extends AppCompatActivity {
             equvalence.setText("Driving " + km_driven.toString() + "km on road");
             Integer hours_of_air_condition = total_emission/2;
             equvalence1.setText("Keeping air condition on for " +
-            hours_of_air_condition.toString() + " hours");
+                    hours_of_air_condition.toString() + " hours");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,8 +64,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         mNext_Activity.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                //Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
-                //startActivity(intent);
+                Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
+                startActivity(intent);
             }
 
         });
@@ -110,6 +110,20 @@ public class ResultScreenFirst extends AppCompatActivity {
         BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year kg");
         BarData barData = new BarData(X_food_name, Y_emission);
         emission_chart.setData(barData);
+
+
+
+
+        //button to next page
+//        final Button next = findViewById(R.id.nextPage);
+//        next.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.setClass(ResultScreenFirst.this,ResultScreenSecond.class);
+//                startActivity(intent);
+//            }
+//
+//        });
 
 
     }
