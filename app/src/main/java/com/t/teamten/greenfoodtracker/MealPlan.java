@@ -8,19 +8,18 @@ import java.util.List;
 public class MealPlan {
     private List<Pair<String, Integer>> lists;
 
-    public MealPlan(List<Pair<String, Integer>> userList){
-        this.lists = userList;
+    public MealPlan(List<Pair<String, Integer>> lists){
+        this.lists = lists;
     }
 
     public boolean chickenEmpty(){
-        boolean noChicken = true;
+        boolean empty = true;
         for(Pair<String, Integer> pair: lists){
             if(pair.first.equals("Chicken")){
-                noChicken = false;
-                break;
+                empty = false;
             }
         }
-        return noChicken;
+        return empty;
     }
 
     public boolean vegeEmpty(){
@@ -28,7 +27,7 @@ public class MealPlan {
         for(Pair<String, Integer> pair: lists){
             if(pair.first.equals("Vegetables")){
                 empty = false;
-                break;
+                //break;
             }
         }
         return empty;
