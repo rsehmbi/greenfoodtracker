@@ -17,10 +17,4 @@ public class Food {
     public double getCarbonPerKg() {
         return carbonPerKg;
     }
-
-
-    public String getFoodInFoInString() {
-        String foodInformation = foodName + ", " + carbonPerKg + "\n";
-        return foodInformation;
-    }
 }

@@ -3,6 +3,7 @@ package foodandco2;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.t.teamten.greenfoodtracker.MainActivity;
 import com.t.teamten.greenfoodtracker.R;
 
 import java.io.BufferedReader;
