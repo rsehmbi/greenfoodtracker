@@ -7,7 +7,7 @@ import java.util.List;
 
 import foodandco2.Food;
 import foodandco2.FoodData;
-
+//functions to handle calculations for the first result screen activity
 public class ResultScreenFirstDataHandler {
     private Activity activity;
     public ResultScreenFirstDataHandler(Activity activity) {

@@ -14,9 +14,7 @@ import com.github.mikephil.charting.data.BarEntry;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-import foodandco2.Food;
 import foodandco2.FoodData;
 
 public class ResultScreenFirst extends AppCompatActivity {
@@ -25,7 +23,7 @@ public class ResultScreenFirst extends AppCompatActivity {
     private TextView equvalence1;
     private FoodData foodData;
     private BarChart emission_chart;
-
+    //uses a custom library to display bar graph as result from calculations
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
