@@ -27,7 +27,6 @@ public class ResultScreenFirstDataHandlerTest {
     private FoodData foodData;
     private Context context;
     private ArrayList<Pair<String, Integer>> testArrayData;
-    private Activity activity;
 
     @Before
     public void initializeData() throws IOException {
