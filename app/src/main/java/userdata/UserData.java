@@ -13,6 +13,7 @@ import java.util.List;
 public class UserData {
     private final String CSVFILNAME = "userdiettable.csv";
     private Context context;
+    private UserData user;
     List<Pair<String, Integer>> userList;
 
     public UserData(Context context) {

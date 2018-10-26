@@ -11,24 +11,21 @@
     <string-array name="food_array">
         <item>Lamb</item>
         <item>Beef</item>
-        <item>Cheese</item>
         <item>Pork</item>
-        <item>Farmed Salmon</item>
-        <item>Turkey</item>
         <item>Chicken</item>
-        <item>Canned Tuna</item>
+        <item>Beans</item>
+        <item>Fish</item>
         <item>Eggs</item>
-        <item>Potatoes</item>
-        <item>Rice</item>
-        <item>Peanut Butter</item>
-        <item>Nuts</item>
-        <item>Yogurt</item>
-        <item>Broccoli</item>
-        <item>Tofu</item>
-        <item>Dry Beans</item>
-        <item>Milk (2%)</item>
-        <item>Tomatoes</item>
-        <item>Lentils</item>
+        <item>Vegetables</item>
     </string-array>
 
+    <string name = "result2_intro">You can choose a meal plan to reduce CO2e!</string>
+    <string name = "heading">click here to learn more about meal plans</string>
+    <string name = "meal1">Meat-Eater Plan</string>
+    <string name = "meal2">Low Meat Plan</string>
+    <string name = "meal3">Plant-based Plan</string>
+    <string name = "mealPlansInfo">Plan1: Meat_Eater Plan: changing 50% of lamb and beef to chicken\n
+        Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
+        Plan3: Plant-Based plan: change all meat to vegetable
+    </string>
 </resources>
