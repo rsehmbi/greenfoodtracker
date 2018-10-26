@@ -76,7 +76,7 @@ public class ResultScreenFirst extends AppCompatActivity {
         }
 
         BarChart emission_chart = findViewById(R.id.emission_bar_chart);
-        BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year kg");
+        BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year in kg");
         BarData barData = new BarData(X_food_name, Y_emission);
         emission_chart.setData(barData);
 
