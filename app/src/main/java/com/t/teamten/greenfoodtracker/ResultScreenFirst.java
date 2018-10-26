@@ -42,24 +42,16 @@ public class ResultScreenFirst extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        generate_graph(userInput);
 
-        try {
-            generate_graph(userInput);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Integer totalEmission = (int) new ResultScreenFirstDataHandler(this).total_emission(userInput, foodData);
+        Integer km_driven = totalEmission*9/2;
 
-        try {
-            Integer total_emission = (int) total_emission(userInput);
-            Integer km_driven = total_emission*9/2;
+        equvalence.setText("Driving " + km_driven.toString() + "km on road");
+        Integer hours_of_air_condition = totalEmission/2;
+        equvalence1.setText("Keeping air condition on for " +
+                hours_of_air_condition.toString() + " hours");
 
-            equvalence.setText("Driving " + km_driven.toString() + "km on road");
-            Integer hours_of_air_condition = total_emission/2;
-            equvalence1.setText("Keeping air condition on for " +
-                    hours_of_air_condition.toString() + " hours");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         mNext_Activity.setOnClickListener(new View.OnClickListener()
         {
@@ -72,29 +64,8 @@ public class ResultScreenFirst extends AppCompatActivity {
 
     }
 
-    public double total_emission(CalculatorActivityData userInput) throws IOException {
-        double total = 0.0;
-        for (int i = 0; i < userInput.getArrayListSize(); i++) {
-            total = total + calculations(userInput, foodData.getFoodList()).get(i);
-        }
 
-        return total;
-    }
-
-    public ArrayList<Double> calculations(CalculatorActivityData userInput, List<Food> listOfFoods) throws IOException {
-        double data_to_add;
-        double food;
-        ArrayList<Double> Data = new ArrayList<>();
-        for (int i = 0; i < userInput.getArrayListSize(); i++) {
-            double input_percentage = Double.valueOf((Integer)userInput.getPairAtIndex(i).second);
-            food = new ResultScreenFirstDataHandler(this).getCarbonConsumptionFromName(listOfFoods, userInput.getPairAtIndex(i).first.toString());
-            data_to_add = 1.8 * (input_percentage / 100) * 365 * food; // calculates the co2 impact(?)
-            Data.add(data_to_add);
-        }
-        return Data;
-    }
-
-    public void generate_graph(CalculatorActivityData userInput) throws IOException {
+    public void generate_graph(CalculatorActivityData userInput) {
         ArrayList<String> X_food_name = new ArrayList<>();
         ArrayList<BarEntry> Y_barEntries = new ArrayList<>();
 
@@ -102,28 +73,14 @@ public class ResultScreenFirst extends AppCompatActivity {
             X_food_name.add(userInput.getPairAtIndex(i).first.toString());
 
         for (int i = 0; i < userInput.getArrayListSize(); i++) {
-            float value = 1.0f * calculations(userInput,foodData.getFoodList()).get(i).floatValue();
+            float value = 1.0f * new ResultScreenFirstDataHandler(this).calculations(userInput,foodData.getFoodList()).get(i).floatValue();
             Y_barEntries.add(new BarEntry(value, i));
         }
 
-        BarChart emission_chart = (BarChart) findViewById(R.id.emission_bar_chart);
+        BarChart emission_chart = findViewById(R.id.emission_bar_chart);
         BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year kg");
         BarData barData = new BarData(X_food_name, Y_emission);
         emission_chart.setData(barData);
-
-
-
-
-        //button to next page
-//        final Button next = findViewById(R.id.nextPage);
-//        next.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setClass(ResultScreenFirst.this,ResultScreenSecond.class);
-//                startActivity(intent);
-//            }
-//
-//        });
 
 
     }
