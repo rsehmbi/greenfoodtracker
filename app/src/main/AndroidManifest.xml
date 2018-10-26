@@ -20,7 +20,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeScreen" />
         <activity android:name=".aboutactivity" />
-        <activity android:name=".FactsActivity">
+        <activity android:name=".FactsActivity"/>
+        <activity android:name=".ResultScreenSecond">
         </activity>
     </application>
 

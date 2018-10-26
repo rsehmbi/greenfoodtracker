@@ -64,8 +64,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         mNext_Activity.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-              //  Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
-              //  startActivity(intent);
+                Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
+                startActivity(intent);
             }
 
         });
@@ -115,15 +115,15 @@ public class ResultScreenFirst extends AppCompatActivity {
 
 
         //button to next page
-        final Button next = findViewById(R.id.nextPage);
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(ResultScreenFirst.this,ResultScreenSecond.class);
-                startActivity(intent);
-            }
-
-        });
+//        final Button next = findViewById(R.id.nextPage);
+//        next.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.setClass(ResultScreenFirst.this,ResultScreenSecond.class);
+//                startActivity(intent);
+//            }
+//
+//        });
 
 
     }
