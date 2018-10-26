@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class FoodTest {
+public class FoodTest {/*
     private Food testFood;
 
     @Before
@@ -29,4 +29,17 @@ public class FoodTest {
         double actualCarbonPerKg = testFood.getCarbonPerKg();
         assertEquals(expectedCarbonPerKg, actualCarbonPerKg, 0.1);
     }
+
+    @Test
+    public void testGetNumberOfConsumptionPerWeek() {
+        int expectedNumberOfConsumptionPerWeek = 2;
+        int actualNumberOfConsumptionPerWeek = testFood.getNumberOfConsumptionPerWeek();
+        assertEquals(expectedNumberOfConsumptionPerWeek, actualNumberOfConsumptionPerWeek);
+    }
+
+    @Ignore
+    @Test // add later
+    public void testGetInfoInString() {
+        testFood.getFoodInFoInString();
+    }*/
 }

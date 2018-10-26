@@ -22,7 +22,7 @@ public class NewPlanCalculator {
             for(Food food : foodList){
                 String foodName = food.getFoodName();
                 if(foodName.equals(name)){
-                    total = total + ((double) amount) * food.getCarbonPerKg();
+                    total = total + ((double) amount *1.8/100) * food.getCarbonPerKg();
                 }
             }
 
@@ -30,7 +30,7 @@ public class NewPlanCalculator {
         return total;
     }
     public double calculationForMetro(double user){
-        double result = 2.463 * 0.9 * user * 52;
+        double result = 2.463 * 0.9 * user * 365;
         return result;
     }
 
