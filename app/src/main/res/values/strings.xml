@@ -5,6 +5,9 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="intro_description_percentage">What percentage of these foods is in your weekly diet?</string>
     <string name="intro_description_number">What number of times do you eat these foods per week?</string>
+    <string name="submit_calc1">Submit Results</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
     <string-array name="food_array">
         <item>Lamb</item>
         <item>Beef</item>

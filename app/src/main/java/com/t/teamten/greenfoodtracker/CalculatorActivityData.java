@@ -7,16 +7,14 @@ import java.util.ArrayList;
 
 public class CalculatorActivityData implements Parcelable {
     private ArrayList<Pair<String, Integer>> listFoodPairs;
-    private int switchStatus;
 
-    CalculatorActivityData(ArrayList<Pair<String, Integer>> listFoodPairs, int switchStatus) {
+
+    CalculatorActivityData(ArrayList<Pair<String, Integer>> listFoodPairs) {
         this.listFoodPairs = listFoodPairs;
-        this.switchStatus = switchStatus;
     }
 
 
     private CalculatorActivityData(Parcel in) {
-        this.switchStatus = in.readInt();
         final int size = in.readInt();
         listFoodPairs = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -61,9 +59,6 @@ public class CalculatorActivityData implements Parcelable {
         return this.listFoodPairs;
     }
 
-    public int getSwitchStatus() {
-        return this.switchStatus;
-    }
 
     @Override
     public int describeContents() {
@@ -72,7 +67,6 @@ public class CalculatorActivityData implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(switchStatus);
         final int size = this.listFoodPairs.size();
         dest.writeInt(size);
         if (size > 0) {

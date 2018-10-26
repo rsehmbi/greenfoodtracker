@@ -26,6 +26,7 @@ android {
         maven { url 'https://jitpack.io' }
     }
 
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
@@ -37,5 +38,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
-    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 }

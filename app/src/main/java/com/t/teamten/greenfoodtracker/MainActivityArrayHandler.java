@@ -1,6 +1,7 @@
 package com.t.teamten.greenfoodtracker;
 
 import android.app.Activity;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -11,7 +12,6 @@ public class MainActivityArrayHandler {
     public MainActivityArrayHandler(Activity activity) {
         this.activity = activity;
     }
-
 
     public ArrayList<Spinner> populateSpinnerArray() { //this function allows for looping code in the spinners.
         ArrayList<Spinner> populatedArray = new ArrayList<>();

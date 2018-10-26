@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
@@ -25,10 +26,19 @@
       </value>
     </option>
   </component>
+<<<<<<< .idea/misc.xml
+=======
+<<<<<<< HEAD
+>>>>>>> .idea/misc.xml
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">
+>>>>>>> d44e515d6e068df516649c081f73379dc935407d
+    <output url="file://$PROJECT_DIR$/out" />
+>>>>>>> 1-create-basic-ui-to-display-functionality
   </component>
 </project>
