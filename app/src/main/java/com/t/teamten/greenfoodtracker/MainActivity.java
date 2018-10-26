@@ -2,15 +2,14 @@ package com.t.teamten.greenfoodtracker;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int MAX_DROPDOWNS = 7; // from the UI elements.
     private TextView mIntroText;
-    private Switch mDataEntrySwapSwitch;
     private ArrayList<Spinner> mSpinnerArray;
     private ArrayList<EditText> mEditTextArray;
     private Button mResultsButton;
