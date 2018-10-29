@@ -20,9 +20,10 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeScreen" />
         <activity android:name=".aboutactivity" />
-        <activity android:name=".FactsActivity"/>
-        <activity android:name=".ResultScreenSecond">
-        </activity>
+        <activity android:name=".FactsActivity" />
+        <activity android:name=".ResultScreenSecond" />
+        <activity android:name=".FirebaseLogin" />
+        <activity android:name=".NewUserRegisteration"></activity>
     </application>
 
 </manifest>

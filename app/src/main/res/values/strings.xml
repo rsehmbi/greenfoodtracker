@@ -19,12 +19,12 @@
         <item>Vegetables</item>
     </string-array>
 
-    <string name = "result2_intro">You can choose a meal plan to reduce CO2e!</string>
-    <string name = "heading">click here to learn more about meal plans</string>
-    <string name = "meal1">Meat-Eater Plan</string>
-    <string name = "meal2">Low Meat Plan</string>
-    <string name = "meal3">Plant-based Plan</string>
-    <string name = "mealPlansInfo">Plan1: Meat_Eater Plan: changing 50% of lamb and beef to chicken\n
+    <string name="result2_intro">You can choose a meal plan to reduce CO2e!</string>
+    <string name="heading">click here to learn more about meal plans</string>
+    <string name="meal1">Meat-Eater Plan</string>
+    <string name="meal2">Low Meat Plan</string>
+    <string name="meal3">Plant-based Plan</string>
+    <string name="mealPlansInfo">Plan1: Meat_Eater Plan: changing 50% of lamb and beef to chicken\n
         Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
         Plan3: Plant-Based plan: change all meat to vegetable
     </string>

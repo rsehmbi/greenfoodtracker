@@ -1,11 +1,9 @@
 package com.t.teamten.greenfoodtracker;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +14,7 @@ public class LoginUser extends AppCompatActivity {
     public  EditText Age;
     private Button Login;
     public static SharedPreferences myprefs;
+    private Button Test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +40,14 @@ public class LoginUser extends AppCompatActivity {
                        NextPage();
                    }
 
+            }
+        });
+        Test =(Button) findViewById(R.id.test);
+        Test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginUser.this,NewUserRegisteration.class);
+                startActivity(i);
             }
         });
     }
