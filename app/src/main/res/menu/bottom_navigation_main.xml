@@ -10,6 +10,13 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/Pledge"
+        android:enabled="true"
+        android:title="Pledge"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/pledge"/>
+
+    <item
         android:id="@+id/Facts"
         android:enabled="true"
         android:icon="@drawable/facts"

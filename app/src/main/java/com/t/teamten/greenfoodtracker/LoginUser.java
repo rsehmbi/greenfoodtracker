@@ -42,14 +42,6 @@ public class LoginUser extends AppCompatActivity {
 
             }
         });
-        Test =(Button) findViewById(R.id.test);
-        Test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginUser.this,NewUserRegisteration.class);
-                startActivity(i);
-            }
-        });
     }
 
 

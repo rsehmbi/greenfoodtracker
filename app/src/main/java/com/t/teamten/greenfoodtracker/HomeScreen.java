@@ -41,6 +41,10 @@ public class HomeScreen extends AppCompatActivity {
                         Intent intent2 = new Intent(HomeScreen.this,aboutactivity.class);
                         startActivity(intent2);
                         break;
+                    case R.id.Pledge:
+                        Toast.makeText(HomeScreen.this,"Pledge",Toast.LENGTH_SHORT).show();
+                        Intent movetoPledge = new Intent(HomeScreen.this,FirebaseLogin.class);
+                        startActivity(movetoPledge);
                 }
                 return true;
             }
