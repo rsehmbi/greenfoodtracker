@@ -26,7 +26,8 @@
         <activity android:name=".ResultScreenSecond" />
         <activity android:name=".FirebaseLogin" />
         <activity android:name=".NewUserRegisteration" />
-        <activity android:name=".UserRegisteration"></activity>
+        <activity android:name=".UserRegisteration" />
+        <activity android:name=".PledgeInteract"></activity>
     </application>
 
 </manifest>

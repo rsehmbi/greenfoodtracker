@@ -11,6 +11,9 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,16 +24,16 @@ public class ResultScreenFirst extends AppCompatActivity {
     private Button mNext_Activity;
     private TextView equvalence;
     private TextView equvalence1;
+
     private FoodData foodData;
-    private BarChart emission_chart;
+
     //uses a custom library to display bar graph as result from calculations
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_screen_first);
-        emission_chart = findViewById(R.id.emission_bar_chart);
-        equvalence = findViewById(R.id.km_driven);
-        equvalence1 = findViewById(R.id.another_one);
+        equvalence = findViewById(R.id.km_driven2);
+        equvalence1 = findViewById(R.id.air_con2);
         mNext_Activity = findViewById(R.id.go_to_next_activity);
         final CalculatorActivityData userInput = getIntent().getParcelableExtra(MainActivity.DATA_PASSED_FROM_MAINACTIVITY);
 
@@ -45,10 +48,9 @@ public class ResultScreenFirst extends AppCompatActivity {
         Integer totalEmission = (int) new ResultScreenFirstDataHandler(this).total_emission(userInput, foodData);
         Integer km_driven = totalEmission*9/2;
 
-        equvalence.setText("Driving " + km_driven.toString() + "km on road");
+        equvalence.setText( km_driven.toString() );
         Integer hours_of_air_condition = totalEmission/2;
-        equvalence1.setText("Keeping air condition on for " +
-                hours_of_air_condition.toString() + " hours");
+        equvalence1.setText( hours_of_air_condition.toString());
 
 
         mNext_Activity.setOnClickListener(new View.OnClickListener()
@@ -79,6 +81,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         BarDataSet Y_emission = new BarDataSet(Y_barEntries, "CO2 Emission per Year in kg");
         BarData barData = new BarData(X_food_name, Y_emission);
         emission_chart.setData(barData);
+        Y_emission.setColors(ColorTemplate.COLORFUL_COLORS);
+        emission_chart.setDescription(" ");
 
 
     }

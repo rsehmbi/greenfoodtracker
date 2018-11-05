@@ -28,4 +28,21 @@
         Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
         Plan3: Plant-Based plan: change all meat to vegetable
     </string>
+    <string name="send_to_pledge">Pledge this amount</string>
+    <string name="text_shown_1">This is equivalent to :</string>
+    <string name="text_shown_2">Choose another meal plan, you can save our planet</string>
+    <string name="text_shown_3">Driving </string>
+    <string name="text_shown_4">km on road</string>
+    <string name="text_shown_5">Keep air condition on for </string>
+    <string name="text_shown_6">hours</string>
+    <string name="text_shown_7">This is your CO2 emission based on your current diet</string>
+    <string name="button_text_shown_1">Click here to choose another plan</string>
+
+    <string name="first_name">First _Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="age">Age</string>
+    <string name="city">Your City</string>
+    <string name="user_pledge">Your Pledge Amount Per Year is: </string>
+    <string name="change_plan">Click Here To Change Pledge</string>
+    <string name="save">Save</string>
 </resources>
