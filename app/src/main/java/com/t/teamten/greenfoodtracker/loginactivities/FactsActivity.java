@@ -1,10 +1,13 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.loginactivities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.loginactivities.fact;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

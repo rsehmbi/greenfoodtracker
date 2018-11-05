@@ -1,14 +1,16 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.calcactivities;
 
 import android.app.Activity;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.t.teamten.greenfoodtracker.R;
+
 import java.util.ArrayList;
 
-public class MainActivityArrayHandler {
+public class CalcActivityArrayHandler {
     private Activity activity;
-    public MainActivityArrayHandler(Activity activity) {
+    public CalcActivityArrayHandler(Activity activity) {
         this.activity = activity;
     }
     //pertains to the initialization of ui elements into array and setting to their respective ids

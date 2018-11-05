@@ -11,22 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginUser">
+        <activity android:name=".loginactivities.LoginUser">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResultScreenFirst" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".HomeScreen" />
-        <activity android:name=".aboutactivity" />
-        <activity android:name=".FactsActivity" />
-        <activity android:name=".ResultScreenSecond" />
-        <activity android:name=".FirebaseLogin" />
+        <activity android:name=".resultscreenactivities.ResultScreenFirst" />
+        <activity android:name=".calcactivities.CalcActivity" />
+        <activity android:name=".loginactivities.HomeScreen" />
+        <activity android:name=".loginactivities.aboutactivity" />
+        <activity android:name=".loginactivities.FactsActivity" />
+        <activity android:name=".resultscreenactivities.ResultScreenSecond" />
+        <activity android:name=".loginactivities.FirebaseLogin" />
         <activity android:name=".NewUserRegisteration" />
-        <activity android:name=".UserRegisteration"></activity>
+        <activity android:name=".loginactivities.UserRegisteration"></activity>
     </application>
 
 </manifest>

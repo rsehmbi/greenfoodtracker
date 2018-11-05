@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.calcactivities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,13 +12,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.resultscreenactivities.ResultScreenFirst;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 import userdata.UserData;
 
-public class MainActivity extends AppCompatActivity {
+public class CalcActivity extends AppCompatActivity {
 
     private static final int MAX_DROPDOWNS = 7; // from the UI elements.
     private TextView mIntroText;
@@ -41,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         hiddenSpinnerQueue = new LinkedList<>();
         hiddenEditTextQueue = new LinkedList<>();
 
-        mEditTextArray = new MainActivityArrayHandler(this).populateEditTextArray();
-        mSpinnerArray =  new MainActivityArrayHandler(this).populateSpinnerArray();
+        mEditTextArray = new CalcActivityArrayHandler(this).populateEditTextArray();
+        mSpinnerArray =  new CalcActivityArrayHandler(this).populateSpinnerArray();
         mAddButton = findViewById(R.id.addButton);
         mSubtractButton = findViewById(R.id.removeButton);
         final Context context = this.getApplicationContext();
@@ -129,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Intent intent = new Intent(MainActivity.this, ResultScreenFirst.class);
+                Intent intent = new Intent(CalcActivity.this, ResultScreenFirst.class);
                 intent.putExtra(DATA_PASSED_FROM_MAINACTIVITY, sendToResultsActivity);
                 startActivity(intent);
             }
