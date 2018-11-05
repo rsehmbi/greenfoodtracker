@@ -1,17 +1,9 @@
 package foodandco2;
 
-import android.app.Activity;
-import android.app.Instrumentation;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 
 import com.t.teamten.greenfoodtracker.BuildConfig;
-import com.t.teamten.greenfoodtracker.MainActivity;
 
-import static android.support.test.InstrumentationRegistry.getContext;
-
-import org.apache.tools.ant.Main;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

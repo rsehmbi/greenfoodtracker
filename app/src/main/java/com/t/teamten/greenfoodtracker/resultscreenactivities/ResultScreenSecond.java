@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.resultscreenactivities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

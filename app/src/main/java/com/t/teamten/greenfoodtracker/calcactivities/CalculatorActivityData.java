@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.calcactivities;
 
 import android.os.Parcel;
 import android.os.Parcelable;

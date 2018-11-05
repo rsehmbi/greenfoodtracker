@@ -2,6 +2,8 @@ package com.t.teamten.greenfoodtracker;
 
 import android.util.Pair;
 
+import com.t.teamten.greenfoodtracker.calcactivities.CalculatorActivityData;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;

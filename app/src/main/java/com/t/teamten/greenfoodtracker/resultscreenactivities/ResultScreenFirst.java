@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.resultscreenactivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
+import com.t.teamten.greenfoodtracker.calcactivities.CalculatorActivityData;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +35,7 @@ public class ResultScreenFirst extends AppCompatActivity {
         equvalence = findViewById(R.id.km_driven);
         equvalence1 = findViewById(R.id.another_one);
         mNext_Activity = findViewById(R.id.go_to_next_activity);
-        final CalculatorActivityData userInput = getIntent().getParcelableExtra(MainActivity.DATA_PASSED_FROM_MAINACTIVITY);
+        final CalculatorActivityData userInput = getIntent().getParcelableExtra(CalcActivity.DATA_PASSED_FROM_MAINACTIVITY);
 
         try {
             foodData = new FoodData(this.getApplicationContext());
