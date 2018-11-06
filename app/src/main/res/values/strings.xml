@@ -59,4 +59,5 @@
     <string name="ACCESS_TOKEN">2207516894-5PhrpMS45sH9BMfzzdD5LP4x69b564Wgotj8ARS</string>
     <string name="ACCESS_TOKEN_SECRET">yOwo34wzyN0zPicrALuCWQe5TUeNPH8giRpxwfgKfWXEX</string>
     <string name="share">Select one of these social media platforms to share your pledge, or share the app!</string>
+    <string name="shareapptext"></string>
 </resources>
