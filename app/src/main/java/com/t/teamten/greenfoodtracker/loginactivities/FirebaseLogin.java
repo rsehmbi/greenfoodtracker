@@ -52,7 +52,10 @@ public class FirebaseLogin extends AppCompatActivity {
 
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(FirebaseLogin.this,"Succesfull",Toast.LENGTH_SHORT).show();
+                    Intent movetoHomescreen = new Intent(FirebaseLogin.this, HomeScreen.class);
+                    startActivity(movetoHomescreen);
+                    Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
+
                 }else{
                     Toast.makeText(FirebaseLogin.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                 }
