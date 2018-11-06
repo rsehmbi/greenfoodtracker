@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.loginactivities;
 
 public class loginactivity {
 

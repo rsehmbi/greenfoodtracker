@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.resultscreenactivities;
 
 import android.util.Pair;
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/greenfood"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".calcactivities.CalcActivity"
     >
 
     <android.support.design.widget.BottomNavigationView

@@ -2,17 +2,17 @@ package com.t.teamten.greenfoodtracker;
 
 import android.util.Pair;
 
+import com.t.teamten.greenfoodtracker.resultscreenactivities.NewPlanCalculator;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import foodandco2.Food;
-import userdata.UserData;
 
 import static org.junit.Assert.*;
 @RunWith(RobolectricTestRunner.class)

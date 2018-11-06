@@ -1,6 +1,8 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.resultscreenactivities;
 
 import android.app.Activity;
+
+import com.t.teamten.greenfoodtracker.calcactivities.CalculatorActivityData;
 
 import java.util.ArrayList;
 import java.util.List;

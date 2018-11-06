@@ -1,8 +1,10 @@
 package com.t.teamten.greenfoodtracker;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.Pair;
+
+import com.t.teamten.greenfoodtracker.calcactivities.CalculatorActivityData;
+import com.t.teamten.greenfoodtracker.resultscreenactivities.ResultScreenFirstDataHandler;
 
 import org.junit.Before;
 import org.junit.Test;

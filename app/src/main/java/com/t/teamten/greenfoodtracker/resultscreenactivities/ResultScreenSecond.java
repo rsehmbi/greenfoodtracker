@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker;
+package com.t.teamten.greenfoodtracker.resultscreenactivities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,12 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
+import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
