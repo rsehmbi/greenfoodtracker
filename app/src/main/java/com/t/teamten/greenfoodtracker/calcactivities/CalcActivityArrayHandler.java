@@ -1,7 +1,9 @@
+
 package com.t.teamten.greenfoodtracker.calcactivities;
 
 import android.app.Activity;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 
 import com.t.teamten.greenfoodtracker.R;
@@ -34,22 +36,22 @@ public class CalcActivityArrayHandler {
         return populatedArray;
     }
 
-    public ArrayList<EditText> populateEditTextArray() {
-        ArrayList<EditText> populatedArray = new ArrayList<>();
-        EditText editText1 = activity.findViewById(R.id.editText1);
-        populatedArray.add(editText1);
-        EditText editText2 = activity.findViewById(R.id.editText2);
-        populatedArray.add(editText2);
-        EditText editText3 = activity.findViewById(R.id.editText3);
-        populatedArray.add(editText3);
-        EditText editText4 = activity.findViewById(R.id.editText4);
-        populatedArray.add(editText4);
-        EditText editText5 = activity.findViewById(R.id.editText5);
-        populatedArray.add(editText5);
-        EditText editText6 = activity.findViewById(R.id.editText6);
-        populatedArray.add(editText6);
-        EditText editText7 = activity.findViewById(R.id.editText7);
-        populatedArray.add(editText7);
+    public ArrayList<SeekBar> populateSeekBarArray() {
+        ArrayList<SeekBar> populatedArray = new ArrayList<>();
+        SeekBar seekBar1 = activity.findViewById(R.id.seekBar1);
+        populatedArray.add(seekBar1);
+        SeekBar seekBar2 = activity.findViewById(R.id.seekBar2);
+        populatedArray.add(seekBar2);
+        SeekBar seekBar3 = activity.findViewById(R.id.seekBar3);
+        populatedArray.add(seekBar3);
+        SeekBar seekBar4 = activity.findViewById(R.id.seekBar4);
+        populatedArray.add(seekBar4);
+        SeekBar seekBar5 = activity.findViewById(R.id.seekBar5);
+        populatedArray.add(seekBar5);
+        SeekBar seekBar6 = activity.findViewById(R.id.seekBar6);
+        populatedArray.add(seekBar6);
+        SeekBar seekBar7 = activity.findViewById(R.id.seekBar7);
+        populatedArray.add(seekBar7);
 
         return populatedArray;
     }

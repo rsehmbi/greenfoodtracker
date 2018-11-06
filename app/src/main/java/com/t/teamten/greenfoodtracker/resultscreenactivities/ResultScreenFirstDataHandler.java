@@ -46,7 +46,7 @@ public class ResultScreenFirstDataHandler {
         for (int i = 0; i < userInput.getArrayListSize(); i++) {
             double input_percentage = Double.valueOf((Integer)userInput.getPairAtIndex(i).second);
             food = getCarbonConsumptionFromName(listOfFoods, userInput.getPairAtIndex(i).first.toString());
-            data_to_add = 1.8 * (input_percentage / 100) * 365 * food; // calculates the co2 impact(?)
+            data_to_add = 1.8 * (input_percentage / 100) * 365 * food; // calculates the co2 impact, assume each person's intake 1.8kg
             Data.add(data_to_add);
         }
         return Data;

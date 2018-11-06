@@ -9,10 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +34,7 @@ public class ResultScreenSecond extends AppCompatActivity {
     private List<Pair<String, Integer>> newlist = new ArrayList<>();
     private List<Food> foodList = new ArrayList<>();
     private double totalAmount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +73,7 @@ public class ResultScreenSecond extends AppCompatActivity {
         pieChartView = findViewById(R.id.chart);
 
         //initialize with a pie chart that has a slice value of 0
-        //so that it won't shown anything at the beginning
+        //so that it won't show anything at the beginning
         List pieData = new ArrayList<>();
         pieData.add(new SliceValue(0, Color.GRAY).setLabel(""));
         PieChartData pieChartData = new PieChartData(pieData);
@@ -122,6 +121,11 @@ public class ResultScreenSecond extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+        //button to pledge page
+        //Send this pledge data to pledge Interac activity
     }
     public void updateMealPlan(List<Pair<String, Integer>> updatedList){
         NewPlanCalculator newCalculator = new NewPlanCalculator(updatedList,foodList);

@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginactivities.LoginUser">
+        <activity android:name=".loginactivities.FirebaseLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +25,10 @@
         <activity android:name=".loginactivities.aboutactivity" />
         <activity android:name=".loginactivities.FactsActivity" />
         <activity android:name=".resultscreenactivities.ResultScreenSecond" />
-        <activity android:name=".loginactivities.FirebaseLogin" />
-        <activity android:name=".NewUserRegisteration" />
         <activity android:name=".loginactivities.UserRegisteration" />
+        <activity android:name="firebaseuser.deleteuser" />
+        <activity android:name="firebaseuser.settings" />
+        <activity android:name=".UserProfile"></activity>
         <activity android:name=".resultscreenactivities.SocialMediaActivity"></activity>
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
     </application>

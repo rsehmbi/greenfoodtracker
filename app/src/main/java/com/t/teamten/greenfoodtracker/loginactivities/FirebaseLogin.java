@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,10 +30,19 @@ public class FirebaseLogin extends AppCompatActivity {
         Username =(EditText) findViewById(R.id.UserID);
         Password=(EditText) findViewById(R.id.Password);
         Auth = FirebaseAuth.getInstance();
+        /*btn = findViewById(R.id.no_signup);
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                Intent intent = new Intent();
+                intent.setClass(FirebaseLogin.this,loginactivity.class);
+                startActivity(intent);
+            }
+        });*/
     }
 
     public void Registeruser(View view) {
-        final ProgressDialog progressDialog =ProgressDialog.show(FirebaseLogin.this,"Please wait..","Processing..",true);
+        final ProgressDialog progressDialog = ProgressDialog.show(FirebaseLogin.this,"Please wait..","Processing..",true);
 
         Auth.signInWithEmailAndPassword(Username.getText().toString(),Password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -41,7 +51,10 @@ public class FirebaseLogin extends AppCompatActivity {
 
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(FirebaseLogin.this,"Succesfull",Toast.LENGTH_SHORT).show();
+                    Intent movetoHomescreen = new Intent(FirebaseLogin.this, HomeScreen.class);
+                    startActivity(movetoHomescreen);
+                    Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
+
                 }else{
                     Toast.makeText(FirebaseLogin.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                 }
