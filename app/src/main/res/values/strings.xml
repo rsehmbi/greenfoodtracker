@@ -19,6 +19,7 @@
         <item>Vegetables</item>
     </string-array>
 
+
     <string name="result2_intro">You can choose a meal plan to reduce CO2e!</string>
     <string name="heading">click here to learn more about meal plans</string>
     <string name="meal1">Meat-Eater Plan</string>
@@ -45,4 +46,11 @@
     <string name="user_pledge">Your Pledge Amount Per Year is: </string>
     <string name="change_plan">Click Here To Change Pledge</string>
     <string name="save">Save</string>
+
+    <string-array name="city_name">
+        <item>Vancouver</item>
+        <item>Burnaby</item>
+        <item>Coquitlam</item>
+        <item>Surrey</item>
+    </string-array>
 </resources>

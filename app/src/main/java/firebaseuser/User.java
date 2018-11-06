@@ -1,4 +1,4 @@
-package firebase_user;
+package firebaseuser;
 
 public class User {
     private String userId;

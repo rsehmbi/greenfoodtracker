@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.settings;
+import firebaseuser.settings;
 
 import static com.t.teamten.greenfoodtracker.loginactivities.LoginUser.myprefs;
 

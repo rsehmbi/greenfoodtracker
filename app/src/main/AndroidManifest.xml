@@ -25,8 +25,9 @@
         <activity android:name=".loginactivities.FactsActivity" />
         <activity android:name=".resultscreenactivities.ResultScreenSecond" />
         <activity android:name=".loginactivities.UserRegisteration" />
-        <activity android:name=".deleteuser" />
-        <activity android:name=".settings"></activity>
+        <activity android:name="firebaseuser.deleteuser" />
+        <activity android:name="firebaseuser.settings" />
+        <activity android:name=".UserProfile"></activity>
     </application>
 
 </manifest>

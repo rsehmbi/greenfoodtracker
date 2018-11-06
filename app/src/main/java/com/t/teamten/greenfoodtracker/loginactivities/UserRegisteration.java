@@ -6,25 +6,26 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
 
-import firebase_user.User;
+import firebaseuser.User;
 
-public class UserRegisteration extends AppCompatActivity {
+public class UserRegisteration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private FirebaseAuth auth;
     private DatabaseReference ref;
 
@@ -40,12 +41,12 @@ public class UserRegisteration extends AppCompatActivity {
 
     private EditText emailText;
     private EditText passwordText;
-    private EditText genderText;
     private EditText ageText;
-    private EditText cityText;
     private EditText firstNameText;
     private EditText lastNameText;
-
+    private Spinner citySpinner;
+    private RadioButton radioButton;
+    private RadioGroup radioGroup;
     private Button signUpButton;
 
     @Override
@@ -53,16 +54,19 @@ public class UserRegisteration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registeration);
 
+        radioGroup = findViewById(R.id.group);
         emailText = (EditText) findViewById(R.id.emailText);
         passwordText = (EditText) findViewById(R.id.passwordText);
-        genderText = (EditText) findViewById(R.id.genderText);
         ageText = (EditText) findViewById(R.id.ageText);
-        cityText = (EditText) findViewById(R.id.cityText);
+        citySpinner =  findViewById(R.id.citySpinner);
         firstNameText = (EditText) findViewById(R.id.firstNameText);
         lastNameText = (EditText) findViewById(R.id.lastNameText);
-
         signUpButton = (Button) findViewById(R.id.signUpButton);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.city_name,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        citySpinner.setAdapter(adapter);
+        citySpinner.setOnItemSelectedListener(this);
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("users");
     }
@@ -71,9 +75,8 @@ public class UserRegisteration extends AppCompatActivity {
 
         email = emailText.getText().toString();
         password = passwordText.getText().toString();
-        gender = genderText.getText().toString();
+        gender = radioButton.getText().toString();
         age = ageText.getText().toString();
-        city = cityText.getText().toString();
         firstName = firstNameText.getText().toString();
         lastName = lastNameText.getText().toString();
         pledge = "";
@@ -102,5 +105,21 @@ public class UserRegisteration extends AppCompatActivity {
         User user = new User(userId, email, password, gender, age, city, firstName, lastName, pledge);
 
         ref.child(userId).setValue(user);
+    }
+
+    public void  rbClick(View view)
+    {
+        int rbId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(rbId);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        city= parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
