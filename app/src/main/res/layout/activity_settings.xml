@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".settings">
+
+    <Button
+        android:id="@+id/Editprofile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="31dp"
+        android:onClick="movetoeditprofile"
+        android:text="Edit Profile"
+        app:layout_constraintBottom_toTopOf="@+id/Signout"
+        app:layout_constraintEnd_toStartOf="@+id/DeleteProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/DeleteProfile"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="deleteprofile"
+        android:text="Delete Profile"
+        app:layout_constraintBottom_toTopOf="@+id/About"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Editprofile"
+        app:layout_constraintTop_toBottomOf="@+id/Managepledge" />
+
+    <Button
+        android:id="@+id/Signout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="33dp"
+        android:onClick="signoutmethod"
+        android:text="Signout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/About"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Editprofile" />
+
+    <Button
+        android:id="@+id/About"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="34dp"
+        android:onClick="movetoaboutpage"
+        android:text="About"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Signout"
+        app:layout_constraintTop_toBottomOf="@+id/DeleteProfile" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="155dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintBottom_toTopOf="@+id/Managepledge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/Managepledge"
+        android:layout_width="264dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="38dp"
+        android:onClick="movetomanagepledgepage"
+        android:text="manage pledge"
+        app:layout_constraintBottom_toTopOf="@+id/DeleteProfile"
+        app:layout_constraintEnd_toEndOf="@+id/DeleteProfile"
+        app:layout_constraintStart_toStartOf="@+id/Signout"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+</android.support.constraint.ConstraintLayout>
