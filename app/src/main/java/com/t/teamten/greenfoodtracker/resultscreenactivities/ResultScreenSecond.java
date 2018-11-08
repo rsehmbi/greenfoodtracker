@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -97,7 +98,6 @@ public class ResultScreenSecond extends AppCompatActivity {
                 mResView.setText("You choose Meat-Eater Plan!");
                 updateMealPlan(newlist,R.string.meal1);
             }
-
         });
 
         final Button button2 = findViewById(R.id.button_view_2);
@@ -108,7 +108,6 @@ public class ResultScreenSecond extends AppCompatActivity {
                 mResView.setText("You choose Low Eater Plan!");
                 updateMealPlan(newlist,R.string.meal2);
             }
-
         });
 
         final Button button3 = findViewById(R.id.button_view_3);
@@ -131,17 +130,13 @@ public class ResultScreenSecond extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         //button to pledge page
         //Send this pledge data to pledge Interac activity
-
         final Button pledgeButton = findViewById(R.id.pledge);
         pledgeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mUser = FirebaseAuth.getInstance().getCurrentUser();
                 String uid = mUser.getUid();
-                //mDatabase.child("users").child(userId).setValue(user);
-
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 mDatabase.child("users").child(uid).child("pledge").setValue(String.format("%.2f", currentSaved));
             }
@@ -161,19 +156,20 @@ public class ResultScreenSecond extends AppCompatActivity {
     public void creatPieChart(int meal, int co2Val){
         String new_meal = getResources().getString(meal);
         List pieData = new ArrayList<>();
-        pieData.add(new SliceValue(((int) totalAmount), Color.BLUE).setLabel("Your plan"));
-        pieData.add(new SliceValue(co2Val, Color.GREEN).setLabel(new_meal));
+        pieData.add(new SliceValue(((int) totalAmount), Color.BLUE).setLabel("Your plan: " + String.format("%.2f", totalAmount) + "kg"));
+        pieData.add(new SliceValue(co2Val, Color.GREEN).setLabel(new_meal + ": " + co2Val + "kg"));
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true).setValueLabelTextSize(12);
         pieChartView.setPieChartData(pieChartData);
     }
 
     public void printResult(double saved,double metroSaved){
-        String result = "By changing your meal plan you have reduced " + (int)saved + " kg of CO2e!\n" +
+        String result = "By changing your meal plan you have reduced " +
+                "<font color='#EE0000'>"+ String.format("%.2f", saved)+ "</font>" + " kg of CO2e!\n" +
                 "if the residents in Metro Vancouver made the same change," +
                 "the CO2e will reduced by "+(int)metroSaved+" million kg!\n"+
                 "This is equivalent to saving "+ (int)(metroSaved/23)+ " trees!";
         resultText = findViewById(R.id.text_view_result2_3);
-        resultText.setText(result);
+        resultText.setText(Html.fromHtml(result));
     }
 }
