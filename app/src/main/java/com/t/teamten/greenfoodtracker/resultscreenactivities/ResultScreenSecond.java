@@ -130,6 +130,7 @@ public class ResultScreenSecond extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         //button to pledge page
         //Send this pledge data to pledge Interac activity
         final Button pledgeButton = findViewById(R.id.pledge);
@@ -145,19 +146,18 @@ public class ResultScreenSecond extends AppCompatActivity {
     public void updateMealPlan(List<Pair<String, Integer>> updatedList,int newPlan){
         NewPlanCalculator newCalculator = new NewPlanCalculator(updatedList,foodList);
         double amount = newCalculator.calculateNewMealPlan();
-        int co2e = (int)amount;
-        creatPieChart(newPlan,co2e);
+        creatPieChart(newPlan,amount);
         double saved = totalAmount - amount;
         currentSaved = saved;
         double metroSaved = newCalculator.calculationForMetro(saved);
         printResult(saved,metroSaved);
     }
 
-    public void creatPieChart(int meal, int co2Val){
+    public void creatPieChart(int meal, double co2Val){
         String new_meal = getResources().getString(meal);
         List pieData = new ArrayList<>();
         pieData.add(new SliceValue(((int) totalAmount), Color.BLUE).setLabel("Your plan: " + String.format("%.2f", totalAmount) + "kg"));
-        pieData.add(new SliceValue(co2Val, Color.GREEN).setLabel(new_meal + ": " + co2Val + "kg"));
+        pieData.add(new SliceValue((int)co2Val, Color.GREEN).setLabel(new_meal + ": " + String.format("%.2f", co2Val) + "kg"));
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true).setValueLabelTextSize(12);
         pieChartView.setPieChartData(pieChartData);
