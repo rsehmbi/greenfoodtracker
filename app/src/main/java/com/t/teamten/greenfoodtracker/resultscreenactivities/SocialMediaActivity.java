@@ -84,7 +84,10 @@ public class SocialMediaActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         tweet = getString(R.string.sharedefault);
-                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + "I am in " + city + ", and I pledge to save " + pledge));
+                        if (city.isEmpty()) {
+                            city = "Vancouver";
+                        }
+                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + "I am in " + city + ", and I pledge to save " + pledge + "tons of CO2 emissions!"));
                         startActivity(tweetIntent);
                     }
                 });
