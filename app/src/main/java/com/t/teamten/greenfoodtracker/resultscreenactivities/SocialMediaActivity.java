@@ -94,6 +94,14 @@ public class SocialMediaActivity extends AppCompatActivity {
                         if (city.isEmpty()) {
                             city = "Greater Vancouver";
                         }
+                        tweet = tweet + " I am from " + city + ",";
+
+                        if (!pledge.equals("0")) {
+                            tweet = tweet + " and I pledge to save " + pledge + "tons of CO2 emissions!";
+                        }
+                        else {
+                            tweet = tweet + " and I support reducing CO2 emissions!";
+                        }
                         ShareLinkContent content = new ShareLinkContent.Builder()
                                 .setQuote(tweet)
                                 .setContentUrl(Uri.parse("https://developers.facebook.com"))
@@ -132,8 +140,15 @@ public class SocialMediaActivity extends AppCompatActivity {
                         if (city.isEmpty()) {
                             city = "Greater Vancouver";
                         }
-                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + " I am in " + city + ", and I pledge to save " + pledge + " tons of CO2 emissions!"));
-                        startActivity(tweetIntent);
+                        if (pledge.equals("0")) {
+                            Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + " I am in " + city + ", and I pledge to save the environment by saving on CO2 emissions!"));
+                            startActivity(tweetIntent);
+
+                        }
+                        else {
+                            Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + " I am in " + city + ", and I pledge to save " + pledge + " tons of CO2 emissions!"));
+                            startActivity(tweetIntent);
+                        }
                     }
                 });
 
