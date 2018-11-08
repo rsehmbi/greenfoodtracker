@@ -7,14 +7,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
 
 public class FirebaseLogin extends AppCompatActivity {
@@ -55,7 +62,7 @@ public class FirebaseLogin extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Intent movetoHomescreen = new Intent(FirebaseLogin.this, HomeScreen.class);
                         startActivity(movetoHomescreen);
-                          Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
 
                     } else {
                         Toast.makeText(FirebaseLogin.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -71,3 +78,4 @@ public class FirebaseLogin extends AppCompatActivity {
         startActivity(movetoregister);
     }
 }
+

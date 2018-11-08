@@ -125,7 +125,7 @@ public class ResultScreenSecond extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ResultScreenSecond.this,HomeScreen.class);
+                intent.setClass(ResultScreenSecond.this,SocialMediaActivity.class); // TODO: temp code please remove
                 startActivity(intent);
             }
         });
