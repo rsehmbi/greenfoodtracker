@@ -29,6 +29,7 @@
         Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
         Plan3: Plant-Based plan: change all meat to vegetable
     </string>
+    <string name= "goBack">Go Back To Home Page</string>
     <string name="send_to_pledge">Pledge this amount</string>
     <string name="text_shown_1">This is equivalent to :</string>
     <string name="text_shown_2">Choose another meal plan, you can save our planet</string>
