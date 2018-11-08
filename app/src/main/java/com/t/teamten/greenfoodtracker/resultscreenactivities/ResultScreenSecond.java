@@ -38,7 +38,6 @@ public class ResultScreenSecond extends AppCompatActivity {
     TextView resultText;
     private UserData userDietPlan;
     private FoodData foodData;
-    private TextView testing;
     private List<Pair<String, Integer>> lists = new ArrayList<>();
     private List<Pair<String, Integer>> newlist = new ArrayList<>();
     private List<Food> foodList = new ArrayList<>();
@@ -156,7 +155,7 @@ public class ResultScreenSecond extends AppCompatActivity {
     public void creatPieChart(int meal, double co2Val){
         String new_meal = getResources().getString(meal);
         List pieData = new ArrayList<>();
-        pieData.add(new SliceValue(((int) totalAmount), Color.BLUE).setLabel("Your plan: " + String.format("%.2f", totalAmount) + "kg"));
+        pieData.add(new SliceValue(((int)totalAmount), Color.BLUE).setLabel("Your plan: " + String.format("%.2f", totalAmount) + "kg"));
         pieData.add(new SliceValue((int)co2Val, Color.GREEN).setLabel(new_meal + ": " + String.format("%.2f", co2Val) + "kg"));
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true).setValueLabelTextSize(12);
