@@ -38,6 +38,8 @@ public class PledgeRecyclerViewAdapter extends RecyclerView.Adapter<PledgeRecycl
     public void onBindViewHolder(@NonNull PledgeViewHolder viewHolder, int i) {
         //viewHolder.setIsRecyclable(false);
 
+        viewHolder.setProfileImageView();;
+
         String name = posts.get(i).getName();
         viewHolder.setNameTextView(name);
 
@@ -54,7 +56,7 @@ public class PledgeRecyclerViewAdapter extends RecyclerView.Adapter<PledgeRecycl
     }
 
     public class PledgeViewHolder extends RecyclerView.ViewHolder {
-        private ImageView profile;
+        private ImageView profileImageView;
         private TextView nameTextView;
         private TextView locationTextView;
         private TextView pledgeTextView;
@@ -62,9 +64,15 @@ public class PledgeRecyclerViewAdapter extends RecyclerView.Adapter<PledgeRecycl
 
         public PledgeViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            profileImageView = itemView.findViewById(R.id.profileView);
             nameTextView = itemView.findViewById(R.id.nameTextView);
             locationTextView = itemView.findViewById(R.id.locationTextView);
             pledgeTextView = itemView.findViewById(R.id.pledge_TextView);
+        }
+
+        public void setProfileImageView() {
+           profileImageView.setImageResource(R.drawable.dog);
         }
 
         public void setNameTextView(String name) {
