@@ -34,7 +34,7 @@
     <string name="text_shown_2">Choose another meal plan, you can save our planet</string>
     <string name="text_shown_3">Driving </string>
     <string name="text_shown_4">km on road</string>
-    <string name="text_shown_5">Keep air condition on for </string>
+    <string name="text_shown_5">Keep air conditioning on for </string>
     <string name="text_shown_6">hours</string>
     <string name="text_shown_7">This is your CO2 emission based on your current diet</string>
     <string name="button_text_shown_1">Click here to choose another plan</string>
@@ -71,7 +71,6 @@
     <string name="ACCESS_TOKEN_SECRET">yOwo34wzyN0zPicrALuCWQe5TUeNPH8giRpxwfgKfWXEX</string>
     <string name="share">Select one of these social media platforms to share your pledge, or share the app!</string>
     <string name="sharedefault">Do you like the idea of having an environmentally friendly diet tracker?</string>
-    <string name="shareapptext"></string>
     <string name="edittexthint">Enter your text here!</string>
     <string name="shareoption">How would you like to share the pledge?</string>
     <string-array name="Icon">
