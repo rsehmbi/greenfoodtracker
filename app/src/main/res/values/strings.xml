@@ -53,8 +53,18 @@
         <item>Metro Vancouver</item>
         <item>Vancouver</item>
         <item>Burnaby</item>
-        <item>Coquitlam</item>
+        <item>Coquiltlam</item>
         <item>Surrey</item>
+        <item>Richmond</item>
+        <item>Langley</item>
+        <item>Delta</item>
+        <item>Maple Ridge</item>
+        <item>New Westminster</item>
+        <item>Port Coquitlam</item>
+        <item>North Vancouver</item>
+        <item>Port Moody</item>
+        <item>White Rock</item>
+        <item>Pitt Meadows</item>
     </string-array>
     <string name="facebook_app_id">210519083041701</string>
     <string name="ACCESS_TOKEN">2207516894-5PhrpMS45sH9BMfzzdD5LP4x69b564Wgotj8ARS</string>
