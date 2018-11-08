@@ -55,13 +55,13 @@ public class UserRegisteration extends AppCompatActivity implements AdapterView.
         setContentView(R.layout.activity_user_registeration);
 
         radioGroup = findViewById(R.id.group);
-        emailText = (EditText) findViewById(R.id.emailText);
-        passwordText = (EditText) findViewById(R.id.passwordText);
-        ageText = (EditText) findViewById(R.id.ageText);
+        emailText = findViewById(R.id.emailText);
+        passwordText = findViewById(R.id.passwordText);
+        ageText = findViewById(R.id.ageText);
         citySpinner =  findViewById(R.id.citySpinner);
-        firstNameText = (EditText) findViewById(R.id.firstNameText);
-        lastNameText = (EditText) findViewById(R.id.lastNameText);
-        signUpButton = (Button) findViewById(R.id.signUpButton);
+        firstNameText = findViewById(R.id.firstNameText);
+        lastNameText = findViewById(R.id.lastNameText);
+        signUpButton = findViewById(R.id.signUpButton);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.city_name,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

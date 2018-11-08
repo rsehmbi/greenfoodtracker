@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +25,7 @@ import firebaseuser.User;
 
 public class SocialMediaActivity extends AppCompatActivity {
     private Button twitterButton;
+    private Button facebookButton;
     private FirebaseAuth auth;
     private DatabaseReference ref;
     private String tweet = ""; // TODO: put user data, and what they want to share into the tweet.
@@ -63,6 +66,48 @@ public class SocialMediaActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("users");
         retrieveAllData();
+        facebookButton = findViewById(R.id.buttonFacebook);
+        facebookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText input = new EditText(SocialMediaActivity.this);
+                input.setHint(R.string.edittexthint);
+                builder.setView(input);
+                final ShareDialog shareDialog = new ShareDialog(SocialMediaActivity.this);
+
+                builder.setPositiveButton("Use my own text!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        tweet = input.getText().toString();
+                        ShareLinkContent content = new ShareLinkContent.Builder()
+                                .setQuote(tweet)
+                                .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                                .build();
+                        shareDialog.show(content);
+                    }
+                });
+
+                builder.setNegativeButton("Share the app!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        tweet = getString(R.string.sharedefault);
+                        if (city.isEmpty()) {
+                            city = "Greater Vancouver";
+                        }
+                        ShareLinkContent content = new ShareLinkContent.Builder()
+                                .setQuote(tweet)
+                                .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                                .build();
+                        shareDialog.show(content);
+                    }
+                });
+
+                builder.create().show();
+
+
+            }
+
+        });
 
         twitterButton = findViewById(R.id.buttonTwitter);
         twitterButton.setOnClickListener(new View.OnClickListener() {
@@ -85,9 +130,9 @@ public class SocialMediaActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         tweet = getString(R.string.sharedefault);
                         if (city.isEmpty()) {
-                            city = "Vancouver";
+                            city = "Greater Vancouver";
                         }
-                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + "I am in " + city + ", and I pledge to save " + pledge + "tons of CO2 emissions!"));
+                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + " I am in " + city + ", and I pledge to save " + pledge + " tons of CO2 emissions!"));
                         startActivity(tweetIntent);
                     }
                 });
