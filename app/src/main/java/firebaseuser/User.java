@@ -1,5 +1,8 @@
 package firebaseuser;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class User {
     private String userId;
     private String email;
@@ -59,6 +62,13 @@ public class User {
     public String getLastName() {
         return lastName;
     }
+
+    public String getFirstNameWithLastNameInitial() {
+        char lastNameIntial = lastName.charAt(0);
+        String nameWithInitial = firstName + "." + lastNameIntial;
+        return nameWithInitial;
+    }
+
     public String getPledge() {
         return pledge;
     }

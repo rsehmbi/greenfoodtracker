@@ -47,7 +47,10 @@
     <string name="change_plan">Click Here To Change Pledge</string>
     <string name="save">Save</string>
 
+    <string name="city_prompt">Choose your Location</string>
+    <string name="filter">Filter</string>
     <string-array name="city_name">
+        <item>Metro Vancouver</item>
         <item>Vancouver</item>
         <item>Burnaby</item>
         <item>Coquitlam</item>

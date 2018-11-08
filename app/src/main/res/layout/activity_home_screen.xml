@@ -3,10 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/greenfood"
     android:layout_height="match_parent"
-    tools:context=".calcactivities.CalcActivity"
+    android:scrollbars="vertical"
+    tools:context=".loginactivities.HomeScreen"
     >
+
+    <Spinner
+        android:id="@+id/spinnerFilter"
+        android:layout_width="300dp"
+        android:layout_height="53dp"
+        android:layout_alignEnd="@+id/pledgeListView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="84dp"
+        android:entries="@array/city_name"
+        android:prompt="@string/city_prompt"></Spinner>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_view"
@@ -21,6 +34,20 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_main"></android.support.design.widget.BottomNavigationView>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pledgeListView"
+        android:layout_width="match_parent"
+        android:layout_height="399dp"
+        android:layout_above="@+id/navigation_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:scrollbars="vertical" />
+
     <Button
         android:id="@+id/Signoutbutton"
         android:layout_width="wrap_content"
@@ -31,5 +58,15 @@
         android:layout_marginEnd="142dp"
         android:gravity="center"
         android:text="SignOut" />
+
+    <Button
+        android:id="@+id/buttonFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spinnerFilter"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="295dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/filter" />
 
 </RelativeLayout>
