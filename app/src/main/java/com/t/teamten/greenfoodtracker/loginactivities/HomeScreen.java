@@ -23,6 +23,7 @@ import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.pledgeposts.PledgePost;
 import com.t.teamten.greenfoodtracker.pledgeposts.PledgeRecyclerViewAdapter;
+import com.t.teamten.greenfoodtracker.settingsforuser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +95,7 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.About:
                         Toast.makeText(HomeScreen.this,"About",Toast.LENGTH_SHORT).show();
-                        Intent intent2 = new Intent(HomeScreen.this,settings.class);
+                        Intent intent2 = new Intent(HomeScreen.this,settingsforuser.class);
                         startActivity(intent2);
                         break;
                     case R.id.Pledge:

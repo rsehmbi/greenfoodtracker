@@ -73,4 +73,21 @@
     <string name="sharedefault">Do you like the idea of having an environmentally friendly diet tracker?</string>
     <string name="edittexthint">Enter your text here!</string>
     <string name="shareoption">How would you like to share the pledge?</string>
+    <string-array name="Icon">
+        <item>😃</item>
+        <item>️⭐️</item>
+        <item>❤</item>
+        <item>💁</item>
+        <item>👨</item>
+        <item>😎 </item>
+        <item>👻</item>
+        <item>🤡</item>
+        <item>🎃</item>
+    </string-array>
+
+    <string-array name="genderarray">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
 </resources>
