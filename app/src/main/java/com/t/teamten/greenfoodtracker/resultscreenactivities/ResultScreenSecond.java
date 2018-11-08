@@ -121,11 +121,19 @@ public class ResultScreenSecond extends AppCompatActivity {
         });
 
         //button to next page
-        final Button next = findViewById(R.id.toMainPage);
+        final Button next = findViewById(R.id.sharedPage);
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ResultScreenSecond.this,SocialMediaActivity.class); // TODO: temp code please remove
+                intent.setClass(ResultScreenSecond.this,SocialMediaActivity.class); 
+                startActivity(intent);
+            }
+        });
+        final Button backToMain = findViewById(R.id.toMainPage);
+        backToMain.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ResultScreenSecond.this,HomeScreen.class);
                 startActivity(intent);
             }
         });
