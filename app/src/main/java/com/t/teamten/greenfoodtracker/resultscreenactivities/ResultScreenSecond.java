@@ -62,8 +62,8 @@ public class ResultScreenSecond extends AppCompatActivity {
         NewPlanCalculator newCalculator = new NewPlanCalculator(lists,foodList);
         totalAmount = newCalculator.calculateNewMealPlan();
 
-        mResView = (TextView)findViewById(R.id.text_view_result2_2);
-        intro = (TextView)findViewById(R.id.text_view_result2_info);
+        mResView = findViewById(R.id.text_view_result2_2);
+        intro = findViewById(R.id.text_view_result2_info);
         intro.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
                 String message = getResources().getString(R.string.mealPlansInfo);
@@ -117,7 +117,7 @@ public class ResultScreenSecond extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ResultScreenSecond.this,HomeScreen.class);
+                intent.setClass(ResultScreenSecond.this,SocialMediaActivity.class); // TODO: temp code please remove
                 startActivity(intent);
             }
         });
@@ -153,7 +153,7 @@ public class ResultScreenSecond extends AppCompatActivity {
                 "if the residents in Metro Vancouver made the same change," +
                 "the CO2e will reduced by "+(int)metroSaved+" million kg!\n"+
                 "This is equivalent to saving "+ (int)(metroSaved/23)+ " trees!";
-        resultText = (TextView)findViewById(R.id.text_view_result2_3);
+        resultText = findViewById(R.id.text_view_result2_3);
         resultText.setText(result);
     }
 }

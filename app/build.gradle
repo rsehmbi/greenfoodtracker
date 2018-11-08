@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
-//apply plugin: 'com.google.gms.google-services'
+
 
 android {
     compileSdkVersion 28
@@ -47,5 +47,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'org.twitter4j:twitter4j-core:4.0.7'
+    implementation 'com.facebook.android:facebook-share:[4,5)'
 
 }
