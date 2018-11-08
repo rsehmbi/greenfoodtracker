@@ -1,12 +1,15 @@
 package com.t.teamten.greenfoodtracker.resultscreenactivities;
 
-import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -16,34 +19,31 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
 
-import java.util.List;
-
 import firebaseuser.User;
-import twitter4j.Twitter;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
-import twitter4j.conf.ConfigurationBuilder;
 
 public class SocialMediaActivity extends AppCompatActivity {
-    Twitter twitter;
-    Button twitterButton;
-    final String ACCESS_TOKEN_SECRET = getString(R.string.ACCESS_TOKEN_SECRET);
-    final String CONSUMER_TOKEN_SECRET = getString(R.string.CONSUMER_API_SECRET);
-    final String CONSUMER_TOKEN = getString(R.string.CONSUMER_API_TOKEN);
-    final String ACCESS_TOKEN = getString(R.string.ACCESS_TOKEN);
+    private Button twitterButton;
     private FirebaseAuth auth;
     private DatabaseReference ref;
-    private User user;
-    List<User> userList;
+    private String tweet = ""; // TODO: put user data, and what they want to share into the tweet.
+    private String pledge;
+    private String city;
 
     public void retrieveAllData() {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String userId = auth.getCurrentUser().getUid();
                 for(DataSnapshot snapShot: dataSnapshot.getChildren()) {
                     User userFromFireBase = snapShot.getValue(User.class);
-                    userList.add(userFromFireBase);
+                    if (userId.equals(userFromFireBase.getUserId())) {
+                        pledge = userFromFireBase.getPledge();
+                        city = userFromFireBase.getCity();
+                        break;
+                    }
                 }
+
+
             }
 
             @Override
@@ -57,42 +57,41 @@ public class SocialMediaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_media);
-
+        final AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(SocialMediaActivity.this);
+        builder.setTitle(getString(R.string.shareoption));
         auth = FirebaseAuth.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference();
-        String userId = auth.getCurrentUser().getUid();
+        ref = FirebaseDatabase.getInstance().getReference("users");
         retrieveAllData();
 
-        String tweet = ""; // TODO: put user data, and what they want to share into the tweet.
         twitterButton = findViewById(R.id.buttonTwitter);
         twitterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
-                configurationBuilder.setDebugEnabled(true)
-                        .setOAuthConsumerKey(CONSUMER_TOKEN)
-                        .setOAuthConsumerSecret(CONSUMER_TOKEN_SECRET)
-                        .setOAuthAccessTokenSecret(ACCESS_TOKEN_SECRET)
-                        .setOAuthAccessToken(ACCESS_TOKEN);
-                try {
-                    TwitterFactory twitterFactory = new TwitterFactory(configurationBuilder.build());
-                    Twitter twitter = twitterFactory.getInstance();
-                    twitter.updateStatus("Pledge text.");
-                }
-                catch(IllegalStateException e) {
-                    if (!twitter.getAuthorization().isEnabled()) {
-                        Context context = getApplicationContext();
-                        CharSequence text = "Authorization Failed.";
-                        Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
-                        toast.show();
+                final EditText input = new EditText(SocialMediaActivity.this);
+                input.setHint(R.string.edittexthint);
+                builder.setView(input);
+                builder.setPositiveButton("Use my own text!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        tweet = input.getText().toString();
+                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet));
+                        startActivity(tweetIntent);
                     }
-                } catch (TwitterException e) {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Twitter Exception.";
-                    Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
-                    toast.show();
-                    e.printStackTrace();
-                }
+                });
+
+                builder.setNegativeButton("Share the app!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        tweet = getString(R.string.sharedefault);
+                        Intent tweetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text=" + tweet + "I am in " + city + ", and I pledge to save " + pledge));
+                        startActivity(tweetIntent);
+                    }
+                });
+
+                builder.create().show();
+
+
             }
         });
 

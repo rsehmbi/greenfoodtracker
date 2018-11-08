@@ -54,10 +54,11 @@
         <item>Surrey</item>
     </string-array>
     <string name="facebook_app_id">210519083041701</string>
-    <string name="CONSUMER_API_TOKEN">81hcTTcF1qK39hELyVvPg5AIA</string>
-    <string name="CONSUMER_API_SECRET">FBLwf2Gv5Q6CkLhaZQoHG4SHlqWlf3k5ShLly8etLcZEAxmV8Y</string>
     <string name="ACCESS_TOKEN">2207516894-5PhrpMS45sH9BMfzzdD5LP4x69b564Wgotj8ARS</string>
     <string name="ACCESS_TOKEN_SECRET">yOwo34wzyN0zPicrALuCWQe5TUeNPH8giRpxwfgKfWXEX</string>
     <string name="share">Select one of these social media platforms to share your pledge, or share the app!</string>
+    <string name="sharedefault">Do you like the idea of having an environmentally friendly diet tracker?</string>
     <string name="shareapptext"></string>
+    <string name="edittexthint">Enter your text here!</string>
+    <string name="shareoption">How would you like to share the pledge?</string>
 </resources>
