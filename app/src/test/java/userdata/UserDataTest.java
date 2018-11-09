@@ -5,7 +5,7 @@ import android.os.Environment;
 import android.util.Pair;
 
 import com.t.teamten.greenfoodtracker.BuildConfig;
-//-
+//--
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
