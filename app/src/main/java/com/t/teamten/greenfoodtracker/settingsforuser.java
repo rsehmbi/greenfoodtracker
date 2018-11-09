@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
 import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
-
+//setting:about,manage account, delete user...
 public class settingsforuser extends AppCompatActivity {
     FirebaseAuth mAuth;
 

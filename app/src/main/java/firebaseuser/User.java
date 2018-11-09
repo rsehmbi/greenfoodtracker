@@ -1,7 +1,7 @@
 package firebaseuser;
 
 import com.google.firebase.database.IgnoreExtraProperties;
-
+//Retrieving, writing to firebase
 @IgnoreExtraProperties
 public class User {
     private String userId;

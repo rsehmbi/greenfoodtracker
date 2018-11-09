@@ -21,7 +21,7 @@ import com.t.teamten.greenfoodtracker.pledgeposts.ProfileIconList;
 import java.util.Objects;
 
 import firebaseuser.User;
-
+//Change and display profile picture
 public class ManageAccount extends AppCompatActivity {
     private DatabaseReference reference;
 

@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
-
+//delete user
 public class deleteuser extends AppCompatActivity {
 
     FirebaseAuth mAuth;

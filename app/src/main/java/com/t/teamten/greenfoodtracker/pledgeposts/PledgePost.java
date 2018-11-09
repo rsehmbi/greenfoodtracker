@@ -9,7 +9,7 @@ public class PledgePost {
 //    public PledgePost() {
 //
 //    }
-
+//For home page pledge display
     public PledgePost(String name, String location, String pledge, String profileIconName) {
         this.name = name;
         this.location = location;

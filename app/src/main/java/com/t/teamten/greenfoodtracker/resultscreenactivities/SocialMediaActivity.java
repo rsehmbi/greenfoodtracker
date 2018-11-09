@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
 
 import firebaseuser.User;
-
+//Sharing to social media
 public class SocialMediaActivity extends AppCompatActivity {
     private Button twitterButton;
     private Button facebookButton;
