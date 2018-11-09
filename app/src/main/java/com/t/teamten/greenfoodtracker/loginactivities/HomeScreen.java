@@ -1,7 +1,6 @@
 package com.t.teamten.greenfoodtracker.loginactivities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -30,10 +29,8 @@ import java.util.List;
 
 import firebaseuser.User;
 import firebaseuser.UserProfile;
-import firebaseuser.settings;
 
-import static com.t.teamten.greenfoodtracker.loginactivities.LoginUser.myprefs;
-
+//HomeScreen contains the bottom navigation view and News feed to show the Data of other users.
 public class HomeScreen extends AppCompatActivity {
     private DatabaseReference reference;
     private List<PledgePost> posts;

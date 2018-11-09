@@ -18,7 +18,8 @@ import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 //setting:about,manage account, delete user...
 public class settingsforuser extends AppCompatActivity {
     FirebaseAuth mAuth;
-
+    //Setting page so that the user can Signout or delete his account or he can manage his account.
+    // Settings also has about to the source of information the user is using.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class settingsforuser extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
     }
-    public void move(View view) {
+    public void movetoaboutactivity(View view) {
         Intent movetoaboutactivity = new Intent(settingsforuser.this,aboutactivity.class);
         startActivity(movetoaboutactivity);
     }
@@ -38,9 +39,9 @@ public class settingsforuser extends AppCompatActivity {
         finish();
     }
 
-    public void deleteid(View view) {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        user.delete()
+    public void deletetheuseraccount(View view) {
+        FirebaseUser currentuser = FirebaseAuth.getInstance().getCurrentUser();
+        currentuser.delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -54,7 +55,7 @@ public class settingsforuser extends AppCompatActivity {
     }
 
     public void manageaccount(View view) {
-        Intent intent = new Intent(this, ManageAccount.class);
-        startActivity(intent);
+        Intent movetomanageactivity = new Intent(this, ManageAccount.class);
+        startActivity(movetomanageactivity);
     }
 }
