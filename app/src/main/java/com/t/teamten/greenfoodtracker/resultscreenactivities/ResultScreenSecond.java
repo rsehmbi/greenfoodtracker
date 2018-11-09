@@ -97,6 +97,7 @@ public class ResultScreenSecond extends AppCompatActivity {
                 mResView.setText("You choose Meat-Eater Plan!");
                 updateMealPlan(newlist,R.string.meal1);
             }
+
         });
 
         final Button button2 = findViewById(R.id.button_view_2);
@@ -107,6 +108,7 @@ public class ResultScreenSecond extends AppCompatActivity {
                 mResView.setText("You choose Low Eater Plan!");
                 updateMealPlan(newlist,R.string.meal2);
             }
+
         });
 
         final Button button3 = findViewById(R.id.button_view_3);

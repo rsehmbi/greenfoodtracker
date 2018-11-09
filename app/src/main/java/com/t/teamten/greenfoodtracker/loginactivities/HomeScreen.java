@@ -41,7 +41,6 @@ public class HomeScreen extends AppCompatActivity {
     private Spinner spinnerFilter;
     private Button buttonFilter;
 
-    Button Signout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +60,7 @@ public class HomeScreen extends AppCompatActivity {
                     if(user.getPledge().equals("")) {
 
                     } else {
-                        PledgePost post = new PledgePost(user.getFirstNameWithLastNameInitial(), user.getCity(), user.getPledge());
+                        PledgePost post = new PledgePost(user.getFirstNameWithLastNameInitial(), user.getCity(), user.getPledge(), user.getProfileIcon());
                         posts.add(post);
                     }
 
@@ -120,20 +119,6 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-
-        Signout=(Button) findViewById(R.id.Signoutbutton);
-        Signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor edit = myprefs.edit();
-                edit.clear();
-                edit.commit();
-
-                Intent gotobackscreen = new Intent(getApplicationContext(),LoginUser.class);
-                startActivity(gotobackscreen);
-
-            }
-        });
     }
 
     public List<PledgePost> getFilterPosts(String city) {
