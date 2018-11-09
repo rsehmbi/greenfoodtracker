@@ -13,14 +13,14 @@ public class User {
     private String firstName;
     private String lastName;
     private String pledge;
-    private String emoji;
+    private String profileIcon;
 
     public User() {
 
     }
 
     public User(String userId, String email, String password, String gender, String age,
-                String city, String firstName, String lastName, String pledge,String emoji) {
+                String city, String firstName, String lastName, String pledge,String profileIcon) {
         this.userId = userId;
         this.email = email;
         this.password = password;
@@ -30,13 +30,12 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.pledge = pledge;
-        this.emoji = emoji;
+        this.profileIcon = profileIcon;
     }
 
     public String getUserId() {
         return userId;
     }
-    public String getEmoji(){return  emoji;}
 
     public String getEmail() {
         return email;
@@ -76,6 +75,10 @@ public class User {
         return pledge;
     }
 
+    public String getProfileIcon() {
+        return profileIcon;
+    }
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -112,5 +115,8 @@ public class User {
         this.pledge = pledge;
     }
 
-    public void setEmoji(String emoji) {this.emoji=emoji;}
+
+    public void setProfileIcon(String newProfileIcon) {
+        profileIcon = newProfileIcon;
+    }
 }

@@ -9,12 +9,12 @@ public class CalculatorActivityData implements Parcelable {
     private ArrayList<Pair<String, Integer>> listFoodPairs;
 
 
-    CalculatorActivityData(ArrayList<Pair<String, Integer>> listFoodPairs) {
+    public CalculatorActivityData(ArrayList<Pair<String, Integer>> listFoodPairs) {
         this.listFoodPairs = listFoodPairs;
     }
 
 
-    private CalculatorActivityData(Parcel in) {
+    public CalculatorActivityData(Parcel in) {
         final int size = in.readInt();
         listFoodPairs = new ArrayList<>();
         for (int i = 0; i < size; i++) {

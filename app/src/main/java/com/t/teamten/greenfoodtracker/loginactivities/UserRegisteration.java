@@ -37,6 +37,8 @@ public class UserRegisteration extends AppCompatActivity {
     private String firstName;
     private String lastName;
     private String pledge;
+    private String defaultProfileIcon;
+
     private String emoji;
 
     private EditText emailText;
@@ -62,7 +64,6 @@ public class UserRegisteration extends AppCompatActivity {
         firstNameText = (EditText) findViewById(R.id.firstNameText);
         lastNameText = (EditText) findViewById(R.id.lastNameText);
         signUpButton = (Button) findViewById(R.id.signUpButton);
-        spinner = (Spinner) findViewById(R.id.icons);
         genderspinner = (Spinner) findViewById(R.id.genderId);
 
         auth = FirebaseAuth.getInstance();
@@ -81,22 +82,6 @@ public class UserRegisteration extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Toast.makeText(UserRegisteration.this,"City field is Empty", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        ArrayAdapter<CharSequence> adapter2 =ArrayAdapter.createFromResource(this,R.array.Icon,android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter2);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                emoji = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(UserRegisteration.this,"Icon field is Empty", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -129,6 +114,7 @@ public class UserRegisteration extends AppCompatActivity {
         firstName = firstNameText.getText().toString();
         lastName = lastNameText.getText().toString();
         pledge = "";
+        defaultProfileIcon = "fox";
 
         if(email.matches("") || password.matches("")) {
             Toast.makeText(UserRegisteration.this, "Email and password are mandatory", Toast.LENGTH_LONG).show();
@@ -155,7 +141,7 @@ public class UserRegisteration extends AppCompatActivity {
 
     public void storeUserToDatabase() {
         String userId = auth.getCurrentUser().getUid();
-        User user = new User(userId, email, password, gender, age, city, firstName, lastName, pledge,emoji);
+        User user = new User(userId, email, password, gender, age, city, firstName, lastName, pledge, defaultProfileIcon);
         ref.child(userId).setValue(user);
     }
 
