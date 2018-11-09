@@ -27,7 +27,6 @@
         <activity android:name=".loginactivities.UserRegisteration" />
         <activity android:name="firebaseuser.deleteuser" />
         <activity android:name="firebaseuser.UserProfile"/>
-        <activity android:name="firebaseuser.settings" />
         <activity android:name=".resultscreenactivities.SocialMediaActivity" />
 
         <meta-data

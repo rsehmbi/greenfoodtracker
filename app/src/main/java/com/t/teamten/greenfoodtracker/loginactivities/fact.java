@@ -2,7 +2,7 @@ package com.t.teamten.greenfoodtracker.loginactivities;
 
 import java.util.Arrays;
 import java.util.Collections;
-
+//Helper fact class for facts activity.
 public class fact{
 
     private String[] textdata;
