@@ -75,6 +75,8 @@
     <string name="sharedefault">Do you like the idea of having an environmentally friendly diet tracker?</string>
     <string name="edittexthint">Enter your text here!</string>
     <string name="shareoption">How would you like to share the pledge?</string>
+    <string name="pledged">Pledged</string>
+    <string name="tco2">tCo2</string>
 
     <string-array name="genderarray">
         <item>Male</item>
