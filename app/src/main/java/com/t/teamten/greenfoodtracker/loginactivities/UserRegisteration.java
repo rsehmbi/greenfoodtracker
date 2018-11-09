@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
 
 import firebaseuser.User;
-
+// User Registeration activity so that the user can register himself on the firebase database.
 public class UserRegisteration extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference ref;
@@ -39,7 +39,6 @@ public class UserRegisteration extends AppCompatActivity {
     private String pledge;
     private String defaultProfileIcon;
 
-    private String emoji;
 
     private EditText emailText;
     private EditText passwordText;
@@ -47,11 +46,7 @@ public class UserRegisteration extends AppCompatActivity {
     private EditText firstNameText;
     private EditText lastNameText;
     private Spinner citySpinner;
-    private Spinner spinner;
     private Spinner genderspinner;
-
-    private Button signUpButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +58,6 @@ public class UserRegisteration extends AppCompatActivity {
         citySpinner =  findViewById(R.id.citySpinner);
         firstNameText = (EditText) findViewById(R.id.firstNameText);
         lastNameText = (EditText) findViewById(R.id.lastNameText);
-        signUpButton = (Button) findViewById(R.id.signUpButton);
         genderspinner = (Spinner) findViewById(R.id.genderId);
 
         auth = FirebaseAuth.getInstance();

@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import firebaseuser.User;
-
+//Edit and save, view user profile
 public class UserProfile extends AppCompatActivity {
     //Edit text and save, edit button
     private EditText first_name;
@@ -43,6 +43,7 @@ public class UserProfile extends AppCompatActivity {
     private Spinner gender;
     private Button save;
     private Button edit;
+
     String gender_s;
     String city_s;
     //Four headlines
@@ -65,7 +66,6 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
         //firebase access
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -205,8 +205,87 @@ public class UserProfile extends AppCompatActivity {
 
 
 
+    /*public void enable_email(View view)
+    {
+        first_name.setEnabled(false);
+        last_name.setEnabled(false);
+        birth_year.setEnabled(false);
+        email.setEnabled(true);
+        password.setEnabled(false);
+        city.setEnabled(false);
+        gender.setEnabled(false);
+        user_info_update_and_dispay.setEmail(email.getText().toString());
+    }
+    public void enable_password(View view)
+    {
+        first_name.setEnabled(false);
+        last_name.setEnabled(false);
+        birth_year.setEnabled(false);
+        email.setEnabled(false);
+        password.setEnabled(true);
+        city.setEnabled(false);
+        gender.setEnabled(false);
+        user_info_update_and_dispay.setPassword(password.getText().toString());
+    }
+    public void enable_last_name(View view)
+    {
+        first_name.setEnabled(false);
+        last_name.setEnabled(true);
+        birth_year.setEnabled(false);
+        email.setEnabled(false);
+        password.setEnabled(false);
+        city.setEnabled(false);
+        gender.setEnabled(false);
+        user_info_update_and_dispay.setLastName(last_name.getText().toString());
+    }
 
+    public void enable_first_name(View view)
+    {
+        first_name.setEnabled(true);
+        last_name.setEnabled(false);
+        birth_year.setEnabled(false);
+        email.setEnabled(false);
+        password.setEnabled(false);
+        city.setEnabled(false);
+        gender.setEnabled(false);
+        user_info_update_and_dispay.setFirstName(first_name.getText().toString());
+    }
 
+    public void enable_city(View view)
+    {
+        first_name.setEnabled(false);
+        last_name.setEnabled(false);
+        birth_year.setEnabled(false);
+        email.setEnabled(false);
+        password.setEnabled(false);
+        city.setEnabled(true);
+        gender.setEnabled(false);
+        user_info_update_and_dispay.setCity(city.getSelectedItem().toString());
+    }
+
+    public void enable_gender(View view)
+    {
+        first_name.setEnabled(false);
+        last_name.setEnabled(false);
+        birth_year.setEnabled(false);
+        email.setEnabled(false);
+        password.setEnabled(false);
+        city.setEnabled(false);
+        gender.setEnabled(true);
+        user_info_update_and_dispay.setGender(gender.getSelectedItem().toString());
+    }
+
+    public void enable_age(View view)
+    {
+        first_name.setEnabled(false);
+        last_name.setEnabled(false);
+        birth_year.setEnabled(true);
+        email.setEnabled(false);
+        password.setEnabled(false);
+        city.setEnabled(false);
+        gender.setEnabled(false);
+        user_info_update_and_dispay.setAge(birth_year.getText().toString());
+    }*/
     public void edit_profile(View view)
     {
         first_name.setEnabled(true);
@@ -227,6 +306,7 @@ public class UserProfile extends AppCompatActivity {
         user_info_update_and_dispay.setGender(gender.getSelectedItem().toString());
         user_info_update_and_dispay.setFirstName(first_name.getText().toString());
         user_info_update_and_dispay.setLastName(last_name.getText().toString());
+        user_info_update_and_dispay.setAge(birth_year.getText().toString());
         databaseReference.child(user_id).setValue(user_info_update_and_dispay);
 
         first_name.setEnabled(false);

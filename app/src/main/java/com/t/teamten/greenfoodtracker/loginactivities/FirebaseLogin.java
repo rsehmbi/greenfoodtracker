@@ -16,7 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.t.teamten.greenfoodtracker.R;
-
+//Login class for firebase so that the user can Login in to user the application.
 public class FirebaseLogin extends AppCompatActivity {
 
     private FirebaseAuth Auth;
