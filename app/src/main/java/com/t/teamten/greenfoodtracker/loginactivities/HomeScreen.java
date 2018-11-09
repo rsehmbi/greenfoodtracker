@@ -94,7 +94,7 @@ public class HomeScreen extends AppCompatActivity {
                         startActivity(intent3);
                         break;
                     case R.id.About:
-                        Toast.makeText(HomeScreen.this,"About",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeScreen.this,"Settings",Toast.LENGTH_SHORT).show();
                         Intent intent2 = new Intent(HomeScreen.this,settingsforuser.class);
                         startActivity(intent2);
                         break;

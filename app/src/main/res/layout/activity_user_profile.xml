@@ -148,7 +148,7 @@
         app:layout_constraintVertical_bias="0.649" />
 
     <EditText
-
+        android:onClick="enable_email"
         android:id="@+id/email"
         android:layout_width="258dp"
         android:layout_height="wrap_content"
