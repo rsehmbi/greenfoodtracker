@@ -92,7 +92,7 @@ public class UserRegisteration extends AppCompatActivity {
         genderspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                city = parent.getItemAtPosition(position).toString();
+                gender = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -113,11 +113,11 @@ public class UserRegisteration extends AppCompatActivity {
         age = ageText.getText().toString();
         firstName = firstNameText.getText().toString();
         lastName = lastNameText.getText().toString();
-        pledge = "";
+        pledge = "0";
         defaultProfileIcon = "fox";
 
-        if(email.matches("") || password.matches("")) {
-            Toast.makeText(UserRegisteration.this, "Email and password are mandatory", Toast.LENGTH_LONG).show();
+        if(email.matches("") || password.matches("") || age.matches("") || city.matches("")|| gender.matches("") ||firstName.matches("") ||lastName.matches("")) {
+            Toast.makeText(UserRegisteration.this, "Fields are mandatory", Toast.LENGTH_LONG).show();
         }
         else {
             final ProgressDialog progressDialog = ProgressDialog.show(UserRegisteration.this, "Please wait..", "Processing..", true);

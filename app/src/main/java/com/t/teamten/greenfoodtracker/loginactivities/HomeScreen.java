@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import firebaseuser.User;
+import firebaseuser.UserProfile;
 import firebaseuser.settings;
 
 import static com.t.teamten.greenfoodtracker.loginactivities.LoginUser.myprefs;
@@ -99,7 +100,7 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.Pledge:
                         Toast.makeText(HomeScreen.this,"Pledge",Toast.LENGTH_SHORT).show();
-                        Intent movetoPledge = new Intent(HomeScreen.this,FirebaseLogin.class);
+                        Intent movetoPledge = new Intent(HomeScreen.this, UserProfile.class);
                         startActivity(movetoPledge);
                 }
                 return true;
