@@ -26,7 +26,7 @@
     <item
         android:id="@+id/About"
         android:enabled="true"
-        android:icon="@drawable/about"
-        android:title="About"
+        android:icon="@drawable/helloworld"
+        android:title="Settings"
         app:showAsAction="ifRoom" />
 </menu>
