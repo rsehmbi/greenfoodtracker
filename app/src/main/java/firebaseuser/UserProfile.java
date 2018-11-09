@@ -205,8 +205,15 @@ public class UserProfile extends AppCompatActivity {
 
 
 
+    public void enable_email(View view)
+    {
 
+    }
 
+    public void enable_last_name(View view)
+    {
+
+    }
     public void edit_profile(View view)
     {
         first_name.setEnabled(true);
@@ -227,6 +234,7 @@ public class UserProfile extends AppCompatActivity {
         user_info_update_and_dispay.setGender(gender.getSelectedItem().toString());
         user_info_update_and_dispay.setFirstName(first_name.getText().toString());
         user_info_update_and_dispay.setLastName(last_name.getText().toString());
+        user_info_update_and_dispay.setAge(birth_year.getText().toString());
         databaseReference.child(user_id).setValue(user_info_update_and_dispay);
 
         first_name.setEnabled(false);
