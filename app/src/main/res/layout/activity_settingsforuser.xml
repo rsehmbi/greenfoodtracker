@@ -100,6 +100,12 @@
                     android:layout_width="160dp"
                     android:layout_height="190dp"
                     android:layout_margin="10dp">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:onClick="manageaccount"
+                        />
 
                     <LinearLayout
                         android:foreground="?android:attr/selectableItemBackground"
@@ -108,6 +114,7 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:gravity="center">
+
                         <ImageView
                             android:layout_width="64dp"
                             android:layout_height="64dp"

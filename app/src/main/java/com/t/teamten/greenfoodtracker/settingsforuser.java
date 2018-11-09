@@ -11,6 +11,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
 import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 
@@ -49,5 +51,10 @@ public class settingsforuser extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void manageaccount(View view) {
+        Intent intent = new Intent(this, ManageAccount.class);
+        startActivity(intent);
     }
 }

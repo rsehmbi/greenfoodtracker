@@ -77,6 +77,8 @@
     <string name="shareoption">How would you like to share the pledge?</string>
     <string name="pledged">Pledged</string>
     <string name="tco2">tCo2</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="update_info">Update Info</string>
 
     <string-array name="genderarray">
         <item>Male</item>
