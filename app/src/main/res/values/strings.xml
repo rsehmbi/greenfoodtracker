@@ -29,6 +29,8 @@
         Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
         Plan3: Plant-Based plan: change all meat to vegetable
     </string>
+    <string name="goBack">Go Back To Home Page</string>
+    <string name="sharedPledge">Share Pledge</string>
     <string name="send_to_pledge">Pledge this amount</string>
     <string name="text_shown_1">This is equivalent to :</string>
     <string name="text_shown_2">Choose another meal plan, you can save our planet</string>
@@ -69,25 +71,32 @@
     <string name="facebook_app_id">210519083041701</string>
     <string name="ACCESS_TOKEN">2207516894-5PhrpMS45sH9BMfzzdD5LP4x69b564Wgotj8ARS</string>
     <string name="ACCESS_TOKEN_SECRET">yOwo34wzyN0zPicrALuCWQe5TUeNPH8giRpxwfgKfWXEX</string>
-    <string name="share">Select one of these social media platforms to share your pledge, or share the app!</string>
+    <string name="share">Select one of these social media platforms to share your pledge.\n        Share the app!</string>
     <string name="sharedefault">Do you like the idea of having an environmentally friendly diet tracker?</string>
     <string name="edittexthint">Enter your text here!</string>
     <string name="shareoption">How would you like to share the pledge?</string>
-    <string-array name="Icon">
-        <item>😃</item>
-        <item>️⭐️</item>
-        <item>❤</item>
-        <item>💁</item>
-        <item>👨</item>
-        <item>😎 </item>
-        <item>👻</item>
-        <item>🤡</item>
-        <item>🎃</item>
-    </string-array>
+    <string name="pledged">Pledged</string>
+    <string name="tco2">tCo2</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="update_info">Update Info</string>
 
     <string-array name="genderarray">
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
+    </string-array>
+
+    <integer-array name="icon_Array">
+        <item>@drawable/chick</item>
+        <item>@drawable/dog</item>
+        <item>@drawable/fox</item>
+        <item>@drawable/whale</item>
+    </integer-array>
+
+    <string-array name="icon_Name_Array">
+        <item>chick</item>
+        <item>dog</item>
+        <item>fox</item>
+        <item>whale</item>
     </string-array>
 </resources>

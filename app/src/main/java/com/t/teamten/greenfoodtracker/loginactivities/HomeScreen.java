@@ -1,7 +1,6 @@
 package com.t.teamten.greenfoodtracker.loginactivities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -29,10 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import firebaseuser.User;
-import firebaseuser.settings;
+import firebaseuser.UserProfile;
 
-import static com.t.teamten.greenfoodtracker.loginactivities.LoginUser.myprefs;
-
+//HomeScreen contains the bottom navigation view and News feed to show the Data of other users.
 public class HomeScreen extends AppCompatActivity {
     private DatabaseReference reference;
     private List<PledgePost> posts;
@@ -41,7 +39,6 @@ public class HomeScreen extends AppCompatActivity {
     private Spinner spinnerFilter;
     private Button buttonFilter;
 
-    Button Signout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +58,7 @@ public class HomeScreen extends AppCompatActivity {
                     if(user.getPledge().equals("")) {
 
                     } else {
-                        PledgePost post = new PledgePost(user.getFirstNameWithLastNameInitial(), user.getCity(), user.getPledge());
+                        PledgePost post = new PledgePost(user.getFirstNameWithLastNameInitial(), user.getCity(), user.getPledge(), user.getProfileIcon());
                         posts.add(post);
                     }
 
@@ -94,13 +91,13 @@ public class HomeScreen extends AppCompatActivity {
                         startActivity(intent3);
                         break;
                     case R.id.About:
-                        Toast.makeText(HomeScreen.this,"About",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomeScreen.this,"Settings",Toast.LENGTH_SHORT).show();
                         Intent intent2 = new Intent(HomeScreen.this,settingsforuser.class);
                         startActivity(intent2);
                         break;
                     case R.id.Pledge:
                         Toast.makeText(HomeScreen.this,"Pledge",Toast.LENGTH_SHORT).show();
-                        Intent movetoPledge = new Intent(HomeScreen.this,FirebaseLogin.class);
+                        Intent movetoPledge = new Intent(HomeScreen.this, UserProfile.class);
                         startActivity(movetoPledge);
                 }
                 return true;
@@ -120,20 +117,6 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-
-        Signout=(Button) findViewById(R.id.Signoutbutton);
-        Signout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor edit = myprefs.edit();
-                edit.clear();
-                edit.commit();
-
-                Intent gotobackscreen = new Intent(getApplicationContext(),LoginUser.class);
-                startActivity(gotobackscreen);
-
-            }
-        });
     }
 
     public List<PledgePost> getFilterPosts(String city) {

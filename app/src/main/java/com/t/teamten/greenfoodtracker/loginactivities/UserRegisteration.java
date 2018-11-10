@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
 
 import firebaseuser.User;
-
+// User Registeration activity so that the user can register himself on the firebase database.
 public class UserRegisteration extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference ref;
@@ -37,7 +37,8 @@ public class UserRegisteration extends AppCompatActivity {
     private String firstName;
     private String lastName;
     private String pledge;
-    private String emoji;
+    private String defaultProfileIcon;
+
 
     private EditText emailText;
     private EditText passwordText;
@@ -45,11 +46,7 @@ public class UserRegisteration extends AppCompatActivity {
     private EditText firstNameText;
     private EditText lastNameText;
     private Spinner citySpinner;
-    private Spinner spinner;
     private Spinner genderspinner;
-
-    private Button signUpButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +58,6 @@ public class UserRegisteration extends AppCompatActivity {
         citySpinner =  findViewById(R.id.citySpinner);
         firstNameText = (EditText) findViewById(R.id.firstNameText);
         lastNameText = (EditText) findViewById(R.id.lastNameText);
-        signUpButton = (Button) findViewById(R.id.signUpButton);
-        spinner = (Spinner) findViewById(R.id.icons);
         genderspinner = (Spinner) findViewById(R.id.genderId);
 
         auth = FirebaseAuth.getInstance();
@@ -84,22 +79,6 @@ public class UserRegisteration extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<CharSequence> adapter2 =ArrayAdapter.createFromResource(this,R.array.Icon,android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter2);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                emoji = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(UserRegisteration.this,"Icon field is Empty", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         ArrayAdapter<CharSequence> adapterforgender = ArrayAdapter.createFromResource(this,R.array.genderarray,android.R.layout.simple_spinner_item);
         adapterforgender.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderspinner.setAdapter(adapterforgender);
@@ -107,7 +86,7 @@ public class UserRegisteration extends AppCompatActivity {
         genderspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                city = parent.getItemAtPosition(position).toString();
+                gender = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -128,10 +107,11 @@ public class UserRegisteration extends AppCompatActivity {
         age = ageText.getText().toString();
         firstName = firstNameText.getText().toString();
         lastName = lastNameText.getText().toString();
-        pledge = "";
+        pledge = "0";
+        defaultProfileIcon = "fox";
 
-        if(email.matches("") || password.matches("")) {
-            Toast.makeText(UserRegisteration.this, "Email and password are mandatory", Toast.LENGTH_LONG).show();
+        if(email.matches("") || password.matches("") || age.matches("") || city.matches("")|| gender.matches("") ||firstName.matches("") ||lastName.matches("")) {
+            Toast.makeText(UserRegisteration.this, "Fields are mandatory", Toast.LENGTH_LONG).show();
         }
         else {
             final ProgressDialog progressDialog = ProgressDialog.show(UserRegisteration.this, "Please wait..", "Processing..", true);
@@ -155,7 +135,7 @@ public class UserRegisteration extends AppCompatActivity {
 
     public void storeUserToDatabase() {
         String userId = auth.getCurrentUser().getUid();
-        User user = new User(userId, email, password, gender, age, city, firstName, lastName, pledge,emoji);
+        User user = new User(userId, email, password, gender, age, city, firstName, lastName, pledge, defaultProfileIcon);
         ref.child(userId).setValue(user);
     }
 

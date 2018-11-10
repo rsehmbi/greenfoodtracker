@@ -3,6 +3,7 @@ package com.t.teamten.greenfoodtracker.pledgeposts;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,12 @@ import java.util.List;
 public class PledgeRecyclerViewAdapter extends RecyclerView.Adapter<PledgeRecyclerViewAdapter.PledgeViewHolder> {
     private List<PledgePost> posts;
     private Context context;
+    private ProfileIconList iconList;
 
     public PledgeRecyclerViewAdapter(Context context, List<PledgePost> posts) {
         this.context = context;
         this.posts = posts;
+        iconList = new ProfileIconList(context);
     }
 
 
@@ -37,8 +40,8 @@ public class PledgeRecyclerViewAdapter extends RecyclerView.Adapter<PledgeRecycl
     @Override
     public void onBindViewHolder(@NonNull PledgeViewHolder viewHolder, int i) {
         //viewHolder.setIsRecyclable(false);
-
-        viewHolder.setProfileImageView();;
+        String profileImageName = posts.get(i).getProfileIconName();
+        viewHolder.setProfileImageView(profileImageName);
 
         String name = posts.get(i).getName();
         viewHolder.setNameTextView(name);
@@ -71,8 +74,10 @@ public class PledgeRecyclerViewAdapter extends RecyclerView.Adapter<PledgeRecycl
             pledgeTextView = itemView.findViewById(R.id.pledge_TextView);
         }
 
-        public void setProfileImageView() {
-           profileImageView.setImageResource(R.drawable.dog);
+        public void setProfileImageView(String profileImageName) {
+            int profileImageId = iconList.getDrawableId(profileImageName);
+            //Log.e("tag", profileImageName + " " + Integer.toString(profileImageId));
+            profileImageView.setImageResource(profileImageId);
         }
 
         public void setNameTextView(String name) {

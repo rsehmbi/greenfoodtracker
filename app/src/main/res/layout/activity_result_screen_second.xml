@@ -7,21 +7,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     tools:context=".resultscreenactivities.ResultScreenSecond">
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="38dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/text_view_result2_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/result2_intro"
-            android:textSize="12dp"/>
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/text_view_result2_info"
@@ -36,8 +36,8 @@
             android:id="@+id/groupMeals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_view_result2_info"
-            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp"
             android:orientation="horizontal"
             android:weightSum="3">
 
@@ -66,7 +66,6 @@
                 android:text="@string/meal3" />
         </LinearLayout>
 
-
         <lecho.lib.hellocharts.view.PieChartView
             android:id="@+id/chart"
             android:layout_width="300dp"
@@ -74,7 +73,7 @@
             android:layout_below="@+id/groupMeals"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginTop="11dp" />
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/text_view_result2_2"
@@ -98,32 +97,53 @@
             android:layout_below="@+id/text_view_result2_3"
             android:layout_marginTop="10dp" />
     </RelativeLayout>
+
     <Button
         android:id="@+id/toMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "Go Back To Home Page"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/goBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id = "@+id/pledge"
+        android:id="@+id/pledge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text = "@string/send_to_pledge"
+        android:text="@string/send_to_pledge"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.882" />
 
+    <Button
+        android:id="@+id/sharedPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/sharedPledge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

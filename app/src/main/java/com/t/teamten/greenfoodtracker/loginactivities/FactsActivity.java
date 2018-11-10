@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class FactsActivity extends AppCompatActivity {
-
+    // Facts Activity so that the user can see random facts instead of using the Calculator all the time.
     TextView randomFacts;
     Button refreshButton;
     InputStream streamcountlines;
