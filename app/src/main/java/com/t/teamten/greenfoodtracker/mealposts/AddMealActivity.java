@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.t.teamten.greenfoodtracker.R;
@@ -19,6 +20,7 @@ public class AddMealActivity extends AppCompatActivity {
     EditText mName;
     EditText mLocation;
     EditText mDescription;
+    Button mImageAddButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
