@@ -21,6 +21,7 @@ public class AddMealActivity extends AppCompatActivity {
     EditText mLocation;
     EditText mDescription;
     Button mImageAddButton;
+    Button mFinishButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,14 @@ public class AddMealActivity extends AppCompatActivity {
         mName = findViewById(R.id.editTextName);
         mDescription = findViewById(R.id.editTextDescription);
         mLocation = findViewById(R.id.editTextLocation);
+        mImageAddButton = findViewById(R.id.imageButton);
+        mFinishButton = findViewById(R.id.buttonFinish);
+        mFinishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
         setSupportActionBar(toolbar);
         String[] arrayAdapter = getResources().getStringArray(R.array.food_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, arrayAdapter);
