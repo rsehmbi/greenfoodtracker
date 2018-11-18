@@ -18,7 +18,7 @@ import java.lang.reflect.Array;
 public class AddMealActivity extends AppCompatActivity {
     AutoCompleteTextView mMainProtein;
     EditText mName;
-    EditText mLocation;
+    AutoCompleteTextView mLocation;
     EditText mDescription;
     Button mImageAddButton;
     Button mFinishButton;
@@ -27,22 +27,27 @@ public class AddMealActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_meal_acitivty);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         mMainProtein = findViewById(R.id.autoCompleteTextView);
         mName = findViewById(R.id.editTextName);
         mDescription = findViewById(R.id.editTextDescription);
         mLocation = findViewById(R.id.editTextLocation);
         mImageAddButton = findViewById(R.id.imageButton);
         mFinishButton = findViewById(R.id.buttonFinish);
-        mFinishButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
-        setSupportActionBar(toolbar);
         String[] arrayAdapter = getResources().getStringArray(R.array.food_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, arrayAdapter);
         mMainProtein.setAdapter(adapter);
+        String[] locationArray = getResources().getStringArray(R.array.city_name);
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, locationArray);
+        mLocation.setAdapter(cityAdapter);
+        mFinishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: add meal data, and images to firebase.
+            }
+        });
+
+
 
     }
 

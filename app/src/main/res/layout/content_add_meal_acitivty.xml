@@ -11,6 +11,7 @@
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="349dp"
+        android:layout_height="40dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -38,7 +39,7 @@
     <EditText
         android:id="@+id/editTextRestaurant"
         android:layout_width="349dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -50,15 +51,17 @@
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="349dp"
+        android:layout_height="40dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="@string/autocompleteEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/editTextLocation"
         android:layout_width="349dp"
+        android:layout_height="40dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -69,8 +72,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="49dp"
-        android:layout_height="57dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/map_thumbnail"
@@ -79,8 +82,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="44dp"
-        android:layout_height="54dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/restaurant"
@@ -101,9 +104,9 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="44dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/steak_icon"
         app:layout_constraintEnd_toStartOf="@+id/autoCompleteTextView"
@@ -111,8 +114,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/restaurantbuilding"
