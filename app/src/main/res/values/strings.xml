@@ -182,6 +182,6 @@
     <string name="editTextName">What did you eat?</string>
     <string name="editTextRestaurant">Which restaurant did you eat at?</string>
     <string name="autocompleteEditText">What\'s the main protein?</string>
-    <string name="addImageButton">Add a picture!</string>
+    <string name="addImageButton">Add a picture! (Optional)</string>
     <string name="finishButton">Finish!</string>
 </resources>
