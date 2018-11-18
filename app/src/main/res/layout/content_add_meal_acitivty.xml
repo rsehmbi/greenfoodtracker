@@ -130,8 +130,18 @@
         android:layout_width="158dp"
         android:layout_height="77dp"
         android:layout_marginStart="124dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="52dp"
         android:text="@string/addImageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="339dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/material"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 </android.support.constraint.ConstraintLayout>
