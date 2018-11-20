@@ -17,6 +17,13 @@
         android:icon="@drawable/pledge"/>
 
     <item
+        android:id="@+id/Newsfeed"
+        android:enabled="true"
+        android:title="Home"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ihome"/>
+
+    <item
         android:id="@+id/Facts"
         android:enabled="true"
         android:icon="@drawable/facts"

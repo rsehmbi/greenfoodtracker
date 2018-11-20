@@ -1,4 +1,4 @@
-package com.t.teamten.greenfoodtracker.pledgeposts;
+package com.t.teamten.greenfoodtracker.profileicon;
 
 public class ProfileIcon {
     private String profileIconTitle;

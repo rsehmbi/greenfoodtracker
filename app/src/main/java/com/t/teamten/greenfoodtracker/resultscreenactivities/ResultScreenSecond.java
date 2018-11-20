@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,7 @@ import userdata.UserData;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import static android.widget.Toast.LENGTH_SHORT;
 

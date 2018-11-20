@@ -1,9 +1,8 @@
-package com.t.teamten.greenfoodtracker.pledgeposts;
+package com.t.teamten.greenfoodtracker.profileicon;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import com.t.teamten.greenfoodtracker.R;
