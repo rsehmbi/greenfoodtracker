@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.t.teamten.greenfoodtracker.BuildConfig;
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 
 import org.junit.Before;
 import org.junit.Test;

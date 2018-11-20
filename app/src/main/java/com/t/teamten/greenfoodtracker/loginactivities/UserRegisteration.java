@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import firebaseuser.User;
 // User Registeration activity so that the user can register himself on the firebase database.
