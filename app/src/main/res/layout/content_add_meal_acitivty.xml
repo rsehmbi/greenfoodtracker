@@ -22,17 +22,17 @@
 
     <EditText
         android:id="@+id/editTextDescription"
-        android:layout_width="382dp"
+        android:layout_width="361dp"
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="top|left"
         android:inputType="textPersonName"
         android:text="Add a short description! (Optional)"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
 
@@ -101,9 +101,10 @@
         android:text="@string/finishButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.904" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -129,8 +130,7 @@
         android:id="@+id/imageButton"
         android:layout_width="158dp"
         android:layout_height="77dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="112dp"
         android:text="@string/addImageButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
@@ -139,8 +139,7 @@
         android:id="@+id/imageView7"
         android:layout_width="339dp"
         android:layout_height="150dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="28dp"
         android:src="@drawable/material"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
