@@ -45,6 +45,7 @@ public class ManageAccount extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("users");
         user_id = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
         user_info_update_and_dispay =  new User();
+        displaypic();
 
         iconList = new ProfileIconList(this);
 
@@ -73,6 +74,30 @@ public class ManageAccount extends AppCompatActivity {
         });
 
     }
+
+    private void displaypic() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds:dataSnapshot.getChildren()) {
+
+                    User user = ds.getValue(User.class);
+                    if (user.getUserId().equals(user_id)) {
+                        user_info_update_and_dispay = user;
+
+                    }
+                }
+                profileView.setImageResource(iconList.getDrawableId(user_info_update_and_dispay.getProfileIcon()));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
     public void updata_profilepic(DataSnapshot dataSnapshot)
     {
         for(DataSnapshot ds:dataSnapshot.getChildren()) {

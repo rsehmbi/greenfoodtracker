@@ -2,9 +2,11 @@ package firebaseuser;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,9 +27,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
+import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import com.t.teamten.greenfoodtracker.loginactivities.UserRegisteration;
 import com.t.teamten.greenfoodtracker.pledgeposts.PledgePost;
+import com.t.teamten.greenfoodtracker.settingsforuser;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -167,6 +171,42 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation_view);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.Calculator:
+                        Toast.makeText(UserProfile.this,"Calculator",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UserProfile.this,CalcActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.Facts:
+                        Toast.makeText(UserProfile.this,"Facts",Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(UserProfile.this,FactsActivity.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.About:
+                        Toast.makeText(UserProfile.this,"Settings",Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(UserProfile.this,settingsforuser.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.Pledge:
+                        Toast.makeText(UserProfile.this,"Pledge",Toast.LENGTH_SHORT).show();
+                        Intent movetoPledge = new Intent(UserProfile.this, UserProfile.class);
+                        startActivity(movetoPledge);
+                        break;
+                    case R.id.Newsfeed:
+                        Toast.makeText(UserProfile.this,"HomeScreen",Toast.LENGTH_SHORT).show();
+                        Intent movetoHomeScreen = new Intent (UserProfile.this,HomeScreen.class);
+                        startActivity(movetoHomeScreen);
+                        break;
+                }
+                return true;
+            }
+        });
+
 
 
 
