@@ -14,12 +14,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
+import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
-import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 
 import firebaseuser.UserProfile;

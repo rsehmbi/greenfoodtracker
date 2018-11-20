@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".resultscreenactivities.ResultScreenFirst" />
         <activity android:name=".calcactivities.CalcActivity" />
-        <activity android:name=".loginactivities.HomeScreen" />
         <activity android:name=".loginactivities.aboutactivity" />
         <activity android:name=".loginactivities.FactsActivity" />
         <activity android:name=".resultscreenactivities.ResultScreenSecond" />
@@ -47,7 +46,8 @@
         <activity
             android:name=".mealposts.AddMealAcitivty"
             android:label="@string/title_activity_add_meal_acitivty"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".homescreenactivity.HomeScreen"></activity>
     </application>
 
 </manifest>

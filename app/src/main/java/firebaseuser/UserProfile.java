@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,8 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,17 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
+import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
-import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
-import com.t.teamten.greenfoodtracker.loginactivities.UserRegisteration;
-import com.t.teamten.greenfoodtracker.pledgeposts.PledgePost;
 import com.t.teamten.greenfoodtracker.settingsforuser;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import firebaseuser.User;
 //Edit and save, view user profile
 public class UserProfile extends AppCompatActivity {
     //Edit text and save, edit button

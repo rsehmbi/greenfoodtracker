@@ -1,5 +1,7 @@
 package com.t.teamten.greenfoodtracker.pledgeposts;
 
+import com.t.teamten.greenfoodtracker.profileicon.ProfileIcon;
+
 import org.junit.Before;
 import org.junit.Test;
 

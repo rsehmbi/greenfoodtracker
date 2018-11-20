@@ -9,13 +9,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import com.t.teamten.greenfoodtracker.resultscreenactivities.ResultScreenFirst;
 
 import java.io.IOException;
