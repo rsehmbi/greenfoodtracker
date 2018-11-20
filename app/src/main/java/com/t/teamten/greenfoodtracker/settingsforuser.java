@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,11 +14,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
+import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 //setting:about,manage account, delete user...
 public class settingsforuser extends AppCompatActivity {
     FirebaseAuth mAuth;
+    float x1,x2,y1,y2;
     //Setting page so that the user can Signout or delete his account or he can manage his account.
     // Settings also has about to the source of information the user is using.
     @Override
@@ -58,4 +62,25 @@ public class settingsforuser extends AppCompatActivity {
         Intent movetomanageactivity = new Intent(this, ManageAccount.class);
         startActivity(movetomanageactivity);
     }
+
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if(x1 < x2){
+                    Intent i = new Intent(settingsforuser.this,FactsActivity.class);
+                    startActivity(i);
+                }else if(x1 > x2){
+
+                }
+                break;
+        }
+        return false;
+    }
+
 }

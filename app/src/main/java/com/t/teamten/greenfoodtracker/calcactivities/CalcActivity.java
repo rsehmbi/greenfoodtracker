@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,12 +15,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import com.t.teamten.greenfoodtracker.resultscreenactivities.ResultScreenFirst;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import firebaseuser.UserProfile;
 import userdata.UserData;
 
 public class CalcActivity extends AppCompatActivity {
@@ -36,6 +39,7 @@ public class CalcActivity extends AppCompatActivity {
     private LinkedList<Spinner> hiddenSpinnerQueue;
     private LinkedList<SeekBar> hiddenSeekbarQueue;
     private UserData userdata;
+    float x1,x2,y1,y2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +145,25 @@ public class CalcActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if(x1 < x2){
+
+                }else if(x1 > x2){
+                    Intent i = new Intent(CalcActivity.this,UserProfile.class);
+                    startActivity(i);
+                }
+                break;
+        }
+        return false;
     }
 }
 

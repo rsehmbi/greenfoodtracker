@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -38,6 +39,7 @@ public class HomeScreen extends AppCompatActivity {
     private PledgeRecyclerViewAdapter adapter;
     private Spinner spinnerFilter;
     private Button buttonFilter;
+    float x1,x2,y1,y2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,12 @@ public class HomeScreen extends AppCompatActivity {
                         Toast.makeText(HomeScreen.this,"Pledge",Toast.LENGTH_SHORT).show();
                         Intent movetoPledge = new Intent(HomeScreen.this, UserProfile.class);
                         startActivity(movetoPledge);
+                        break;
+                    case R.id.Newsfeed:
+                        Toast.makeText(HomeScreen.this,"HomeScreen",Toast.LENGTH_SHORT).show();
+                        Intent movetoHomeScreen = new Intent (HomeScreen.this,HomeScreen.class);
+                        startActivity(movetoHomeScreen);
+                        break;
                 }
                 return true;
             }
@@ -132,5 +140,26 @@ public class HomeScreen extends AppCompatActivity {
             }
             return newPosts;
         }
+    }
+
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if(x1 < x2){
+                    Intent i = new Intent(HomeScreen.this,UserProfile.class);
+                    startActivity(i);
+                }else if(x1 > x2){
+                    Intent i = new Intent(HomeScreen.this,PledgePost.class);
+                    startActivity(i);
+                }
+                break;
+        }
+        return false;
     }
 }

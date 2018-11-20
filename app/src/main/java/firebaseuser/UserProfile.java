@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,7 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
+import com.t.teamten.greenfoodtracker.loginactivities.HomeScreen;
 import com.t.teamten.greenfoodtracker.loginactivities.UserRegisteration;
+import com.t.teamten.greenfoodtracker.pledgeposts.PledgePost;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -43,7 +46,7 @@ public class UserProfile extends AppCompatActivity {
     private Spinner gender;
     private Button save;
     private Button edit;
-
+    float x1,x2,y1,y2;
     String gender_s;
     String city_s;
     //Four headlines
@@ -167,6 +170,26 @@ public class UserProfile extends AppCompatActivity {
 
 
 
+    }
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if(x1 < x2){
+                    Intent i = new Intent(UserProfile.this,CalcActivity.class);
+                    startActivity(i);
+                }else if(x1 > x2){
+                    Intent i = new Intent(UserProfile.this,HomeScreen.class);
+                    startActivity(i);
+                }
+                break;
+        }
+        return false;
     }
 
     private ArrayList<Double> count_and_display(DataSnapshot dataSnapshot)
