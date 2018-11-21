@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/factsback"
-    tools:context=".Result_Pages.Share_On_Social_Media_Activity">
+    tools:context=".resultscreenactivities.SocialMediaActivity">
 
     <Button
         android:id="@+id/buttonTwitter"
