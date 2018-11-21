@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash"
-    tools:context=".Login_And_Registration.Firebase_User_Login_Activity">
+    tools:context=".loginactivities.FirebaseLogin">
 
     <EditText
         android:id="@+id/Password"

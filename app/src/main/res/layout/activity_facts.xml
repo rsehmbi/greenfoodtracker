@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@drawable/factsback"
-    tools:context=".Login_And_Registration.Facts_Activity">
+    tools:context=".loginactivities.FactsActivity">
 
     <TextView
         android:id="@+id/factsID"
