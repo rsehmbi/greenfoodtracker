@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".settingsforuser"
+    tools:context="com.t.teamten.GreenFoodTracker.Firebase_User.Setting_For_User_Activity"
     android:background="@color/backgroundcolor"
     >
 

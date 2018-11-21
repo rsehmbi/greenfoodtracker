@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/factsback"
-    tools:context=".loginactivities.UserRegisteration"
+    tools:context=".Login_And_Registration.User_Registeration_Activity"
     tools:layout_editor_absoluteY="81dp">
 
     <EditText

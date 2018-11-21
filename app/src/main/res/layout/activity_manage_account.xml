@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/factsback"
-    tools:context=".ManageAccount">
+    tools:context="com.t.teamten.GreenFoodTracker.Firebase_User.Manage_Account_Activity">
 
     <ImageView
         android:id="@+id/profileChangeView"

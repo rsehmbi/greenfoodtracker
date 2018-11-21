@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.t.teamten.greenfoodtracker">
+    package="com.t.teamten.GreenFoodTracker">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,22 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginactivities.FirebaseLogin">
+        <activity android:name="com.t.teamten.GreenFoodTracker.Login_And_Registration.Firebase_User_Login_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".resultscreenactivities.ResultScreenFirst" />
-        <activity android:name=".calcactivities.CalcActivity" />
-        <activity android:name=".loginactivities.aboutactivity" />
-        <activity android:name=".loginactivities.FactsActivity" />
-        <activity android:name=".resultscreenactivities.ResultScreenSecond" />
-        <activity android:name=".loginactivities.UserRegisteration" />
-        <activity android:name="firebaseuser.deleteuser" />
-        <activity android:name="firebaseuser.UserProfile" />
-        <activity android:name=".resultscreenactivities.SocialMediaActivity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Result_Pages.Calculation_Result_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Calculator.Calculator_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Login_And_Registration.About_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Login_And_Registration.Facts_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Login_And_Registration.User_Registeration_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Firebase_User.User_Profile_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Result_Pages.Share_On_Social_Media_Activity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -41,13 +39,13 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".settingsforuser" />
-        <activity android:name=".ManageAccount" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Firebase_User.Setting_For_User_Activity" />
+        <activity android:name="com.t.teamten.GreenFoodTracker.Firebase_User.Manage_Account_Activity" />
         <activity
-            android:name=".mealposts.AddMealAcitivty"
+            android:name=".Meal_Posts.AddMealAcitivty"
             android:label="@string/title_activity_add_meal_acitivty"
             android:theme="@style/AppTheme" />
-        <activity android:name=".homescreenactivity.HomeScreen"></activity>
+        <activity android:name="com.t.teamten.GreenFoodTracker.Homescreen.HomeScreen"></activity>
     </application>
 
 </manifest>
