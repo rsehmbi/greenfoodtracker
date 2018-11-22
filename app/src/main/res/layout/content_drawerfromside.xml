@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".homescreenactivity.DrawerFromSide"
-    tools:showIn="@layout/app_bar_drawerfromside">
+    tools:showIn="@layout/app_bar_drawerfromside"
+    android:background="@drawable/factsback">
 
 </android.support.constraint.ConstraintLayout>
