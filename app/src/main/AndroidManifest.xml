@@ -52,7 +52,7 @@
             android:name=".homescreenactivity.DrawerFromSide"
             android:label="@string/title_activity_drawerfromside"
             android:theme="@style/AppTheme" />
-        <activity android:name="firebaseuser.User_Profile"></activity>
+        <activity android:name="firebaseuser.UserProfile"></activity>
     </application>
 
 </manifest>
