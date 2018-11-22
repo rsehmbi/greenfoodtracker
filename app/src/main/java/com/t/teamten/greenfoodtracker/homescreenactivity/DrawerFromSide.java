@@ -9,17 +9,17 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,22 +36,22 @@ import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.ManageAccount;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
+import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
-import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity;
 
 import java.util.Objects;
 
-import firebaseuser.User;
 import firebaseuser.Realtime_Pledge_Data;
+import firebaseuser.User;
 
 public class DrawerFromSide extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private NewsPagerAdapter pagerAdapter;
+    private NewsPageAdapter pagerAdapter;
     private FloatingActionButton postButton;
     private String user_id;
     private ProfileIconList iconList;
@@ -109,7 +109,7 @@ public class DrawerFromSide extends AppCompatActivity
         tabLayout = findViewById(R.id.tablayout2);
         tabLayout.setupWithViewPager(viewPager);
 
-        pagerAdapter = new NewsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        pagerAdapter = new NewsPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.getTabAt(0).setText(R.string.meals);

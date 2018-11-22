@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,14 +16,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
-import com.t.teamten.greenfoodtracker.pledgeposts.PledgePost;
-import com.t.teamten.greenfoodtracker.pledgeposts.PledgeRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import firebaseuser.User;
 
 /**
  * A simple {@link Fragment} subclass.

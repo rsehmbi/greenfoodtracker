@@ -1,10 +1,10 @@
 package com.t.teamten.greenfoodtracker;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,9 +16,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
+import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
-import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 
 import firebaseuser.Realtime_Pledge_Data;
 

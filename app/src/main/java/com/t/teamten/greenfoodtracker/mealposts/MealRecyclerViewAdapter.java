@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 
 import java.util.List;
 

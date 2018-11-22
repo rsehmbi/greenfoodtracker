@@ -3,6 +3,7 @@ package com.t.teamten.greenfoodtracker.calcactivities;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Pair;
+
 import java.util.ArrayList;
 
 public class CalculatorActivityData implements Parcelable {

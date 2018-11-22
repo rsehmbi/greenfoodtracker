@@ -1,9 +1,9 @@
 package com.t.teamten.greenfoodtracker;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -67,7 +67,7 @@ public class ManageAccount extends AppCompatActivity {
         birthYear = findViewById(R.id.age);
         password = findViewById(R.id.password);
         password.setText("*****");
-        genderSpinner = (Spinner) findViewById(R.id.genderId);
+        genderSpinner = findViewById(R.id.genderId);
         citySpinner =  findViewById(R.id.citySpinner);
         ArrayAdapter<CharSequence> adapterforgender = ArrayAdapter.createFromResource(this,R.array.genderarray,android.R.layout.simple_spinner_item);
         adapterforgender.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -87,9 +87,9 @@ public class ManageAccount extends AppCompatActivity {
 
         iconList = new ProfileIconList(this);
 
-        profileView = (ImageView) findViewById(R.id.profileChangeView);
-        imageNameSpinner = (Spinner) findViewById(R.id.imageNameSpinner);
-        updateButton = (Button) findViewById(R.id.updateProfileButton);
+        profileView = findViewById(R.id.profileChangeView);
+        imageNameSpinner = findViewById(R.id.imageNameSpinner);
+        updateButton = findViewById(R.id.updateProfileButton);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
