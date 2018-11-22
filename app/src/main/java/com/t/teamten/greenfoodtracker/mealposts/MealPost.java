@@ -3,9 +3,6 @@ package com.t.teamten.greenfoodtracker.mealposts;
 import firebaseuser.User;
 
 public class MealPost {
-    private String name;
-    private String profileImage;
-    private String userCity;
     private String mealName;
     private String mealProtein;
     private String restaurantName;
@@ -13,35 +10,23 @@ public class MealPost {
     private String mealImageUrl;
     private String mealDescription;
     private String userId;
+    private String postId;
 
     public MealPost() {
 
     }
 
-    public MealPost(User user, String mealName, String mealProtein, String restaurantName,
-                    String restaurantLocation, String mealImageUrl, String mealDescription) {
-        this.name = user.getFirstNameWithLastNameInitial();
-        this.profileImage = user.getProfileIcon();
-        this.userCity = user.getCity();
+    public MealPost(String mealName, String mealProtein, String restaurantName,
+                    String restaurantLocation, String mealImageUrl, String mealDescription,
+                    String userId, String postId) {
         this.mealName = mealName;
         this.mealProtein = mealProtein;
         this.restaurantName = restaurantName;
         this.restaurantLocation = restaurantLocation;
         this.mealImageUrl = mealImageUrl;
         this.mealDescription = mealDescription;
-        this.userId = user.getUserId();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    public String getUserCity() {
-        return userCity;
+        this.userId = userId;
+        this.postId = postId;
     }
 
     public String getMealName() {
@@ -72,16 +57,8 @@ public class MealPost {
         return userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
-
-    public void setUserCity(String userCity) {
-        this.userCity = userCity;
+    public String getPostId() {
+        return postId;
     }
 
     public void setMealName(String mealName) {
@@ -110,5 +87,9 @@ public class MealPost {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 }

@@ -51,7 +51,7 @@ public class DrawerFromSide extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private NewsPageAdapter pagerAdapter;
+    private NewsPagerAdapter pagerAdapter;
     private FloatingActionButton postButton;
     private String userId;
     private ProfileIconList iconList;
@@ -109,7 +109,7 @@ public class DrawerFromSide extends AppCompatActivity
         tabLayout = findViewById(R.id.tablayout2);
         tabLayout.setupWithViewPager(viewPager);
 
-        pagerAdapter = new NewsPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        pagerAdapter = new NewsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.getTabAt(0).setText(R.string.meals);

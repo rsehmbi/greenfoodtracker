@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".mealposts.AddMealFragment"
+    android:layout_width="350dp"
+    android:layout_height="475dp"
+    android:background="@android:color/holo_green_light"
+    android:scrollbars="vertical"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/leaveText"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:text="X"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/mealNameText"
+            android:layout_width="270dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/textboxshape"
+            android:textAlignment="center"
+            android:hint="Name of your meal"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white">
+
+            <Spinner
+                android:id="@+id/proteinSpinner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/proteinlist"
+                android:padding="10dp"
+                android:prompt="@string/mainprotein"
+                android:spinnerMode="dropdown" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/restaurantNameText"
+            android:layout_width="270dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textboxshape"
+            android:textAlignment="center"
+            android:hint="Name of the restaurant"/>
+
+        <EditText
+            android:id="@+id/restaurantLocationText"
+            android:layout_width="270dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textboxshape"
+            android:textAlignment="center"
+            android:hint="Restaurant location"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/mealImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@android:drawable/ic_menu_camera"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/mealDescriptionText"
+            android:layout_width="270dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textboxshape"
+            android:textAlignment="center"
+            android:hint="Add meal description"/>
+
+        <Button
+            android:id="@id/postButton"
+            android:layout_width="130dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:textAlignment="center"
+            android:text="Post"/>
+
+    </LinearLayout>
+
+</ScrollView>
