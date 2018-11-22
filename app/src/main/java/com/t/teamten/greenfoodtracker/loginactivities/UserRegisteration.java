@@ -97,8 +97,6 @@ public class UserRegisteration extends AppCompatActivity {
             }
         });
 
-
-
     }
 
     public void RegisterActivity(View view) {

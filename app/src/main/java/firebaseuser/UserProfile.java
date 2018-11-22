@@ -127,13 +127,8 @@ public class UserProfile extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Toast.makeText(UserProfile.this,"Gender field is Empty", Toast.LENGTH_SHORT).show();
-
             }
         });
-
-
-
-
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {

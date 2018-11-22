@@ -5,73 +5,138 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/factsback"
-    tools:context=".ManageAccount">
+    tools:context=".ManageAccount"
+    tools:layout_editor_absoluteY="25dp">
+
+    <Spinner
+        android:id="@+id/genderId"
+        android:layout_width="107dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="248dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/profileChangeView">
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:layout_width="149dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="34dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="12dp"
+        android:hint="First Name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toStartOf="@+id/last_name"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/EmailID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="108dp"
+        android:hint="Email"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="346dp"
+        android:layout_marginBottom="18dp"
+        android:password="true"
+        app:layout_constraintBottom_toTopOf="@+id/EmailID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="207dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="90dp"
+        android:hint="Last Name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/first_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="56dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="250dp"
+        android:hint="Age"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/citySpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
     <ImageView
         android:id="@+id/profileChangeView"
-        android:layout_width="174dp"
-        android:layout_height="164dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="130dp"
+        app:layout_constraintBottom_toTopOf="@+id/genderId"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/userimage" />
 
+
     <android.support.v7.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="111dp"
+        android:id="@+id/cardView4"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
         android:elevation="10dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView4">
-
-        <Button
-            android:id="@+id/showImageButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:onClick="displayCurrentProfile"
-            tools:layout_editor_absoluteX="91dp"
-            tools:layout_editor_absoluteY="354dp" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Display Current Picture" />
-
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardView4"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="25dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageNameSpinner">
+        app:layout_constraintTop_toBottomOf="@+id/first_name"
+        app:layout_constraintVertical_bias="0.926">
 
         <Button
             android:id="@+id/updateProfileButton"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             tools:layout_editor_absoluteX="129dp"
             tools:layout_editor_absoluteY="433dp" />
@@ -86,24 +151,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Upload New  Picture" />
+            android:text="Save" />
 
     </android.support.v7.widget.CardView>
 
 
     <Spinner
         android:id="@+id/imageNameSpinner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="278dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="113dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="9dp"
         android:entries="@array/icon_Name_Array"
-        app:layout_constraintBottom_toTopOf="@+id/cardView4"
-        app:layout_constraintEnd_toEndOf="@+id/cardView4"
-        app:layout_constraintStart_toStartOf="@+id/profileChangeView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/first_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileChangeView" />
 
 
 </android.support.constraint.ConstraintLayout>
