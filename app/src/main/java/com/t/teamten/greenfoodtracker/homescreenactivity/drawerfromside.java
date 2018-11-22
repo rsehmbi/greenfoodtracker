@@ -40,6 +40,7 @@ import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
+import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity;
 
@@ -181,7 +182,7 @@ public class drawerfromside extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.AboutheuserID) {
-            Intent movetoaboutpage = new Intent(drawerfromside.this, UserProfile.class);
+            Intent movetoaboutpage = new Intent(drawerfromside.this, aboutactivity.class);
             startActivity(movetoaboutpage);
         } else if (id == R.id.SignoutuserID) {
             FirebaseAuth.getInstance().signOut();
@@ -224,8 +225,7 @@ public class drawerfromside extends AppCompatActivity
             startActivity(movetomanageaccount);
         } else if (id == R.id.HomeID)
         {
-            Intent movetoHome= new Intent (drawerfromside.this,drawerfromside.class);
-            startActivity(movetoHome);
+            Toast.makeText(drawerfromside.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
             Intent movetoPledgepage= new Intent (drawerfromside.this,UserProfile.class);
             startActivity(movetoPledgepage);

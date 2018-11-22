@@ -165,45 +165,6 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation_view);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId())
-                {
-                    case R.id.Calculator:
-                        Toast.makeText(UserProfile.this,"Calculator",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UserProfile.this,CalcActivity.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.Facts:
-                        Toast.makeText(UserProfile.this,"Facts",Toast.LENGTH_SHORT).show();
-                        Intent intent3 = new Intent(UserProfile.this,FactsActivity.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.About:
-                        Toast.makeText(UserProfile.this,"Settings",Toast.LENGTH_SHORT).show();
-                        Intent intent2 = new Intent(UserProfile.this,settingsforuser.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.Pledge:
-                        Toast.makeText(UserProfile.this,"Pledge",Toast.LENGTH_SHORT).show();
-                        Intent movetoPledge = new Intent(UserProfile.this, UserProfile.class);
-                        startActivity(movetoPledge);
-                        break;
-                    case R.id.Newsfeed:
-                        Toast.makeText(UserProfile.this,"HomeScreen",Toast.LENGTH_SHORT).show();
-                        Intent movetoHomeScreen = new Intent (UserProfile.this,HomeScreen.class);
-                        startActivity(movetoHomeScreen);
-                        break;
-                }
-                return true;
-            }
-        });
-
-
-
-
     }
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
