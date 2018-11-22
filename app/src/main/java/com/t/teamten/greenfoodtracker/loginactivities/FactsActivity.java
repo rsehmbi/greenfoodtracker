@@ -48,22 +48,22 @@ public class FactsActivity extends AppCompatActivity {
         inputStream = this.getResources().openRawResource(R.raw.factstextfile);
         bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
-        factsObject.inititializingarray(factsObject.getIntCount());
+        factsObject.initializeArray(factsObject.getIntCount());
         try {
             for(int i = 0 ; i < factsObject.getIntCount();i++){
-                factsObject.setTextdata(bufferedReader.readLine(),i);
+                factsObject.setTextData(bufferedReader.readLine(),i);
             }
-        }catch (Exception exceptiontoCatchforBufferReader ){
-                exceptiontoCatchforBufferReader.printStackTrace();
+        }catch (Exception bufferReaderException ){
+                bufferReaderException.printStackTrace();
         }
 
-        randomFacts.setText(factsObject.getTextdata(0));
+        randomFacts.setText(factsObject.getTextData(0));
         refreshButton = findViewById(R.id.RefreshID);
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 factsObject.pickRandomFacts();
-                randomFacts.setText(factsObject.getTextdata(0));
+                randomFacts.setText(factsObject.getTextData(0));
             }
         });
     }

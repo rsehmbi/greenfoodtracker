@@ -14,11 +14,11 @@ public class Fact{
         intCount = 0;
     }
 
-    public void inititializingarray(int index)
+    public void initializeArray(int index)
     {
         this.textData = new String[index];
     }
-    public String getTextdata(int index) {
+    public String getTextData(int index) {
         return textData[index];
     }
 
@@ -30,15 +30,15 @@ public class Fact{
         this.intCount = intCount;
     }
 
-    public void setTextdata(String line, int index) {
+    public void setTextData(String line, int index) {
         this.textData[index]=line;
     }
 
-    public String[] Textdata() {
+    public String[] getTextData() {
         return textData;
     }
 
      public void pickRandomFacts() {
-       Collections.shuffle(Arrays.asList(Textdata()));
+       Collections.shuffle(Arrays.asList(getTextData()));
      }
 }
