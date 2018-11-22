@@ -2,16 +2,13 @@ package com.t.teamten.greenfoodtracker.loginactivities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,7 +23,7 @@ import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import firebaseuser.User;
 // User Registeration activity so that the user can register himself on the firebase database.
-public class UserRegisteration extends AppCompatActivity {
+public class UserRegistration extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference ref;
 
@@ -53,13 +50,13 @@ public class UserRegisteration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registeration);
 
-        emailText = (EditText) findViewById(R.id.emailText);
-        passwordText = (EditText) findViewById(R.id.passwordText);
-        ageText = (EditText) findViewById(R.id.ageText);
+        emailText = findViewById(R.id.emailText);
+        passwordText = findViewById(R.id.passwordText);
+        ageText = findViewById(R.id.ageText);
         citySpinner =  findViewById(R.id.citySpinner);
-        firstNameText = (EditText) findViewById(R.id.firstNameText);
-        lastNameText = (EditText) findViewById(R.id.lastNameText);
-        genderspinner = (Spinner) findViewById(R.id.genderId);
+        firstNameText = findViewById(R.id.firstNameText);
+        lastNameText = findViewById(R.id.lastNameText);
+        genderspinner = findViewById(R.id.genderId);
 
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("users");
@@ -76,7 +73,7 @@ public class UserRegisteration extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(UserRegisteration.this,"City field is Empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserRegistration.this,"City field is Empty", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -92,7 +89,7 @@ public class UserRegisteration extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(UserRegisteration.this,"Gender field is Empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserRegistration.this,"Gender field is Empty", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -110,22 +107,22 @@ public class UserRegisteration extends AppCompatActivity {
         defaultProfileIcon = "fox";
 
         if(email.matches("") || password.matches("") || age.matches("") || city.matches("")|| gender.matches("") ||firstName.matches("") ||lastName.matches("")) {
-            Toast.makeText(UserRegisteration.this, "Fields are mandatory", Toast.LENGTH_LONG).show();
+            Toast.makeText(UserRegistration.this, "Fields are mandatory", Toast.LENGTH_LONG).show();
         }
         else {
-            final ProgressDialog progressDialog = ProgressDialog.show(UserRegisteration.this, "Please wait..", "Processing..", true);
+            final ProgressDialog progressDialog = ProgressDialog.show(UserRegistration.this, "Please wait..", "Processing..", true);
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressDialog.dismiss();
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(UserRegisteration.this, "Successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserRegistration.this, "Successful", Toast.LENGTH_SHORT).show();
                         storeUserToDatabase();
-                        Intent moveToHomeScreen = new Intent(UserRegisteration.this, HomeScreen.class);
+                        Intent moveToHomeScreen = new Intent(UserRegistration.this, HomeScreen.class);
                         startActivity(moveToHomeScreen);
                     } else {
-                        Toast.makeText(UserRegisteration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserRegistration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

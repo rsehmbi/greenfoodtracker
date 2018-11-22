@@ -44,7 +44,7 @@ public class ResultScreenFirstDataHandlerTest {
     @Test
     public void total_emission() {
         CalculatorActivityData testCalcData = new CalculatorActivityData(testArrayData);
-        int testTotal = (int) new ResultScreenFirstDataHandler().total_emission(testCalcData, foodData);
+        int testTotal = (int) new ResultScreenFirstDataHandler().totalEmission(testCalcData, foodData);
         assertEquals(testTotal, 16181);
     }
 

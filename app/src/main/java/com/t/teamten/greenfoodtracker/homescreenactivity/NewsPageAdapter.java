@@ -7,10 +7,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.t.teamten.greenfoodtracker.mealposts.MealFragment;
 import com.t.teamten.greenfoodtracker.pledgeposts.PledgeFragment;
 
-public class NewsPagerAdapter extends FragmentPagerAdapter {
+public class NewsPageAdapter extends FragmentPagerAdapter {
     private int numberOfTabs;
 
-    public NewsPagerAdapter(FragmentManager fragmentManager, int numberOfTabs) {
+    public NewsPageAdapter(FragmentManager fragmentManager, int numberOfTabs) {
         super(fragmentManager);
         this.numberOfTabs = numberOfTabs;
     }

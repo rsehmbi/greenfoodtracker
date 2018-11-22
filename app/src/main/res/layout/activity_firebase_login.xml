@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:onClick="Registeruser" />
+            android:onClick="registerUser" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="33dp"
         android:clickable="true"
-        android:onClick="movetoregisterationpage"
+        android:onClick="moveToRegistrationPage"
         android:text="Not a User! Register here.."
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
