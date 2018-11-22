@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -50,14 +49,13 @@ import firebaseuser.Realtime_Pledge_Data;
 
 public class DrawerFromSide extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private BottomNavigationView bottomNavigationView;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private NewsPagerAdapter pagerAdapter;
     private FloatingActionButton postButton;
     private String user_id;
     private ProfileIconList iconList;
-    private User user_info_update_and_dispay;
+    private User userInfo;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -78,7 +76,7 @@ public class DrawerFromSide extends AppCompatActivity
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
         user_id = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
-        user_info_update_and_dispay =  new User();
+        userInfo =  new User();
 
         iconList = new ProfileIconList(this);
         dialog = new Dialog(this);
@@ -105,7 +103,7 @@ public class DrawerFromSide extends AppCompatActivity
         textToShow = headerView.findViewById(R.id.nametoshow);
         email = headerView.findViewById(R.id.emailofuser);
         icon = headerView.findViewById(R.id.imageicon);
-        displayname();
+        displayName();
 
         viewPager = findViewById(R.id.viewPager2);
         tabLayout = findViewById(R.id.tablayout2);
@@ -118,7 +116,7 @@ public class DrawerFromSide extends AppCompatActivity
         tabLayout.getTabAt(1).setText(R.string.pledges);
     }
 
-    private void displayname() {
+    private void displayName() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -126,7 +124,7 @@ public class DrawerFromSide extends AppCompatActivity
 
                     User user = ds.getValue(User.class);
                     if (user.getUserId().equals(user_id)) {
-                        user_info_update_and_dispay = user;
+                        userInfo = user;
                         textToShow.setText(user.getFirstName()+" "+user.getLastName());
                         email.setText(user.getEmail());
                         icon.setImageResource(iconList.getDrawableId(user.getProfileIcon()));
@@ -220,23 +218,23 @@ public class DrawerFromSide extends AppCompatActivity
             alert.show();
 
         } else if (id == R.id.manageuserID) {
-            Intent movetomanageaccount = new Intent (DrawerFromSide.this, ManageAccount.class);
-            startActivity(movetomanageaccount);
+            Intent moveToManageAccount = new Intent (DrawerFromSide.this, ManageAccount.class);
+            startActivity(moveToManageAccount);
         } else if (id == R.id.HomeID)
         {
             Toast.makeText(DrawerFromSide.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
-            Intent movetoPledgepage= new Intent (DrawerFromSide.this, Realtime_Pledge_Data.class);
-            startActivity(movetoPledgepage);
+            Intent moveToPledgePage = new Intent (DrawerFromSide.this, Realtime_Pledge_Data.class);
+            startActivity(moveToPledgePage);
         }else if (id == R.id.CalculatorID) {
-            Intent movetoCalc = new Intent(DrawerFromSide.this, CalcActivity.class);
-            startActivity(movetoCalc);
+            Intent moveToCalc = new Intent(DrawerFromSide.this, CalcActivity.class);
+            startActivity(moveToCalc);
         }else if (id == R.id.factsscreenID) {
-            Intent movetofacts = new Intent(DrawerFromSide.this,FactsActivity.class);
-            startActivity(movetofacts);
+            Intent moveToFacts = new Intent(DrawerFromSide.this,FactsActivity.class);
+            startActivity(moveToFacts);
         }else if (id == R.id.nav_share) {
-            Intent movetosocialmedia = new Intent(DrawerFromSide.this, SocialMediaActivity.class);
-            startActivity(movetosocialmedia);
+            Intent moveToSocialMedia = new Intent(DrawerFromSide.this, SocialMediaActivity.class);
+            startActivity(moveToSocialMedia);
         } else if (id == R.id.nav_send) {
 
         }

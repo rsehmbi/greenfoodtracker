@@ -54,7 +54,7 @@ public class HomeScreen extends AppCompatActivity {
 
         dialog = new Dialog(this);
 
-        postButton = (FloatingActionButton) findViewById(R.id.postButton);
+        postButton = findViewById(R.id.postButton);
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation_view);
+        bottomNavigationView = findViewById(R.id.navigation_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

@@ -50,13 +50,13 @@ public class UserRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registeration);
 
-        emailText = (EditText) findViewById(R.id.emailText);
-        passwordText = (EditText) findViewById(R.id.passwordText);
-        ageText = (EditText) findViewById(R.id.ageText);
+        emailText = findViewById(R.id.emailText);
+        passwordText = findViewById(R.id.passwordText);
+        ageText = findViewById(R.id.ageText);
         citySpinner =  findViewById(R.id.citySpinner);
-        firstNameText = (EditText) findViewById(R.id.firstNameText);
-        lastNameText = (EditText) findViewById(R.id.lastNameText);
-        genderspinner = (Spinner) findViewById(R.id.genderId);
+        firstNameText = findViewById(R.id.firstNameText);
+        lastNameText = findViewById(R.id.lastNameText);
+        genderspinner = findViewById(R.id.genderId);
 
         auth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("users");

@@ -50,7 +50,7 @@ public class MealFragment extends Fragment {
     public void onViewCreated(View view, @NonNull Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.mealListView);
+        recyclerView = view.findViewById(R.id.mealListView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

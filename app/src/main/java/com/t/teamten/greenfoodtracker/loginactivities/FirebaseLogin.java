@@ -32,13 +32,13 @@ public class FirebaseLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firebase_login);
 
-        Username =(EditText) findViewById(R.id.UserID);
-        Password=(EditText) findViewById(R.id.Password);
+        Username = findViewById(R.id.UserID);
+        Password= findViewById(R.id.Password);
         Auth = FirebaseAuth.getInstance();
 
     }
 
-    public void Registeruser(View view) {
+    public void registerUser(View view) {
         user = Username.getText().toString();
         password = Password.getText().toString();
 
@@ -54,9 +54,9 @@ public class FirebaseLogin extends AppCompatActivity {
                     progressDialog.dismiss();
 
                     if (task.isSuccessful()) {
-                        Intent movetoHomescreen = new Intent(FirebaseLogin.this, DrawerFromSide.class);
-                        startActivity(movetoHomescreen);
-                          Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
+                        Intent moveToHomeScreen = new Intent(FirebaseLogin.this, DrawerFromSide.class);
+                        startActivity(moveToHomeScreen);
+                          Toast.makeText(FirebaseLogin.this, "Successful", Toast.LENGTH_SHORT).show();
 
                     } else {
                         Toast.makeText(FirebaseLogin.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -67,8 +67,8 @@ public class FirebaseLogin extends AppCompatActivity {
         }
     }
 
-    public void movetoregisterationpage(View view) {
-        Intent movetoregister = new Intent(FirebaseLogin.this,UserRegistration.class);
-        startActivity(movetoregister);
+    public void moveToRegistrationPage(View view) {
+        Intent toRegistration = new Intent(FirebaseLogin.this,UserRegistration.class);
+        startActivity(toRegistration);
     }
 }

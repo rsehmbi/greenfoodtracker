@@ -14,7 +14,7 @@ public class ProfileIconList {
     private Context context;
     private List<ProfileIcon> icons;
     private Resources resources;
-    int[] imageIcones;
+    int[] imageIcons;
     String[] imageNames;
     int imageIconesId;
     int imageNamesId;
@@ -29,17 +29,17 @@ public class ProfileIconList {
 
         TypedArray typedArray = resources.obtainTypedArray(R.array.icon_Array);
         int len = typedArray.length();
-        imageIcones = new int[len];
+        imageIcons = new int[len];
 
         for(int i = 0; i < len; i++) {
-            imageIcones[i] = typedArray.getResourceId(i, 0);
+            imageIcons[i] = typedArray.getResourceId(i, 0);
         }
 
         icons = new ArrayList<>();
 
-        for(int i = 0; i < imageIcones.length; i++) {
+        for(int i = 0; i < imageIcons.length; i++) {
             String imageName = imageNames[i];
-            int imageIcon = imageIcones[i];
+            int imageIcon = imageIcons[i];
             ProfileIcon icon = new ProfileIcon(imageName, imageIcon);
             Log.e("tag", imageName + " " + imageIcon);
             icons.add(icon);

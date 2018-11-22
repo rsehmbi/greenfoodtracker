@@ -32,7 +32,7 @@ public class FactsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
         final Fact factsObject= new Fact();
-        randomFacts =(TextView) findViewById(R.id.factsID);
+        randomFacts = findViewById(R.id.factsID);
         streamCountLines = this.getResources().openRawResource(R.raw.factstextfile);
         readCountLines = new BufferedReader(new InputStreamReader(streamCountLines));
         try{
@@ -58,7 +58,7 @@ public class FactsActivity extends AppCompatActivity {
         }
 
         randomFacts.setText(factsObject.getTextdata(0));
-        refreshButton = (Button)findViewById(R.id.RefreshID);
+        refreshButton = findViewById(R.id.RefreshID);
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
