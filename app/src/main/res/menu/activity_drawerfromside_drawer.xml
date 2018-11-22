@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/HomeID"
+            android:icon="@drawable/ihome"
+            android:title="Home" />
+        <item
+            android:id="@+id/CalculatorID"
+            android:icon="@drawable/calculator"
+            android:title="Calculator" />
+        <item
+            android:id="@+id/PledgeID"
+            android:icon="@drawable/pledge"
+            android:title="Pledge" />
+        <item
+            android:id="@+id/factsscreenID"
+            android:icon="@drawable/facts"
+            android:title="Facts" />
+
+        <item
+            android:id="@+id/AboutheuserID"
+            android:icon="@drawable/about"
+            android:title="About" />
+        <item
+            android:id="@+id/SignoutuserID"
+            android:icon="@drawable/signingout"
+            android:title="Signout" />
+        <item
+            android:id="@+id/DeleteUserID"
+            android:icon="@drawable/dustbin"
+            android:title="Delete" />
+        <item
+            android:id="@+id/manageuserID"
+            android:icon="@drawable/manageaccount"
+            android:title="Manage Account" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

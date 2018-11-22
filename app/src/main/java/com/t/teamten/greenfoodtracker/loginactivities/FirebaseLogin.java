@@ -17,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
+import com.t.teamten.greenfoodtracker.homescreenactivity.drawerfromside;
 
 //Login class for firebase so that the user can Login in to user the application.
 public class FirebaseLogin extends AppCompatActivity {
@@ -55,7 +56,7 @@ public class FirebaseLogin extends AppCompatActivity {
                     progressDialog.dismiss();
 
                     if (task.isSuccessful()) {
-                        Intent movetoHomescreen = new Intent(FirebaseLogin.this, HomeScreen.class);
+                        Intent movetoHomescreen = new Intent(FirebaseLogin.this, drawerfromside.class);
                         startActivity(movetoHomescreen);
                           Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
 

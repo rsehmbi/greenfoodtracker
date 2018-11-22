@@ -47,7 +47,11 @@
             android:name=".mealposts.AddMealAcitivty"
             android:label="@string/title_activity_add_meal_acitivty"
             android:theme="@style/AppTheme" />
-        <activity android:name=".homescreenactivity.HomeScreen"></activity>
+        <activity android:name=".homescreenactivity.HomeScreen" />
+        <activity
+            android:name=".homescreenactivity.drawerfromside"
+            android:label="@string/title_activity_drawerfromside"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

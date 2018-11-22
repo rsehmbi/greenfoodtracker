@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homescreenactivity.drawerfromside">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        layout="@layout/content_drawerfromside"
+        app:layout_anchor="@+id/postButton"
+        app:layout_anchorGravity="right|top" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/postButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="70dp"
+        android:src="@android:drawable/ic_dialog_email"
+        app:useCompatPadding="true" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:title="News Feed" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout2"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabMeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/meals" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabPledges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pledges" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager2"
+        android:layout_width="398dp"
+        android:layout_height="593dp"
+        android:layout_below="@+id/tablayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="110dp" />
+
+</android.support.design.widget.CoordinatorLayout>
