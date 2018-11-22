@@ -22,7 +22,6 @@ import com.t.teamten.greenfoodtracker.calcactivities.CalculatorActivityData;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import firebaseuser.Realtime_Pledge_Data;
 import foodandco2.FoodData;
@@ -98,7 +97,7 @@ public class ResultScreenFirst extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        final Integer totalEmission = (int) new ResultScreenFirstDataHandler(this).total_emission(userInput, foodData);
+        final Integer totalEmission = (int) new ResultScreenFirstDataHandler(this).totalEmission(userInput, foodData);
         set_textview_for_current_diet(totalEmission);
         initialize_seek_bar_data(userInput);
         generate_graph();
@@ -452,7 +451,7 @@ public class ResultScreenFirst extends AppCompatActivity {
 
     public void set_changese_to_saving_and_adjusted()
     {
-        final Integer total_after_adjustment = (int) new ResultScreenFirstDataHandler(this).total_emission(seek_bar_name,seek_bar_data, foodData);
+        final Integer total_after_adjustment = (int) new ResultScreenFirstDataHandler(this).totalEmission(seek_bar_name,seek_bar_data, foodData);
 
         Integer car_adjusted = total_after_adjustment*9/4;
         Integer radiator_adjusted = total_after_adjustment/2;

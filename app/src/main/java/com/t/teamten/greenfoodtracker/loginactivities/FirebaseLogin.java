@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,8 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
-import com.t.teamten.greenfoodtracker.homescreenactivity.drawerfromside;
+import com.t.teamten.greenfoodtracker.homescreenactivity.DrawerFromSide;
 
 //Login class for firebase so that the user can Login in to user the application.
 public class FirebaseLogin extends AppCompatActivity {
@@ -56,7 +54,7 @@ public class FirebaseLogin extends AppCompatActivity {
                     progressDialog.dismiss();
 
                     if (task.isSuccessful()) {
-                        Intent movetoHomescreen = new Intent(FirebaseLogin.this, drawerfromside.class);
+                        Intent movetoHomescreen = new Intent(FirebaseLogin.this, DrawerFromSide.class);
                         startActivity(movetoHomescreen);
                           Toast.makeText(FirebaseLogin.this, "Succesfull", Toast.LENGTH_SHORT).show();
 
@@ -70,7 +68,7 @@ public class FirebaseLogin extends AppCompatActivity {
     }
 
     public void movetoregisterationpage(View view) {
-        Intent movetoregister = new Intent(FirebaseLogin.this,UserRegisteration.class);
+        Intent movetoregister = new Intent(FirebaseLogin.this,UserRegistration.class);
         startActivity(movetoregister);
     }
 }

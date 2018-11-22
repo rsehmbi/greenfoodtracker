@@ -19,8 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.t.teamten.greenfoodtracker.homescreenactivity.drawerfromside;
-import com.t.teamten.greenfoodtracker.loginactivities.UserRegisteration;
+import com.t.teamten.greenfoodtracker.homescreenactivity.DrawerFromSide;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 
 import java.util.Objects;
@@ -30,12 +29,12 @@ import firebaseuser.User;
 public class ManageAccount extends AppCompatActivity {
     private DatabaseReference reference;
 
-    private EditText first_name;
-    private EditText last_name;
-    private EditText birth_year;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText birthYear;
     private EditText password;
     private EditText email;
-    private Spinner genderspinner;
+    private Spinner genderSpinner;
     private Spinner citySpinner;
     private String gender;
     private String city;
@@ -49,7 +48,7 @@ public class ManageAccount extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private String user_id;
     private String user_id2;
-    private User user_info_update_and_dispay;
+    private User updateAndDisplayInfo;
     private String imageName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,22 +58,22 @@ public class ManageAccount extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
         user_id = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
-        user_info_update_and_dispay =  new User();
-        displaypic();
+        updateAndDisplayInfo =  new User();
+        displayPicture();
 
-        first_name = findViewById(R.id.first_name);
-        last_name = findViewById(R.id.last_name);
+        firstName = findViewById(R.id.first_name);
+        lastName = findViewById(R.id.last_name);
         email = findViewById(R.id.EmailID);
-        birth_year = findViewById(R.id.age);
+        birthYear = findViewById(R.id.age);
         password = findViewById(R.id.password);
         password.setText("*****");
-        genderspinner = (Spinner) findViewById(R.id.genderId);
+        genderSpinner = (Spinner) findViewById(R.id.genderId);
         citySpinner =  findViewById(R.id.citySpinner);
         ArrayAdapter<CharSequence> adapterforgender = ArrayAdapter.createFromResource(this,R.array.genderarray,android.R.layout.simple_spinner_item);
         adapterforgender.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        genderspinner.setAdapter(adapterforgender);
+        genderSpinner.setAdapter(adapterforgender);
 
-        genderspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 gender = parent.getItemAtPosition(position).toString();
@@ -100,7 +99,7 @@ public class ManageAccount extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    updata_profilepic(dataSnapshot);
+                    updateProfilePicture(dataSnapshot);
                 }
 
                 @Override
@@ -112,9 +111,9 @@ public class ManageAccount extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<CharSequence> adapterforcity = ArrayAdapter.createFromResource(this,R.array.city_name,android.R.layout.simple_spinner_item);
-        adapterforcity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        citySpinner.setAdapter(adapterforcity);
+        ArrayAdapter<CharSequence> adapterForCity = ArrayAdapter.createFromResource(this,R.array.city_name,android.R.layout.simple_spinner_item);
+        adapterForCity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        citySpinner.setAdapter(adapterForCity);
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -129,7 +128,7 @@ public class ManageAccount extends AppCompatActivity {
 
     }
 
-    private void displaypic() {
+    private void displayPicture() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -137,18 +136,18 @@ public class ManageAccount extends AppCompatActivity {
 
                     User user = ds.getValue(User.class);
                     if (user.getUserId().equals(user_id)) {
-                        user_info_update_and_dispay = user;
+                        updateAndDisplayInfo = user;
 
                     }
                 }
-                profileView.setImageResource(iconList.getDrawableId(user_info_update_and_dispay.getProfileIcon()));
-                first_name.setText(user_info_update_and_dispay.getFirstName());
-                last_name.setText(user_info_update_and_dispay.getLastName());
-                birth_year.setText(user_info_update_and_dispay.getAge());
-                password.setText(user_info_update_and_dispay.getPassword());
-                email.setText(user_info_update_and_dispay.getEmail());
-                setSpinText(genderspinner,user_info_update_and_dispay.getGender());
-                setSpinText(citySpinner,user_info_update_and_dispay.getCity());
+                profileView.setImageResource(iconList.getDrawableId(updateAndDisplayInfo.getProfileIcon()));
+                firstName.setText(updateAndDisplayInfo.getFirstName());
+                lastName.setText(updateAndDisplayInfo.getLastName());
+                birthYear.setText(updateAndDisplayInfo.getAge());
+                password.setText(updateAndDisplayInfo.getPassword());
+                email.setText(updateAndDisplayInfo.getEmail());
+                setSpinText(genderSpinner, updateAndDisplayInfo.getGender());
+                setSpinText(citySpinner, updateAndDisplayInfo.getCity());
             }
 
             @Override
@@ -159,53 +158,31 @@ public class ManageAccount extends AppCompatActivity {
 
     }
 
-    public void updata_profilepic(DataSnapshot dataSnapshot)
+    public void updateProfilePicture(DataSnapshot dataSnapshot)
     {
         for(DataSnapshot ds:dataSnapshot.getChildren()) {
 
             User user = ds.getValue(User.class);
             if (user.getUserId().equals(user_id)) {
-                user_info_update_and_dispay = user;
+                updateAndDisplayInfo = user;
 
             }
         }
-        user_info_update_and_dispay.setFirstName(first_name.getText().toString());
-        user_info_update_and_dispay.setLastName(last_name.getText().toString());
-        user_info_update_and_dispay.setAge(birth_year.getText().toString());
-        user_info_update_and_dispay.setProfileIcon(imageName);
-        user_info_update_and_dispay.setEmail(email.getText().toString());
-        user_info_update_and_dispay.setGender(genderspinner.getSelectedItem().toString());
-        user_info_update_and_dispay.setCity(citySpinner.getSelectedItem().toString());
-        user_info_update_and_dispay.setPassword(password.getText().toString());
-        databaseReference.child(user_id).setValue(user_info_update_and_dispay);
+        updateAndDisplayInfo.setFirstName(firstName.getText().toString());
+        updateAndDisplayInfo.setLastName(lastName.getText().toString());
+        updateAndDisplayInfo.setAge(birthYear.getText().toString());
+        updateAndDisplayInfo.setProfileIcon(imageName);
+        updateAndDisplayInfo.setEmail(email.getText().toString());
+        updateAndDisplayInfo.setGender(genderSpinner.getSelectedItem().toString());
+        updateAndDisplayInfo.setCity(citySpinner.getSelectedItem().toString());
+        updateAndDisplayInfo.setPassword(password.getText().toString());
+        databaseReference.child(user_id).setValue(updateAndDisplayInfo);
 
-        Toast.makeText(ManageAccount.this,"Your data is Save",Toast.LENGTH_SHORT).show();
-        Intent movetoHome = new Intent(ManageAccount.this,drawerfromside.class);
-        startActivity(movetoHome);
+        Toast.makeText(ManageAccount.this,"Your data is Saved",Toast.LENGTH_SHORT).show();
+        Intent moveToHome = new Intent(ManageAccount.this,DrawerFromSide.class);
+        startActivity(moveToHome);
     }
 
-  /*  public void displayCurrentProfile(View view) {
-        databaseReference.addValueEventListener(new ValueEventListener() {
-           @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds:dataSnapshot.getChildren()) {
-
-                    User user = ds.getValue(User.class);
-                    if (user.getUserId().equals(user_id)) {
-                        user_info_update_and_dispay = user;
-
-                    }
-                }
-                profileView.setImageResource(iconList.getDrawableId(user_info_update_and_dispay.getProfileIcon()));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-    */
   public void setSpinText(Spinner spin, String text)
   {
       for(int i= 0; i < spin.getAdapter().getCount(); i++)

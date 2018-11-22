@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
-import com.t.teamten.greenfoodtracker.settingsforuser;
+import com.t.teamten.greenfoodtracker.SettingsForUser;
 
 import firebaseuser.Realtime_Pledge_Data;
 
@@ -82,7 +82,7 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.About:
                         Toast.makeText(HomeScreen.this,"Settings",Toast.LENGTH_SHORT).show();
-                        Intent intent2 = new Intent(HomeScreen.this,settingsforuser.class);
+                        Intent intent2 = new Intent(HomeScreen.this,SettingsForUser.class);
                         startActivity(intent2);
                         break;
                     case R.id.Pledge:

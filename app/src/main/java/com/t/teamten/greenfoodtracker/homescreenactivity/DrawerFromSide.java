@@ -39,7 +39,7 @@ import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
-import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
+import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity;
 
@@ -48,7 +48,7 @@ import java.util.Objects;
 import firebaseuser.User;
 import firebaseuser.Realtime_Pledge_Data;
 
-public class drawerfromside extends AppCompatActivity
+public class DrawerFromSide extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
     private TabLayout tabLayout;
@@ -61,7 +61,7 @@ public class drawerfromside extends AppCompatActivity
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    TextView texttoshow;
+    TextView textToShow;
     TextView email;
     ImageView icon;
 
@@ -71,7 +71,7 @@ public class drawerfromside extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawerfromside);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -83,7 +83,7 @@ public class drawerfromside extends AppCompatActivity
         iconList = new ProfileIconList(this);
         dialog = new Dialog(this);
 
-        postButton = (FloatingActionButton) findViewById(R.id.postButton);
+        postButton = findViewById(R.id.postButton);
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,18 +93,18 @@ public class drawerfromside extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View headerView = navigationView.getHeaderView(0);
-        texttoshow = (TextView) headerView.findViewById(R.id.nametoshow);
-        email = (TextView) headerView.findViewById(R.id.emailofuser);
-        icon = (ImageView) headerView.findViewById(R.id.imageicon);
+        textToShow = headerView.findViewById(R.id.nametoshow);
+        email = headerView.findViewById(R.id.emailofuser);
+        icon = headerView.findViewById(R.id.imageicon);
         displayname();
 
         viewPager = findViewById(R.id.viewPager2);
@@ -127,7 +127,7 @@ public class drawerfromside extends AppCompatActivity
                     User user = ds.getValue(User.class);
                     if (user.getUserId().equals(user_id)) {
                         user_info_update_and_dispay = user;
-                        texttoshow.setText(user.getFirstName()+" "+user.getLastName());
+                        textToShow.setText(user.getFirstName()+" "+user.getLastName());
                         email.setText(user.getEmail());
                         icon.setImageResource(iconList.getDrawableId(user.getProfileIcon()));
                     }
@@ -144,7 +144,7 @@ public class drawerfromside extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -181,16 +181,16 @@ public class drawerfromside extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.AboutheuserID) {
-            Intent movetoaboutpage = new Intent(drawerfromside.this, aboutactivity.class);
+            Intent movetoaboutpage = new Intent(DrawerFromSide.this, AboutActivity.class);
             startActivity(movetoaboutpage);
         } else if (id == R.id.SignoutuserID) {
             FirebaseAuth.getInstance().signOut();
-            Intent movetologin = new Intent(drawerfromside.this, FirebaseLogin.class);
+            Intent movetologin = new Intent(DrawerFromSide.this, FirebaseLogin.class);
             startActivity(movetologin);
             finish();
 
         } else if (id == R.id.DeleteUserID) {
-            AlertDialog.Builder builder= new AlertDialog.Builder(drawerfromside.this);
+            AlertDialog.Builder builder= new AlertDialog.Builder(DrawerFromSide.this);
             builder.setMessage("Are you sure to delete your account ?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -200,8 +200,8 @@ public class drawerfromside extends AppCompatActivity
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(drawerfromside.this, "Userdeleted", Toast.LENGTH_LONG).show();
-                                        Intent movetoLoginScreen = new Intent(drawerfromside.this, FirebaseLogin.class);
+                                        Toast.makeText(DrawerFromSide.this, "Userdeleted", Toast.LENGTH_LONG).show();
+                                        Intent movetoLoginScreen = new Intent(DrawerFromSide.this, FirebaseLogin.class);
                                         startActivity(movetoLoginScreen);
                                         finish();
                                     }
@@ -220,27 +220,27 @@ public class drawerfromside extends AppCompatActivity
             alert.show();
 
         } else if (id == R.id.manageuserID) {
-            Intent movetomanageaccount = new Intent (drawerfromside.this, ManageAccount.class);
+            Intent movetomanageaccount = new Intent (DrawerFromSide.this, ManageAccount.class);
             startActivity(movetomanageaccount);
         } else if (id == R.id.HomeID)
         {
-            Toast.makeText(drawerfromside.this, "This is Home Page ", Toast.LENGTH_LONG).show();
+            Toast.makeText(DrawerFromSide.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
-            Intent movetoPledgepage= new Intent (drawerfromside.this, Realtime_Pledge_Data.class);
+            Intent movetoPledgepage= new Intent (DrawerFromSide.this, Realtime_Pledge_Data.class);
             startActivity(movetoPledgepage);
         }else if (id == R.id.CalculatorID) {
-            Intent movetoCalc = new Intent(drawerfromside.this, CalcActivity.class);
+            Intent movetoCalc = new Intent(DrawerFromSide.this, CalcActivity.class);
             startActivity(movetoCalc);
         }else if (id == R.id.factsscreenID) {
-            Intent movetofacts = new Intent(drawerfromside.this,FactsActivity.class);
+            Intent movetofacts = new Intent(DrawerFromSide.this,FactsActivity.class);
             startActivity(movetofacts);
         }else if (id == R.id.nav_share) {
-            Intent movetosocialmedia = new Intent(drawerfromside.this, SocialMediaActivity.class);
+            Intent movetosocialmedia = new Intent(DrawerFromSide.this, SocialMediaActivity.class);
             startActivity(movetosocialmedia);
         } else if (id == R.id.nav_send) {
 
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

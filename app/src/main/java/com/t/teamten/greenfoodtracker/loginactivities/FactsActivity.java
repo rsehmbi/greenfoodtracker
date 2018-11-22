@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
-import com.t.teamten.greenfoodtracker.settingsforuser;
+import com.t.teamten.greenfoodtracker.SettingsForUser;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -20,8 +20,8 @@ public class FactsActivity extends AppCompatActivity {
     // Facts Activity so that the user can see random facts instead of using the Calculator all the time.
     TextView randomFacts;
     Button refreshButton;
-    InputStream streamcountlines;
-    BufferedReader readcounlines;
+    InputStream streamCountLines;
+    BufferedReader readCountLines;
 
     InputStream inputStream;
     BufferedReader bufferedReader;
@@ -31,26 +31,26 @@ public class FactsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts);
-        final fact factsObject= new fact();
+        final Fact factsObject= new Fact();
         randomFacts =(TextView) findViewById(R.id.factsID);
-        streamcountlines = this.getResources().openRawResource(R.raw.factstextfile);
-        readcounlines = new BufferedReader(new InputStreamReader(streamcountlines));
+        streamCountLines = this.getResources().openRawResource(R.raw.factstextfile);
+        readCountLines = new BufferedReader(new InputStreamReader(streamCountLines));
         try{
 
-            while(readcounlines.readLine() != null){
-                factsObject.setIntcount(factsObject.getIntcount()+1);
+            while(readCountLines.readLine() != null){
+                factsObject.setIntCount(factsObject.getIntCount()+1);
 
             }
-        }catch (Exception exceptiontoCatch){
+        } catch (Exception exceptiontoCatch){
             exceptiontoCatch.printStackTrace();
         }
 
         inputStream = this.getResources().openRawResource(R.raw.factstextfile);
         bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
-        factsObject.inititializingarray(factsObject.getIntcount());
+        factsObject.inititializingarray(factsObject.getIntCount());
         try {
-            for(int i = 0 ; i < factsObject.getIntcount();i++){
+            for(int i = 0 ; i < factsObject.getIntCount();i++){
                 factsObject.setTextdata(bufferedReader.readLine(),i);
             }
         }catch (Exception exceptiontoCatchforBufferReader ){
@@ -80,7 +80,7 @@ public class FactsActivity extends AppCompatActivity {
                     Intent i = new Intent(FactsActivity.this,HomeScreen.class);
                     startActivity(i);
                 }else if(x1 > x2){
-                    Intent i = new Intent(FactsActivity.this,settingsforuser.class);
+                    Intent i = new Intent(FactsActivity.this,SettingsForUser.class);
                     startActivity(i);
                 }
                 break;
