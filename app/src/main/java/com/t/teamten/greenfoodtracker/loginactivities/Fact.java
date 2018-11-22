@@ -10,8 +10,8 @@ public class Fact{
 
     Fact()
     {
-        textData = new String[intCount];
         intCount = 0;
+        textData = new String[intCount];
     }
 
     public void initializeArray(int index)
