@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +21,7 @@ import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.settingsforuser;
 
-import firebaseuser.UserProfile;
+import firebaseuser.Realtime_Pledge_Data;
 
 //HomeScreen contains the bottom navigation view and News feed to show the Data of other users.
 public class HomeScreen extends AppCompatActivity {
@@ -88,7 +87,7 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.Pledge:
                         Toast.makeText(HomeScreen.this,"Pledge",Toast.LENGTH_SHORT).show();
-                        Intent movetoPledge = new Intent(HomeScreen.this, UserProfile.class);
+                        Intent movetoPledge = new Intent(HomeScreen.this, Realtime_Pledge_Data.class);
                         startActivity(movetoPledge);
                 }
                 return true;

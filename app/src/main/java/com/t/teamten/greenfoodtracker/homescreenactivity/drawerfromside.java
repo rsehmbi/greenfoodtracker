@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -47,7 +46,7 @@ import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity
 import java.util.Objects;
 
 import firebaseuser.User;
-import firebaseuser.UserProfile;
+import firebaseuser.Realtime_Pledge_Data;
 
 public class drawerfromside extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -227,7 +226,7 @@ public class drawerfromside extends AppCompatActivity
         {
             Toast.makeText(drawerfromside.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
-            Intent movetoPledgepage= new Intent (drawerfromside.this,UserProfile.class);
+            Intent movetoPledgepage= new Intent (drawerfromside.this, Realtime_Pledge_Data.class);
             startActivity(movetoPledgepage);
         }else if (id == R.id.CalculatorID) {
             Intent movetoCalc = new Intent(drawerfromside.this, CalcActivity.class);

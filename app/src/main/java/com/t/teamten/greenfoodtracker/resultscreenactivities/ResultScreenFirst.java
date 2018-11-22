@@ -9,7 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.calcactivities.CalculatorActivityData;
@@ -19,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import firebaseuser.Realtime_Pledge_Data;
 import foodandco2.FoodData;
 import lecho.lib.hellocharts.model.PieChartData;
 import lecho.lib.hellocharts.model.SliceValue;
@@ -29,9 +35,11 @@ public class ResultScreenFirst extends AppCompatActivity {
     private ArrayList<String> seek_bar_name ;
     private ArrayList<Integer> seek_bar_data;
     private FoodData foodData;
+    private FirebaseUser mUser;
+    private DatabaseReference mDatabase;
 
-
-    Button mNext_Activity;
+    Integer Total_Saved;
+    Button mPledge_Savings;
     SeekBar mBeefBar;
     SeekBar mLambBar;
     SeekBar mEggBar;
@@ -46,6 +54,8 @@ public class ResultScreenFirst extends AppCompatActivity {
     TextView mAdjustedRadiator;
     TextView mSavedCar;
     TextView mSavedRadiator;
+    TextView mTextview_On_Screen;
+    TextView mSaved_In_Tonnes;
 
 
 
@@ -58,11 +68,12 @@ public class ResultScreenFirst extends AppCompatActivity {
         setContentView(R.layout.activity_result_screen_first);
         seek_bar_name = new ArrayList<>();
         seek_bar_data = new ArrayList<>();
+        Total_Saved = 0;
 
         final CalculatorActivityData userInput = getIntent().getParcelableExtra(CalcActivity.DATA_PASSED_FROM_MAINACTIVITY);
 
 
-        mNext_Activity = findViewById(R.id.go_to_next_activity);
+        mPledge_Savings = findViewById(R.id.Pledge_saving);
         mBeefBar = findViewById(R.id.beef_seekbar);
         mBeanBar = findViewById(R.id.bean_seekbar);
         mChickenBar = findViewById(R.id.chicken_seekbar);
@@ -77,6 +88,9 @@ public class ResultScreenFirst extends AppCompatActivity {
         mSavedCar = findViewById(R.id.car_saving);
         mCurrentCar = findViewById(R.id.car_current);
         mCurrentRadiator = findViewById(R.id.radiator_current);
+        mTextview_On_Screen = findViewById(R.id.saving_or_more);
+        mSaved_In_Tonnes = findViewById(R.id.Tonnes);
+
 
         try {
             foodData = new FoodData(this.getApplicationContext());
@@ -87,17 +101,17 @@ public class ResultScreenFirst extends AppCompatActivity {
         final Integer totalEmission = (int) new ResultScreenFirstDataHandler(this).total_emission(userInput, foodData);
         set_textview_for_current_diet(totalEmission);
         initialize_seek_bar_data(userInput);
-       // initially_set_seekbar_data(seek_bar_data,seek_bar_name);
-        generate_graph(seek_bar_data,seek_bar_name);
+        generate_graph();
 
 
 
         mBeefBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
             }
 
             @Override
@@ -113,9 +127,10 @@ public class ResultScreenFirst extends AppCompatActivity {
         mPorkBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
             }
 
             @Override
@@ -131,9 +146,10 @@ public class ResultScreenFirst extends AppCompatActivity {
         mFishBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
             }
 
             @Override
@@ -149,9 +165,10 @@ public class ResultScreenFirst extends AppCompatActivity {
         mChickenBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
             }
 
             @Override
@@ -168,9 +185,10 @@ public class ResultScreenFirst extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
 
             }
 
@@ -187,10 +205,10 @@ public class ResultScreenFirst extends AppCompatActivity {
         mEggBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mBeefBar.setProgress(seek_bar_data.get(0));
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
             }
 
             @Override
@@ -206,9 +224,10 @@ public class ResultScreenFirst extends AppCompatActivity {
         mBeanBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
             }
 
             @Override
@@ -224,9 +243,10 @@ public class ResultScreenFirst extends AppCompatActivity {
         mLambBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                set_changes_to_dataset(seek_bar_data,seek_bar_name);
-                set_changese_to_saving_and_adjusted(totalEmission);
-                generate_graph(seek_bar_data,seek_bar_name);
+                set_changes_to_dataset();
+                set_changese_to_saving_and_adjusted();
+                Total_Saved =set_text_to_textview();
+                generate_graph();
 
             }
 
@@ -246,10 +266,16 @@ public class ResultScreenFirst extends AppCompatActivity {
 
 
 
-        mNext_Activity.setOnClickListener(new View.OnClickListener()
+        mPledge_Savings.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent intent = new Intent(ResultScreenFirst.this, ResultScreenSecond.class);
+                Toast toast = Toast.makeText(getApplicationContext(), "Check Your Pledge On Your Pledge Page", Toast.LENGTH_SHORT);
+                toast.show();
+                mUser = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = mUser.getUid();
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+                mDatabase.child("users").child(uid).child("pledge").setValue(Total_Saved.toString());
+                Intent intent = new Intent(ResultScreenFirst.this, Realtime_Pledge_Data.class);
                 startActivity(intent);
             }
 
@@ -385,8 +411,7 @@ public class ResultScreenFirst extends AppCompatActivity {
 
 
 
-    public void generate_graph(ArrayList<Integer> seek_bar_data, ArrayList<String> seek_bar_name) {
-        Random rnd = new Random();
+    public void generate_graph() {
         List pieData = new ArrayList<>(8);
         PieChartView data_chart;
         data_chart = findViewById(R.id.PieChart);
@@ -400,7 +425,7 @@ public class ResultScreenFirst extends AppCompatActivity {
 
     }
 
-    public void set_changes_to_dataset(ArrayList<Integer> seek_bar_data, ArrayList<String> seek_bar_name)
+    public void set_changes_to_dataset()
     {
         String name;
         for(int i = 0; i< seek_bar_data.size(); i++)
@@ -425,7 +450,7 @@ public class ResultScreenFirst extends AppCompatActivity {
         }
     }
 
-    public void set_changese_to_saving_and_adjusted(Integer totalEmission)
+    public void set_changese_to_saving_and_adjusted()
     {
         final Integer total_after_adjustment = (int) new ResultScreenFirstDataHandler(this).total_emission(seek_bar_name,seek_bar_data, foodData);
 
@@ -437,11 +462,24 @@ public class ResultScreenFirst extends AppCompatActivity {
         Integer car_saved;
         Integer radiator_saved;
         car_saved = Integer.parseInt(mCurrentCar.getText().toString()) - car_adjusted;
+        if (car_saved<0)
+            car_saved = 0;
         mSavedCar.setText(Integer.toString(car_saved));
         radiator_saved = Integer.parseInt(mCurrentRadiator.getText().toString())- radiator_adjusted;
+        if (radiator_saved<0)
+            radiator_saved = 0;
         mSavedRadiator.setText(Integer.toString(radiator_saved));
 
 
+    }
+
+    public Integer set_text_to_textview()
+    {
+        Integer Total_Savings =  (Integer.parseInt(mCurrentCar.getText().toString()) - Integer.parseInt(mAdjustedCar.getText().toString()))*9/4000;
+        Total_Savings = Total_Savings + (Integer.parseInt(mCurrentRadiator.getText().toString()) - Integer.parseInt(mAdjustedRadiator.getText().toString()))/1000;
+        mTextview_On_Screen.setText("Your CO2 Saving In Tonnes ");
+        mSaved_In_Tonnes.setText(Total_Savings.toString());
+        return Total_Savings;
     }
 
 }

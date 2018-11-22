@@ -20,7 +20,7 @@ import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
 import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 
-import firebaseuser.UserProfile;
+import firebaseuser.Realtime_Pledge_Data;
 
 //setting:about,manage account, delete user...
 public class settingsforuser extends AppCompatActivity {
@@ -57,7 +57,7 @@ public class settingsforuser extends AppCompatActivity {
                         break;
                     case R.id.Pledge:
                         Toast.makeText(settingsforuser.this,"Pledge",Toast.LENGTH_SHORT).show();
-                        Intent movetoPledge = new Intent(settingsforuser.this, UserProfile.class);
+                        Intent movetoPledge = new Intent(settingsforuser.this, Realtime_Pledge_Data.class);
                         startActivity(movetoPledge);
                         break;
                     case R.id.Newsfeed:

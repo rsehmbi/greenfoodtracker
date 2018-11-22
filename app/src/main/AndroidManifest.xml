@@ -25,7 +25,7 @@
         <activity android:name=".resultscreenactivities.ResultScreenSecond" />
         <activity android:name=".loginactivities.UserRegisteration" />
         <activity android:name="firebaseuser.deleteuser" />
-        <activity android:name="firebaseuser.UserProfile" />
+        <activity android:name="firebaseuser.Realtime_Pledge_Data" />
         <activity android:name=".resultscreenactivities.SocialMediaActivity" />
 
         <meta-data
@@ -51,7 +51,8 @@
         <activity
             android:name=".homescreenactivity.drawerfromside"
             android:label="@string/title_activity_drawerfromside"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name="firebaseuser.User_Profile"></activity>
     </application>
 
 </manifest>

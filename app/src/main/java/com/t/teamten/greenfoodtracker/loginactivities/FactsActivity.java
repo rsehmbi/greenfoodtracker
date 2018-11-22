@@ -1,28 +1,20 @@
 package com.t.teamten.greenfoodtracker.loginactivities;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
-import com.t.teamten.greenfoodtracker.loginactivities.fact;
 import com.t.teamten.greenfoodtracker.settingsforuser;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import firebaseuser.UserProfile;
 
 public class FactsActivity extends AppCompatActivity {
     // Facts Activity so that the user can see random facts instead of using the Calculator all the time.
