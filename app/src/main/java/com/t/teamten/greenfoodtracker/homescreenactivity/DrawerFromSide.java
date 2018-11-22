@@ -114,6 +114,7 @@ public class DrawerFromSide extends AppCompatActivity
 
         tabLayout.getTabAt(0).setText(R.string.meals);
         tabLayout.getTabAt(1).setText(R.string.pledges);
+        tabLayout.getTabAt(2).setText("My Meal");
     }
 
     private void displayName() {
