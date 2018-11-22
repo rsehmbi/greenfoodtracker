@@ -186,7 +186,6 @@ public class DrawerFromSide extends AppCompatActivity
             Intent movetologin = new Intent(DrawerFromSide.this, FirebaseLogin.class);
             startActivity(movetologin);
             finish();
-
         } else if (id == R.id.DeleteUserID) {
             AlertDialog.Builder builder= new AlertDialog.Builder(DrawerFromSide.this);
             builder.setMessage("Are you sure to delete your account ?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
