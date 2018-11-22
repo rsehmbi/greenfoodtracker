@@ -196,4 +196,18 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+
+    <string name="my_meal">My Meal</string>
+    <string name="mainprotein">Meal\'s main protein</string>
+    <string name="pledge_filter">Pledge Filter</string>
+    <string name="my_meals">My Meals</string>
+
+    <string-array name="proteinlist">
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Fish</item>
+        <item>Lamb</item>
+        <item>Vegetarian</item>
+        <item>Other</item>
+    </string-array>
 </resources>

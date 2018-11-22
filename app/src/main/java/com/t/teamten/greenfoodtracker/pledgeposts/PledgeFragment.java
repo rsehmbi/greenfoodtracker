@@ -1,14 +1,18 @@
 package com.t.teamten.greenfoodtracker.pledgeposts;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +34,14 @@ public class PledgeFragment extends Fragment {
     private List<PledgePost> posts;
     private RecyclerView recyclerView;
     private PledgeRecyclerViewAdapter adapter;
+    private Dialog filterDialog;
+    private FloatingActionButton pledgeFloatingButton;
+
+    private List<PledgePost> newPosts;
+    private Spinner spinner;
+    private Button filterButton;
+    private String city;
+
 
     public PledgeFragment() {
         // Required empty public constructor
@@ -45,8 +57,7 @@ public class PledgeFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @NonNull Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        recyclerView = view.findViewById(R.id.pledgeListView);
+        recyclerView = (RecyclerView) view.findViewById(R.id.pledgeListView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -75,5 +86,38 @@ public class PledgeFragment extends Fragment {
 
             }
         });
+
+        pledgeFloatingButton = (FloatingActionButton) view.findViewById(R.id.pledgeFloatingButton);
+        pledgeFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filterDialog = new Dialog(getActivity());
+                filterDialog.setContentView(R.layout.pledge_filter);
+                filterDialog.show();
+
+                spinner = (Spinner) filterDialog.findViewById(R.id.citySpinner);
+                filterButton = (Button) filterDialog.findViewById(R.id.filterPledgeButton);
+                filterButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        city = spinner.getSelectedItem().toString();
+                        newPosts = setNewPledgePosts(city);
+                        adapter = new PledgeRecyclerViewAdapter(getActivity(), newPosts);
+                        recyclerView.setAdapter(adapter);
+                    }
+                });
+            }
+        });
+    }
+
+    private List<PledgePost> setNewPledgePosts(String location) {
+        List<PledgePost> updatePost = new ArrayList<>();
+        for(PledgePost post: posts) {
+            if(post.getLocation().equals(location)) {
+                updatePost.add(post);
+            }
+        }
+
+        return updatePost;
     }
 }

@@ -37,6 +37,12 @@
             android:layout_height="wrap_content"
             android:text="@string/pledges" />
 
+        <android.support.design.widget.TabItem
+            android:id="@+id/myMeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_meals"/>
+
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
@@ -44,7 +50,9 @@
         android:layout_width="match_parent"
         android:layout_height="410dp"
         android:layout_below="@+id/tablayout"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-4dp" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_view"
@@ -69,8 +77,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="118dp"
         android:src="@android:drawable/ic_dialog_email"
         app:useCompatPadding="true" />
 
