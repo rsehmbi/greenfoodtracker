@@ -10,6 +10,8 @@
     <string name="submit_calc1">Submit Results</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+
+
     <string-array name="food_array">
         <item>Lamb</item>
         <item>Beef</item>
