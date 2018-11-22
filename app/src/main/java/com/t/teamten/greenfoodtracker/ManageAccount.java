@@ -59,7 +59,7 @@ public class ManageAccount extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    updata_profilepic(dataSnapshot);
+                    update_profilepic(dataSnapshot);
                 }
 
                 @Override
@@ -96,7 +96,7 @@ public class ManageAccount extends AppCompatActivity {
 
     }
 
-    public void updata_profilepic(DataSnapshot dataSnapshot)
+    public void update_profilepic(DataSnapshot dataSnapshot)
     {
         for(DataSnapshot ds:dataSnapshot.getChildren()) {
 

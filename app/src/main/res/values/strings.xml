@@ -50,7 +50,6 @@
     <string name="save">Save</string>
 
     <string name="city_prompt">Choose your Location</string>
-    <string name="filter">Filter</string>
     <string-array name="city_name">
         <item>Metro Vancouver</item>
         <item>Vancouver</item>
@@ -189,4 +188,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="meals">Meals</string>
     <string name="pledges">Pledges</string>
+
+    <string name="mainprotein">Meal\'s main protein</string>
+    <string name="my_meals">My meals</string>
+    <string name="filter">Filter</string>
+t
+    <string-array name="proteinlist">
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Fish</item>
+        <item>Lamb</item>
+        <item>Vegetarian</item>
+        <item>Other</item>
+    </string-array>
 </resources>

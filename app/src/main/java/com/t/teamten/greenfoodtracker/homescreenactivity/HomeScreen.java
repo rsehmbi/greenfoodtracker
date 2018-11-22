@@ -9,6 +9,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.t.teamten.greenfoodtracker.R;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
+import com.t.teamten.greenfoodtracker.mealposts.AddMealFragment;
 import com.t.teamten.greenfoodtracker.settingsforuser;
 
 import firebaseuser.UserProfile;
@@ -41,6 +43,7 @@ public class HomeScreen extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("News Feed");
+        //setSupportActionBar(toolbar); ///
 
         tabLayout = findViewById(R.id.tablayout);
 
@@ -52,16 +55,15 @@ public class HomeScreen extends AppCompatActivity {
 
         tabLayout.getTabAt(0).setText(R.string.meals);
         tabLayout.getTabAt(1).setText(R.string.pledges);
-
-        dialog = new Dialog(this);
+        tabLayout.getTabAt(2).setText(R.string.my_meals);
 
         postButton = (FloatingActionButton) findViewById(R.id.postButton);
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.setContentView(R.layout.activity_add_meal_acitivty);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+                FragmentManager manager = getSupportFragmentManager();
+                AddMealFragment mealFragment = AddMealFragment.newInstanceFragment("Post");
+                mealFragment.show(manager, "fragment_add_meal");
             }
         });
 

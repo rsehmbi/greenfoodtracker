@@ -1,8 +1,10 @@
 package com.t.teamten.greenfoodtracker.pledgeposts;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -30,6 +32,9 @@ public class PledgeFragment extends Fragment {
     private List<PledgePost> posts;
     private RecyclerView recyclerView;
     private PledgeRecyclerViewAdapter adapter;
+    private Dialog filterDialog;
+    private FloatingActionButton pledgeFloatingButton;
+
 
     public PledgeFragment() {
         // Required empty public constructor
@@ -45,6 +50,15 @@ public class PledgeFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @NonNull Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        pledgeFloatingButton = (FloatingActionButton) view.findViewById(R.id.pledgeFloatingButton);
+        pledgeFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filterDialog = new Dialog(getActivity());
+                filterDialog.setContentView(R.layout.pledge_fillter);
+                filterDialog.show();
+            }
+        });
 
         recyclerView = (RecyclerView) view.findViewById(R.id.pledgeListView);
         recyclerView.setHasFixedSize(true);

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.t.teamten.greenfoodtracker.mealposts.MealFragment;
+import com.t.teamten.greenfoodtracker.mymealposts.MyMealPostFragment;
 import com.t.teamten.greenfoodtracker.pledgeposts.PledgeFragment;
 
 public class NewsPagerAdapter extends FragmentPagerAdapter {
@@ -21,6 +22,8 @@ public class NewsPagerAdapter extends FragmentPagerAdapter {
             return new MealFragment();
         } else if(position == 1) {
             return new PledgeFragment();
+        } else if(position == 2) {
+            return new MyMealPostFragment();
         } else {
             return null;
         }
