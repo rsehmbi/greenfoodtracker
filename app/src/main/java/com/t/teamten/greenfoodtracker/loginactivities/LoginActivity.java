@@ -2,6 +2,7 @@ package com.t.teamten.greenfoodtracker.loginactivities;
 
 public class LoginActivity {
 
+//login activity data class
     private String username;
     private int age;
 
