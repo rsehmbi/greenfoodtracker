@@ -53,7 +53,7 @@ public class DrawerFromSide extends AppCompatActivity
     private ViewPager viewPager;
     private NewsPageAdapter pagerAdapter;
     private FloatingActionButton postButton;
-    private String user_id;
+    private String userId;
     private ProfileIconList iconList;
     private User userInfo;
     private FirebaseAuth firebaseAuth;
@@ -75,7 +75,7 @@ public class DrawerFromSide extends AppCompatActivity
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
-        user_id = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
+        userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
         userInfo =  new User();
 
         iconList = new ProfileIconList(this);
@@ -123,7 +123,7 @@ public class DrawerFromSide extends AppCompatActivity
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
 
                     User user = ds.getValue(User.class);
-                    if (user.getUserId().equals(user_id)) {
+                    if (user.getUserId().equals(userId)) {
                         userInfo = user;
                         textToShow.setText(user.getFirstName()+" "+user.getLastName());
                         email.setText(user.getEmail());
