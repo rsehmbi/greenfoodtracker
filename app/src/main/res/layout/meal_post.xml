@@ -46,14 +46,11 @@
 
     </RelativeLayout>
 
+
     <ImageView
         android:id="@+id/deleteImageView"
         android:layout_width="44dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-28dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/relativeOne"
-        android:adjustViewBounds="true"
         android:visibility="gone"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
@@ -107,7 +104,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearOne"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="-60dp"
         android:textSize="15sp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </RelativeLayout>
