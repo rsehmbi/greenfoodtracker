@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import firebaseuser.Realtime_Pledge_Data;
+import firebaseuser.RealtimePledgeData;
 import userdata.UserData;
 
 public class CalcActivity extends AppCompatActivity {
@@ -170,7 +170,7 @@ public class CalcActivity extends AppCompatActivity {
                 if (x1 < x2) {
 
                 } else if (x1 > x2) {
-                    Intent i = new Intent(CalcActivity.this, Realtime_Pledge_Data.class);
+                    Intent i = new Intent(CalcActivity.this, RealtimePledgeData.class);
                     startActivity(i);
                 }
                 break;

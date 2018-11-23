@@ -99,7 +99,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/textboxshape"
-            android:textAlignment="center"
+            android:gravity="top|left"
             android:hint="Add meal description"/>
 
         <Button

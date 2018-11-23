@@ -44,7 +44,7 @@ import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity
 
 import java.util.Objects;
 
-import firebaseuser.Realtime_Pledge_Data;
+import firebaseuser.RealtimePledgeData;
 import firebaseuser.User;
 
 public class DrawerFromSide extends AppCompatActivity
@@ -224,7 +224,7 @@ public class DrawerFromSide extends AppCompatActivity
         {
             Toast.makeText(DrawerFromSide.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
-            Intent moveToPledgePage = new Intent (DrawerFromSide.this, Realtime_Pledge_Data.class);
+            Intent moveToPledgePage = new Intent (DrawerFromSide.this, RealtimePledgeData.class);
             startActivity(moveToPledgePage);
         }else if (id == R.id.CalculatorID) {
             Intent moveToCalc = new Intent(DrawerFromSide.this, CalcActivity.class);

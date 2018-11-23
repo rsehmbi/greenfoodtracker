@@ -68,7 +68,7 @@ public class MealFragment extends Fragment {
     public void onViewCreated(View view, @NonNull Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.mealListView);
+        recyclerView = view.findViewById(R.id.mealListView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -108,7 +108,7 @@ public class MealFragment extends Fragment {
             }
         });
 
-        mealFloatingButton = (FloatingActionButton) view.findViewById(R.id.mealFloatingButton);
+        mealFloatingButton = view.findViewById(R.id.mealFloatingButton);
         mealFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,11 +116,11 @@ public class MealFragment extends Fragment {
                 filterDialog.setContentView(R.layout.meal_filter);
                 filterDialog.show();
 
-                citySpinner = (Spinner) filterDialog.findViewById(R.id.citySpinner);
-                proteinSpinner = (Spinner) filterDialog.findViewById(R.id.proteinSpinner);
-                withImageSpinner = (Spinner) filterDialog.findViewById(R.id.withImageSpinner);
+                citySpinner = filterDialog.findViewById(R.id.citySpinner);
+                proteinSpinner = filterDialog.findViewById(R.id.proteinSpinner);
+                withImageSpinner = filterDialog.findViewById(R.id.withImageSpinner);
 
-                filterButton = (Button) filterDialog.findViewById(R.id.filterMealButton);
+                filterButton = filterDialog.findViewById(R.id.filterMealButton);
                 filterButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
