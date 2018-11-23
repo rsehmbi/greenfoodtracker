@@ -59,6 +59,7 @@ public class AddMealFragment extends DialogFragment {
 
     private ImageView mealImage;
     private Spinner spinner;
+    private Spinner locationSpinner;
     private Button postButton;
 
     private MealPost post;
@@ -113,7 +114,8 @@ public class AddMealFragment extends DialogFragment {
 
         mealNameText = (EditText) view.findViewById(R.id.mealNameText);
         restauantNameText = (EditText) view.findViewById(R.id.restaurantNameText);
-        restaurantLocationText = (EditText) view.findViewById(R.id.restaurantLocationText);
+        //restaurantLocationText = (EditText) view.findViewById(R.id.restaurantLocationText);
+        locationSpinner = (Spinner) view.findViewById(R.id.locationSpinner);
         mealDescriptionText = (EditText) view.findViewById(R.id.mealDescriptionText);
         spinner = (Spinner) view.findViewById(R.id.proteinSpinner);
         ///////////////////////////////////////
@@ -153,7 +155,7 @@ public class AddMealFragment extends DialogFragment {
             public void onClick(View v) {
                 mealName = mealNameText.getText().toString();
                 restaurantName = restauantNameText.getText().toString();
-                restaurantLocation = restaurantLocationText.getText().toString();
+                restaurantLocation = locationSpinner.getSelectedItem().toString();
                 mealDescription = mealDescriptionText.getText().toString();
                 mealProtein = spinner.getSelectedItem().toString();
 

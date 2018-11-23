@@ -85,7 +85,7 @@ public class DrawerFromSide extends AppCompatActivity
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.setContentView(R.layout.activity_add_meal_acitivty);
+                dialog.setContentView(R.layout.fragment_add_meal);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
@@ -105,8 +105,8 @@ public class DrawerFromSide extends AppCompatActivity
         icon = headerView.findViewById(R.id.imageicon);
         displayName();
 
-        viewPager = findViewById(R.id.viewPager2);
-        tabLayout = findViewById(R.id.tablayout2);
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
 
         pagerAdapter = new NewsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
@@ -114,6 +114,7 @@ public class DrawerFromSide extends AppCompatActivity
 
         tabLayout.getTabAt(0).setText(R.string.meals);
         tabLayout.getTabAt(1).setText(R.string.pledges);
+        tabLayout.getTabAt(2).setText(R.string.my_meals);
     }
 
     private void displayName() {

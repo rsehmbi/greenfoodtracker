@@ -104,6 +104,7 @@ public class PledgeFragment extends Fragment {
                         newPosts = setNewPledgePosts(city);
                         adapter = new PledgeRecyclerViewAdapter(getActivity(), newPosts);
                         recyclerView.setAdapter(adapter);
+                        filterDialog.dismiss();
                     }
                 });
             }
