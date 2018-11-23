@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "150359459133",
+    "firebase_url": "https://greenfoodchallenge-f6faa.firebaseio.com",
+    "project_id": "greenfoodchallenge-f6faa",
+    "storage_bucket": "greenfoodchallenge-f6faa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150359459133:android:0aefac40439f91f2",
+        "android_client_info": {
+          "package_name": "com.t.teamten.greenfoodtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150359459133-bljegrsibklbaj6dnr7u52qhttrh4gks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.t.teamten.greenfoodtracker",
+            "certificate_hash": "acb08eccc6f58b768b32fb35d18f3930ad104fe4"
+          }
+        },
+        {
+          "client_id": "150359459133-937d48if7jr73l7hglv4tu37hom8ri8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAOSJvYrssaQTojJx97hKA9VF4Zx0nNO0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150359459133-937d48if7jr73l7hglv4tu37hom8ri8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/Calculator"
+        android:enabled="true"
+        android:icon="@drawable/calculator"
+        android:title="Calc"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/Pledge"
+        android:enabled="true"
+        android:title="Pledge"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/pledge"/>
+
+    <item
+        android:id="@+id/Newsfeed"
+        android:enabled="true"
+        android:title="Home"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ihome"/>
+
+    <item
+        android:id="@+id/Facts"
+        android:enabled="true"
+        android:icon="@drawable/facts"
+        android:title="Facts"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/About"
+        android:enabled="true"
+        android:icon="@drawable/settings"
+        android:title="Settings"
+        app:showAsAction="ifRoom" />
+</menu>

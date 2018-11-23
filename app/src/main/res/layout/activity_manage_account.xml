@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/factsback"
+    tools:context=".ManageAccount"
+    tools:layout_editor_absoluteY="25dp">
+
+    <Spinner
+        android:id="@+id/genderId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="299dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="44dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/EmailID"
+        app:layout_constraintEnd_toStartOf="@+id/citySpinner"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/genderId"
+        app:layout_constraintTop_toTopOf="@+id/genderId" />
+
+
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="16dp"
+        android:hint="First Name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/genderId"
+        app:layout_constraintEnd_toStartOf="@+id/last_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageNameSpinner" />
+
+    <EditText
+        android:id="@+id/EmailID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="131dp"
+        android:hint="Email"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderId" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="177dp"
+        android:password="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="152dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="19dp"
+        android:hint="Last Name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/citySpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/first_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="299dp"
+        android:layout_marginEnd="25dp"
+        android:hint="Age"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/genderId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profileChangeView"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageNameSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/userimage" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="180dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="34dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailID">
+
+        <Button
+            android:id="@+id/updateProfileButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="433dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Save" />
+
+    </android.support.v7.widget.CardView>
+
+
+    <Spinner
+        android:id="@+id/imageNameSpinner"
+        android:layout_width="113dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="15dp"
+        android:entries="@array/icon_Name_Array"
+        app:layout_constraintBottom_toTopOf="@+id/last_name"
+        app:layout_constraintEnd_toStartOf="@+id/last_name"
+        app:layout_constraintStart_toStartOf="@+id/last_name"
+        app:layout_constraintTop_toBottomOf="@+id/profileChangeView" />
+
+
+</android.support.constraint.ConstraintLayout>

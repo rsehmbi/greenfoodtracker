@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="350dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:title="@string/filter_meals">
+    </Toolbar>
+
+    <Spinner
+        android:id="@+id/citySpinner"
+        android:layout_width="199dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:entries="@array/city_name">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/proteinSpinner"
+        android:layout_width="199dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:entries="@array/proteinArray">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/withImageSpinner"
+        android:layout_width="199dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:entries="@array/hasImage">
+    </Spinner>
+
+    <Button
+        android:id="@+id/filterMealButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/filter"/>
+</LinearLayout>

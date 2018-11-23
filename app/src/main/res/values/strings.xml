@@ -1,0 +1,230 @@
+<resources>
+    <string name="app_name">Green Food Tracker</string>
+    <string name="title_activity_about_page">AboutPageActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="intro_description_percentage">How often do you eat these food?</string>
+    <string name="intro_description_number">What number of times do you eat these foods per week?</string>
+    <string name="freq">a little</string>
+    <string name="freq1">a lot</string>
+    <string name="submit_calc1">Submit Results</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string-array name="food_array">
+        <item>Lamb</item>
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Chicken</item>
+        <item>Beans</item>
+        <item>Fish</item>
+        <item>Eggs</item>
+        <item>Vegetables</item>
+    </string-array>
+
+
+    <string name="result2_intro">You can choose a meal plan to reduce CO2e!</string>
+    <string name="heading">Click here to learn more about meal plans</string>
+    <string name="meal1">Meat-Eater Plan</string>
+    <string name="meal2">Low Meat Plan</string>
+    <string name="meal3">Plant-based Plan</string>
+    <string name="mealPlansInfo">Plan 1: Meat_Eater Plan: Change 50% of lamb and beef to chicken\n
+        Plan 2: Low Meat Plan: Change 50% of lamb and beef to vegetable\n
+        Plan 3: Plant-Based plan: Change all meat to vegetable
+    </string>
+    <string name="goBack">Go Back To Home Page</string>
+    <string name="sharedPledge">Share Pledge</string>
+    <string name="send_to_pledge">Pledge this amount</string>
+    <string name="text_shown_1">This is equivalent to :</string>
+    <string name="text_shown_2">Choose another meal plan, you can save our planet!</string>
+    <string name="text_shown_3">Driving </string>
+    <string name="text_shown_4">km on road</string>
+    <string name="text_shown_5">Keep air conditioning on for </string>
+    <string name="text_shown_6">hours</string>
+    <string name="text_shown_7">This is your CO2 emission based on your current diet</string>
+    <string name="button_text_shown_1">Click here to choose another plan</string>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="age">Age</string>
+    <string name="city">Your City</string>
+    <string name="user_pledge">Your Pledge Amount Per Year is: </string>
+    <string name="change_plan">Click Here To Change Pledge</string>
+    <string name="save">Save</string>
+
+    <string name="city_prompt">Choose your Location</string>
+    <string name="filter">Filter</string>
+    <string-array name="city_name">
+        <item>Metro Vancouver</item>
+        <item>Vancouver</item>
+        <item>Burnaby</item>
+        <item>Coquitlam</item>
+        <item>Surrey</item>
+        <item>Richmond</item>
+        <item>Langley</item>
+        <item>Delta</item>
+        <item>Maple Ridge</item>
+        <item>New Westminster</item>
+        <item>Port Coquitlam</item>
+        <item>North Vancouver</item>
+        <item>Port Moody</item>
+        <item>White Rock</item>
+        <item>Pitt Meadows</item>
+    </string-array>
+    <string name="facebook_app_id">210519083041701</string>
+    <string name="ACCESS_TOKEN">2207516894-5PhrpMS45sH9BMfzzdD5LP4x69b564Wgotj8ARS</string>
+    <string name="ACCESS_TOKEN_SECRET">yOwo34wzyN0zPicrALuCWQe5TUeNPH8giRpxwfgKfWXEX</string>
+    <string name="share">Select one of these social media platforms to share your pledge.\n        Share the app!</string>
+    <string name="sharedefault">Do you like the idea of having an environmentally friendly diet tracker?</string>
+    <string name="edittexthint">Enter your text here!</string>
+    <string name="shareoption">How would you like to share the pledge?</string>
+    <string name="pledged">Pledged</string>
+    <string name="tco2">tCo2</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="update_info">Update Info</string>
+
+    <string-array name="genderarray">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <integer-array name="icon_Array">
+        <item>@drawable/chick</item>
+        <item>@drawable/dog</item>
+        <item>@drawable/fox</item>
+        <item>@drawable/whale</item>
+    </integer-array>
+
+    <string-array name="icon_Name_Array">
+        <item>chick</item>
+        <item>dog</item>
+        <item>fox</item>
+        <item>whale</item>
+    </string-array>
+
+    <string name="intro">Use the sliders to change how much you eat</string>
+    <string name="title_activity_calc">calcActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_add_meal">Add a Meal!</string>
+
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display Name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_add_meal_acitivty">Add A Meal!</string>
+    <string name="editTextDescription">Add a short description! (Optional)</string>
+    <string name="editTextLocation">Where did you eat?</string>
+    <string name="editTextName">What did you eat?</string>
+    <string name="editTextRestaurant">Which restaurant did you eat at?</string>
+    <string name="autocompleteEditText">What\'s the main protein?</string>
+    <string name="addImageButton">Add a picture! (Optional)</string>
+    <string name="finishButton">Finish!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="meals">Meals</string>
+    <string name="pledges">Pledges</string>
+    <string name="title_activity_drawerfromside">drawerfromside</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="my_meal">My Meal</string>
+    <string name="mainprotein">Meal\'s main protein</string>
+    <string name="pledge_filter">Pledge Filter</string>
+    <string name="my_meals">My Meals</string>
+    <string name="filter_meals">Filter Meals</string>
+
+    <string-array name="proteinlist">
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Fish</item>
+        <item>Lamb</item>
+        <item>Vegetarian</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="proteinArray">
+        <item>All Protein</item>
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Fish</item>
+        <item>Lamb</item>
+        <item>Vegetarian</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="hasImage">
+        <item>With Image</item>
+        <item>No Image</item>
+        <item>Both</item>
+    </string-array>
+</resources>
