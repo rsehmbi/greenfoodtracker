@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -39,6 +40,7 @@ import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
+import com.t.teamten.greenfoodtracker.mealposts.AddMealFragment;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity;
 
@@ -85,9 +87,9 @@ public class DrawerFromSide extends AppCompatActivity
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.setContentView(R.layout.fragment_add_meal);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+                FragmentManager manager = getSupportFragmentManager();
+                AddMealFragment mealFragment = AddMealFragment.newInstanceFragment("Post");
+                mealFragment.show(manager, "fragment_add_meal");
             }
         });
 

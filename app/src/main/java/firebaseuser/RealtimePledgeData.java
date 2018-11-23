@@ -31,7 +31,7 @@ public class RealtimePledgeData extends AppCompatActivity {
     //Average amount
     private String calculateAverageAmount;
 
-    //for retriving user information
+    //for retrieving user information
     private String userId;
     private User updatedUser;
     private FirebaseAuth firebaseAuth;
