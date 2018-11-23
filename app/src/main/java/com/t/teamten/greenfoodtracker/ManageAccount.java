@@ -20,19 +20,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.homescreenactivity.DrawerFromSide;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 
 import java.util.Objects;
 
-import firebaseuser.Realtime_Pledge_Data;
 import firebaseuser.User;
 //Change and display profile picture
 public class ManageAccount extends AppCompatActivity {
     private DatabaseReference reference;
-    float x1,x2,y1,y2;
+    float movedown, movedownvalue, moveup, moveupvalue;
     private EditText firstName;
     private EditText lastName;
     private EditText birthYear;
@@ -202,17 +200,17 @@ public class ManageAccount extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
+                movedown = touchEvent.getX();
+                moveup = touchEvent.getY();
                 break;
             case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
-                if(x1 < x2){
+                movedownvalue = touchEvent.getX();
+                moveupvalue = touchEvent.getY();
+                if(movedown < movedownvalue){
                     Intent intent = new Intent(ManageAccount.this, FactsActivity.class);
                     startActivity(intent);
 
-                }else if(x1 > x2){
+                }else if(movedown > movedownvalue){
 
                 }
                 break;

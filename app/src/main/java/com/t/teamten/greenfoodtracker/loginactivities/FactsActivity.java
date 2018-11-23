@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.t.teamten.greenfoodtracker.ManageAccount;
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.SettingsForUser;
-import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -28,7 +26,7 @@ public class FactsActivity extends AppCompatActivity {
 
     InputStream inputStream;
     BufferedReader bufferedReader;
-    float x1,x2,y1,y2;
+    float moveup, moveupvalue, movedown, movedownvalue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,16 +71,16 @@ public class FactsActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
+                moveup = touchEvent.getX();
+                movedown = touchEvent.getY();
                 break;
             case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
-                if(x1 < x2){
+                moveupvalue = touchEvent.getX();
+                movedownvalue = touchEvent.getY();
+                if(moveup < moveupvalue){
                     Intent i = new Intent(FactsActivity.this, Realtime_Pledge_Data.class);
                     startActivity(i);
-                }else if(x1 > x2){
+                }else if(moveup > moveupvalue){
                     Intent i = new Intent(FactsActivity.this,ManageAccount.class);
                     startActivity(i);
                 }

@@ -244,8 +244,8 @@ public class DrawerFromSide extends AppCompatActivity
     }
 
     public void moveto(MenuItem item) {
-        Intent intent = new Intent(DrawerFromSide.this,ManageAccount.class);
-        startActivity(intent);
+        Intent movetomanageaccountpage = new Intent(DrawerFromSide.this,ManageAccount.class);
+        startActivity(movetomanageaccountpage);
         Toast.makeText(DrawerFromSide.this, "Opening Settings", Toast.LENGTH_LONG).show();
     }
 }

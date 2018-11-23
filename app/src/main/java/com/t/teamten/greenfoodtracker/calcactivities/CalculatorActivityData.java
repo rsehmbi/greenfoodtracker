@@ -18,7 +18,7 @@ public class CalculatorActivityData implements Parcelable {
     public CalculatorActivityData(Parcel in) {
         final int size = in.readInt();
         listFoodPairs = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
+        for (int index = 0; index < size; index++) {
             String first = in.readString();
             Integer second = in.readInt();
             Pair<String, Integer> addPair = new Pair(first, second);

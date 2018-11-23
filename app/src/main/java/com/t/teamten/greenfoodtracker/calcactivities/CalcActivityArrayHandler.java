@@ -17,40 +17,40 @@ public class CalcActivityArrayHandler {
     //pertains to the initialization of ui elements into array and setting to their respective ids
     public ArrayList<Spinner> populateSpinnerArray() { //this function allows for looping code in the spinners.
         ArrayList<Spinner> populatedArray = new ArrayList<>();
-        Spinner spinner1 = activity.findViewById(R.id.spinner1);
-        populatedArray.add(spinner1);
-        Spinner spinner2 = activity.findViewById(R.id.spinner2);
-        populatedArray.add(spinner2);
-        Spinner spinner3 = activity.findViewById(R.id.spinner3);
-        populatedArray.add(spinner3);
-        Spinner spinner4 = activity.findViewById(R.id.spinner4);
-        populatedArray.add(spinner4);
-        Spinner spinner5 = activity.findViewById(R.id.spinner5);
-        populatedArray.add(spinner5);
-        Spinner spinner6 = activity.findViewById(R.id.spinner6);
-        populatedArray.add(spinner6);
-        Spinner spinner7 = activity.findViewById(R.id.spinner7);
-        populatedArray.add(spinner7);
+        Spinner spinnerforfirstfood = activity.findViewById(R.id.spinner1);
+        populatedArray.add(spinnerforfirstfood);
+        Spinner spinnerforsecondfood = activity.findViewById(R.id.spinner2);
+        populatedArray.add(spinnerforsecondfood);
+        Spinner spinnerforthirdfood = activity.findViewById(R.id.spinner3);
+        populatedArray.add(spinnerforthirdfood);
+        Spinner spinnerforfourthfood = activity.findViewById(R.id.spinner4);
+        populatedArray.add(spinnerforfourthfood);
+        Spinner spinnerforfirftfood = activity.findViewById(R.id.spinner5);
+        populatedArray.add(spinnerforfirftfood);
+        Spinner spinnerforsixthfood = activity.findViewById(R.id.spinner6);
+        populatedArray.add(spinnerforsixthfood);
+        Spinner spinnerforseventhfood = activity.findViewById(R.id.spinner7);
+        populatedArray.add(spinnerforseventhfood);
 
         return populatedArray;
     }
 
     public ArrayList<SeekBar> populateSeekBarArray() {
         ArrayList<SeekBar> populatedArray = new ArrayList<>();
-        SeekBar seekBar1 = activity.findViewById(R.id.seekBar1);
-        populatedArray.add(seekBar1);
-        SeekBar seekBar2 = activity.findViewById(R.id.seekBar2);
-        populatedArray.add(seekBar2);
-        SeekBar seekBar3 = activity.findViewById(R.id.seekBar3);
-        populatedArray.add(seekBar3);
-        SeekBar seekBar4 = activity.findViewById(R.id.seekBar4);
-        populatedArray.add(seekBar4);
-        SeekBar seekBar5 = activity.findViewById(R.id.seekBar5);
-        populatedArray.add(seekBar5);
-        SeekBar seekBar6 = activity.findViewById(R.id.seekBar6);
-        populatedArray.add(seekBar6);
-        SeekBar seekBar7 = activity.findViewById(R.id.seekBar7);
-        populatedArray.add(seekBar7);
+        SeekBar seekbarforfirstfood = activity.findViewById(R.id.seekBar1);
+        populatedArray.add(seekbarforfirstfood);
+        SeekBar seekbarforsecondfood = activity.findViewById(R.id.seekBar2);
+        populatedArray.add(seekbarforsecondfood);
+        SeekBar seekbarforthirdfood = activity.findViewById(R.id.seekBar3);
+        populatedArray.add(seekbarforthirdfood);
+        SeekBar seekbarforfourthfood = activity.findViewById(R.id.seekBar4);
+        populatedArray.add(seekbarforfourthfood);
+        SeekBar seekbarforfifthfood = activity.findViewById(R.id.seekBar5);
+        populatedArray.add(seekbarforfifthfood);
+        SeekBar seekbarforsixthfood = activity.findViewById(R.id.seekBar6);
+        populatedArray.add(seekbarforsixthfood);
+        SeekBar seekbarforseventhfood = activity.findViewById(R.id.seekBar7);
+        populatedArray.add(seekbarforseventhfood);
 
         return populatedArray;
     }

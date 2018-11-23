@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.homescreenactivity.DrawerFromSide;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import java.io.IOException;
@@ -135,7 +136,7 @@ public class ResultScreenSecond extends AppCompatActivity {
         backToMain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ResultScreenSecond.this,HomeScreen.class);
+                intent.setClass(ResultScreenSecond.this,DrawerFromSide.class);
                 startActivity(intent);
             }
         });

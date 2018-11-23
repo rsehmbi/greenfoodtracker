@@ -38,7 +38,7 @@ public class CalcActivity extends AppCompatActivity {
     private LinkedList<Spinner> hiddenSpinnerQueue;
     private LinkedList<SeekBar> hiddenSeekbarQueue;
     private UserData userdata;
-    float x1,x2,y1,y2;
+    float movedown, moveup, movedownvalue, moveupvalue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +54,14 @@ public class CalcActivity extends AppCompatActivity {
         mSubtractButton = findViewById(R.id.removeButton);
         final Context context = this.getApplicationContext();
 
-        for (int i = mSeekbarArray.size() - 1; i > 0; i--)
+        for (int index = mSeekbarArray.size() - 1; index > 0; index--)
         { //starts at 1, ignores the first
-            if (mSeekbarArray.get(i).getProgress()==0&& !mSeekbarArray.isEmpty())
+            if (mSeekbarArray.get(index).getProgress()==0 && !mSeekbarArray.isEmpty())
             {
-                mSeekbarArray.get(i).setVisibility(View.GONE);
-                mSpinnerArray.get(i).setVisibility(View.GONE);
-                hiddenSeekbarQueue.add(mSeekbarArray.get(i));
-                hiddenSpinnerQueue.add(mSpinnerArray.get(i)); //queue is FIFO
+                mSeekbarArray.get(index).setVisibility(View.GONE);
+                mSpinnerArray.get(index).setVisibility(View.GONE);
+                hiddenSeekbarQueue.add(mSeekbarArray.get(index));
+                hiddenSpinnerQueue.add(mSpinnerArray.get(index)); //queue is FIFO
             }
             else {
                 break;
@@ -91,13 +91,13 @@ public class CalcActivity extends AppCompatActivity {
 
         mSubtractButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                for (int i = mSeekbarArray.size() - 1; i > 0; i--) { //starts at (7), ignores the first
-                    if (mSeekbarArray.get(i).getVisibility() == View.VISIBLE) {
-                        mSeekbarArray.get(i).setVisibility(View.GONE);
-                        mSpinnerArray.get(i).setVisibility(View.GONE);
-                        mSeekbarArray.get(i).setProgress(0);
-                        hiddenSeekbarQueue.add(mSeekbarArray.get(i));
-                        hiddenSpinnerQueue.add(mSpinnerArray.get(i)); //queue is FIFO
+                for (int index = mSeekbarArray.size() - 1; index > 0; index--) { //starts at (7), ignores the first
+                    if (mSeekbarArray.get(index).getVisibility() == View.VISIBLE) {
+                        mSeekbarArray.get(index).setVisibility(View.GONE);
+                        mSpinnerArray.get(index).setVisibility(View.GONE);
+                        mSeekbarArray.get(index).setProgress(0);
+                        hiddenSeekbarQueue.add(mSeekbarArray.get(index));
+                        hiddenSpinnerQueue.add(mSpinnerArray.get(index)); //queue is FIFO
                         break;
                     }
 
@@ -114,14 +114,14 @@ public class CalcActivity extends AppCompatActivity {
                 String spinnerValue;
                 ArrayList<Pair<String, Integer>> pairArraySentToActivity = new ArrayList<>();
                 Pair<String, Integer> resultPair;
-                for (int i = 0; i < MAX_DROPDOWNS; i++) {
-                    if (mSeekbarArray.get(i).getProgress()!=0 &&
-                            !mSpinnerArray.get(i).getSelectedItem().toString().isEmpty()
+                for (int index = 0; index < MAX_DROPDOWNS; index++) {
+                    if (mSeekbarArray.get(index).getProgress()!=0 &&
+                            !mSpinnerArray.get(index).getSelectedItem().toString().isEmpty()
                             ) {
                         //unentered edittexts and spinners will not be added to the array
 
-                        seekBarValue = mSeekbarArray.get(i).getProgress();
-                        spinnerValue = mSpinnerArray.get(i).getSelectedItem().toString();
+                        seekBarValue = mSeekbarArray.get(index).getProgress();
+                        spinnerValue = mSpinnerArray.get(index).getSelectedItem().toString();
                         resultPair = new Pair<>(spinnerValue, seekBarValue);
                         pairArraySentToActivity.add(resultPair);
                     }
@@ -148,17 +148,17 @@ public class CalcActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
+                movedown = touchEvent.getX();
+                movedownvalue = touchEvent.getY();
                 break;
             case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
-                if(x1 < x2){
+                moveup = touchEvent.getX();
+                moveupvalue = touchEvent.getY();
+                if(movedown < moveup){
                     Intent intent = new Intent(CalcActivity.this, DrawerFromSide.class);
                     startActivity(intent);
 
-                }else if(x1 > x2){
+                }else if(movedown > moveup){
                     Intent i = new Intent(CalcActivity.this, Realtime_Pledge_Data.class);
                     startActivity(i);
                 }

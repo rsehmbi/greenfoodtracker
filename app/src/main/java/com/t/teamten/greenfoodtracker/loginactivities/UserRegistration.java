@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.homescreenactivity.DrawerFromSide;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import firebaseuser.User;
@@ -119,7 +120,7 @@ public class UserRegistration extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(UserRegistration.this, "Successful", Toast.LENGTH_SHORT).show();
                         storeUserToDatabase();
-                        Intent moveToHomeScreen = new Intent(UserRegistration.this, HomeScreen.class);
+                        Intent moveToHomeScreen = new Intent(UserRegistration.this, DrawerFromSide.class);
                         startActivity(moveToHomeScreen);
                     } else {
                         Toast.makeText(UserRegistration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
