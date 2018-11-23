@@ -98,7 +98,7 @@ public class MealFragment extends Fragment {
                     posts.add(post);
                 }
 
-                adapter = new MealRecyclerViewAdapter(getActivity(), posts, user);
+                adapter = new MealRecyclerViewAdapter(getActivity(), posts);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -130,7 +130,7 @@ public class MealFragment extends Fragment {
                         hasImage = withImageSpinner.getSelectedItem().toString();
                         newPosts = setNewMealPosts(city, protein, hasImage);
 
-                        adapter = new MealRecyclerViewAdapter(getActivity(), newPosts, user);
+                        adapter = new MealRecyclerViewAdapter(getActivity(), newPosts);
                         recyclerView.setAdapter(adapter);
                         filterDialog.dismiss();
                     }
