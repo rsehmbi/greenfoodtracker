@@ -201,6 +201,7 @@
     <string name="mainprotein">Meal\'s main protein</string>
     <string name="pledge_filter">Pledge Filter</string>
     <string name="my_meals">My Meals</string>
+    <string name="filter_meals">Filter Meals</string>
 
     <string-array name="proteinlist">
         <item>Beef</item>
@@ -209,5 +210,21 @@
         <item>Lamb</item>
         <item>Vegetarian</item>
         <item>Other</item>
+    </string-array>
+
+    <string-array name="proteinArray">
+        <item>All Protein</item>
+        <item>Beef</item>
+        <item>Pork</item>
+        <item>Fish</item>
+        <item>Lamb</item>
+        <item>Vegetarian</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="hasImage">
+        <item>With Image</item>
+        <item>No Image</item>
+        <item>Both</item>
     </string-array>
 </resources>
