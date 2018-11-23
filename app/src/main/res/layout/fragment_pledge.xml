@@ -15,7 +15,10 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/pledgeFloatingButton"
         android:layout_width="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="305dp"
         android:layout_height="wrap_content"
+        android:src="@drawable/filter"
         app:layout_anchor="@+id/pledgeListView">
 
     </android.support.design.widget.FloatingActionButton>

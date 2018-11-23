@@ -3,6 +3,8 @@
     package="com.t.teamten.greenfoodtracker">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +27,7 @@
         <activity android:name=".resultscreenactivities.ResultScreenSecond" />
         <activity android:name=".loginactivities.UserRegistration" />
         <activity android:name="firebaseuser.deleteuser" />
-        <activity android:name="firebaseuser.RealtimePledgeData" />
+        <activity android:name="firebaseuser.Realtime_Pledge_Data" />
         <activity android:name=".resultscreenactivities.SocialMediaActivity" />
 
         <meta-data
@@ -52,7 +54,7 @@
             android:name=".homescreenactivity.DrawerFromSide"
             android:label="@string/title_activity_drawerfromside"
             android:theme="@style/AppTheme" />
-        <activity android:name="firebaseuser.UserProfile"></activity>
+        <activity android:name="firebaseuser.User_Profile"></activity>
     </application>
 
 </manifest>

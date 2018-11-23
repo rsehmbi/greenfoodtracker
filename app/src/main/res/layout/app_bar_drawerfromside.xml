@@ -26,8 +26,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="70dp"
-        android:src="@android:drawable/ic_dialog_email"
-        app:useCompatPadding="true" />
+        android:src="@drawable/postapicture"
+        app:useCompatPadding="true" />M
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -37,8 +37,9 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:title="News Feed" />
+        app:theme="@style/MyMaterialTheme"
+        app:title="News Feed"
+        app:titleTextColor="@android:color/black"/>/>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"

@@ -16,13 +16,13 @@ public class ProfileIconList {
     private Resources resources;
     int[] imageIcons;
     String[] imageNames;
-    int imageIconId;
+    int imageIconesId;
     int imageNamesId;
 
     public ProfileIconList(Context context) {
         this.context = context;
         resources = context.getResources();
-        imageIconId = R.array.icon_Array;
+        imageIconesId = R.array.icon_Array;
         imageNamesId = R.array.icon_Name_Array;
 
         imageNames = resources.getStringArray(imageNamesId);

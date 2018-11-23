@@ -15,6 +15,9 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/mealFloatingButton"
+        android:src="@drawable/filter"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="305dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_anchor="@+id/mealListView">

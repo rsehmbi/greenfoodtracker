@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.t.teamten.greenfoodtracker.ManageAccount;
 import com.t.teamten.greenfoodtracker.R;
-import com.t.teamten.greenfoodtracker.SettingsForUser;
-import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import firebaseuser.Realtime_Pledge_Data;
 
 public class FactsActivity extends AppCompatActivity {
     // Facts Activity so that the user can see random facts instead of using the Calculator all the time.
@@ -25,7 +26,7 @@ public class FactsActivity extends AppCompatActivity {
 
     InputStream inputStream;
     BufferedReader bufferedReader;
-    float x1,x2,y1,y2;
+    float moveup, moveupvalue, movedown, movedownvalue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,17 +71,17 @@ public class FactsActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
+                moveup = touchEvent.getX();
+                movedown = touchEvent.getY();
                 break;
             case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
-                if(x1 < x2){
-                    Intent i = new Intent(FactsActivity.this,HomeScreen.class);
+                moveupvalue = touchEvent.getX();
+                movedownvalue = touchEvent.getY();
+                if(moveup < moveupvalue){
+                    Intent i = new Intent(FactsActivity.this, Realtime_Pledge_Data.class);
                     startActivity(i);
-                }else if(x1 > x2){
-                    Intent i = new Intent(FactsActivity.this,SettingsForUser.class);
+                }else if(moveup > moveupvalue){
+                    Intent i = new Intent(FactsActivity.this,ManageAccount.class);
                     startActivity(i);
                 }
                 break;

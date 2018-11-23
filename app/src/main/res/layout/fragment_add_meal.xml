@@ -5,7 +5,7 @@
     tools:context=".mealposts.AddMealFragment"
     android:layout_width="350dp"
     android:layout_height="475dp"
-    android:background="@android:color/holo_green_light"
+    android:background="@drawable/factsback"
     android:scrollbars="vertical"
     android:padding="5dp"
     android:layout_gravity="center">
@@ -89,7 +89,7 @@
                 android:id="@+id/mealImage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@android:drawable/ic_menu_camera"/>
+                android:background="@drawable/camerabelike"/>
         </RelativeLayout>
 
         <EditText
@@ -99,7 +99,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/textboxshape"
-            android:gravity="top|left"
+            android:textAlignment="center"
             android:hint="Add meal description"/>
 
         <Button

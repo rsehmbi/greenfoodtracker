@@ -87,7 +87,7 @@ public class MyMealPostFragment extends Fragment {
 
                 }
 
-                adapter = new MealRecyclerViewAdapter(getActivity(), myPosts, user);
+                adapter = new MealRecyclerViewAdapter(getActivity(), myPosts);
                 recyclerView.setAdapter(adapter);
             }
 
