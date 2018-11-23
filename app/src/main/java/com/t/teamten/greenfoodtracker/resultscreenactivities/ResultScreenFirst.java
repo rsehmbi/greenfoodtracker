@@ -477,6 +477,8 @@ public class ResultScreenFirst extends AppCompatActivity {
         totalSavings = totalSavings + (Integer.parseInt(mCurrentRadiator.getText().toString()) - Integer.parseInt(mAdjustedRadiator.getText().toString()))/1000;
         mTextviewOnScreen.setText("Your CO2 Saving In Tonnes ");
         mSavedInTonnes.setText(totalSavings.toString());
+        if(totalSavings<0)
+            totalSavings = 0;
         return totalSavings;
     }
 
