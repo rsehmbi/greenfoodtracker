@@ -32,7 +32,7 @@ public class RealtimePledgeData extends AppCompatActivity {
     private String calculateAverageAmount;
 
     //for retriving user information
-    private String user_id;
+    private String userId;
     private User updatedUser;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -47,7 +47,7 @@ public class RealtimePledgeData extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
-        user_id = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
+        userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
         updatedUser =  new User();
 
 
@@ -95,7 +95,7 @@ public class RealtimePledgeData extends AppCompatActivity {
         {
 
             User user = ds.getValue(User.class);
-            if(user.getUserId().equals(user_id))
+            if(user.getUserId().equals(userId))
             {
                 updatedUser = user;
 

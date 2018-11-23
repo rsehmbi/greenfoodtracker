@@ -28,7 +28,7 @@ public class SocialMediaActivity extends AppCompatActivity {
     private Button facebookButton;
     private FirebaseAuth auth;
     private DatabaseReference ref;
-    private String tweet = ""; // TODO: put user data, and what they want to share into the tweet.
+    private String tweet = ""; 
     private String pledge;
     private String city;
 
