@@ -28,13 +28,13 @@ public class LoginActivity {
         this.username = username;
     }
 
-    public boolean validateName(String nameToBeValidated)
+    public boolean validateName(String nametobevalidated)
     {
-        return nameToBeValidated.length() >= 1 ;
+        return nametobevalidated.length() >= 1 ;
     }
-    public boolean validateAge(int ageToBeValidated)
+    public boolean validateAge(int agetobevalidated)
     {
-        return ageToBeValidated <= 100 && ageToBeValidated > 0 ;
+        return agetobevalidated <= 100 && agetobevalidated > 0 ;
     }
 
 }

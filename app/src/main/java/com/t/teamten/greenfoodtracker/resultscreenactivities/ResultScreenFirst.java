@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import firebaseuser.RealtimePledgeData;
+import firebaseuser.Realtime_Pledge_Data;
 import foodandco2.FoodData;
 import lecho.lib.hellocharts.model.PieChartData;
 import lecho.lib.hellocharts.model.SliceValue;
@@ -273,7 +273,7 @@ public class ResultScreenFirst extends AppCompatActivity {
                 String uid = mUser.getUid();
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 mDatabase.child("users").child(uid).child("pledge").setValue(totalSaved.toString());
-                Intent intent = new Intent(ResultScreenFirst.this, RealtimePledgeData.class);
+                Intent intent = new Intent(ResultScreenFirst.this, Realtime_Pledge_Data.class);
                 startActivity(intent);
             }
 
@@ -477,8 +477,6 @@ public class ResultScreenFirst extends AppCompatActivity {
         totalSavings = totalSavings + (Integer.parseInt(mCurrentRadiator.getText().toString()) - Integer.parseInt(mAdjustedRadiator.getText().toString()))/1000;
         mTextviewOnScreen.setText("Your CO2 Saving In Tonnes ");
         mSavedInTonnes.setText(totalSavings.toString());
-        if(totalSavings<0)
-            totalSavings = 0;
         return totalSavings;
     }
 

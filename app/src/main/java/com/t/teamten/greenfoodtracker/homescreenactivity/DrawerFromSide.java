@@ -46,7 +46,7 @@ import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity
 
 import java.util.Objects;
 
-import firebaseuser.RealtimePledgeData;
+import firebaseuser.Realtime_Pledge_Data;
 import firebaseuser.User;
 
 public class DrawerFromSide extends AppCompatActivity
@@ -226,7 +226,7 @@ public class DrawerFromSide extends AppCompatActivity
         {
             Toast.makeText(DrawerFromSide.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
-            Intent moveToPledgePage = new Intent (DrawerFromSide.this, RealtimePledgeData.class);
+            Intent moveToPledgePage = new Intent (DrawerFromSide.this, Realtime_Pledge_Data.class);
             startActivity(moveToPledgePage);
         }else if (id == R.id.CalculatorID) {
             Intent moveToCalc = new Intent(DrawerFromSide.this, CalcActivity.class);
@@ -237,11 +237,15 @@ public class DrawerFromSide extends AppCompatActivity
         }else if (id == R.id.nav_share) {
             Intent moveToSocialMedia = new Intent(DrawerFromSide.this, SocialMediaActivity.class);
             startActivity(moveToSocialMedia);
-        } else if (id == R.id.nav_send) {
-
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void moveto(MenuItem item) {
+        Intent movetomanageaccountpage = new Intent(DrawerFromSide.this,ManageAccount.class);
+        startActivity(movetomanageaccountpage);
+        Toast.makeText(DrawerFromSide.this, "Opening Settings", Toast.LENGTH_LONG).show();
     }
 }

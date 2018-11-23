@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.t.teamten.greenfoodtracker.homescreenactivity.DrawerFromSide;
+import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.profileicon.ProfileIconList;
 
 import java.util.Objects;
@@ -28,7 +30,7 @@ import firebaseuser.User;
 //Change and display profile picture
 public class ManageAccount extends AppCompatActivity {
     private DatabaseReference reference;
-
+    float movedown, movedownvalue, moveup, moveupvalue;
     private EditText firstName;
     private EditText lastName;
     private EditText birthYear;
@@ -194,4 +196,25 @@ public class ManageAccount extends AppCompatActivity {
       }
 
   }
+
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                movedown = touchEvent.getX();
+                moveup = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                movedownvalue = touchEvent.getX();
+                moveupvalue = touchEvent.getY();
+                if(movedown < movedownvalue){
+                    Intent intent = new Intent(ManageAccount.this, FactsActivity.class);
+                    startActivity(intent);
+
+                }else if(movedown > movedownvalue){
+
+                }
+                break;
+        }
+        return false;
+    }
 }

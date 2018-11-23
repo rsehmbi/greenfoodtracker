@@ -14,8 +14,11 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -31,12 +34,15 @@ public class MealRecyclerViewAdapter extends RecyclerView.Adapter<MealRecyclerVi
     private Context context;
     private ProfileIconList iconList;
     private User user;
+    private String profileImageName;
+    private String name;
+    private String userCity;
 
-    public MealRecyclerViewAdapter(Context context, List<MealPost> posts, User user) {
+    public MealRecyclerViewAdapter(Context context, List<MealPost> posts /*, User user*/) {
         this.context = context;
         this.posts = posts;
-        this.user = user;
         iconList = new ProfileIconList(context);
+        //this.user = user;
     }
 
     @NonNull
@@ -50,13 +56,29 @@ public class MealRecyclerViewAdapter extends RecyclerView.Adapter<MealRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull MealViewHolder viewHolder, int i) {
-        String profileImageName = user.getProfileIcon();
+        final int index = i;
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("users");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String uid = posts.get(index).getUserId();
+                user = dataSnapshot.child(uid).getValue(User.class);
+                profileImageName = user.getProfileIcon();
+                name = user.getFirstNameWithLastNameInitial();
+                userCity = user.getCity();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
         viewHolder.setProfileImageView(profileImageName);
 
-        String name = user.getFirstNameWithLastNameInitial();
         viewHolder.setNameText(name);
-
-        String userCity = user.getCity();
         viewHolder.setUserLocation(userCity);
 
         String meal = posts.get(i).getMealName();
