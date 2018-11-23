@@ -4,22 +4,22 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.t.teamten.greenfoodtracker.R;
+import com.t.teamten.greenfoodtracker.SettingsForUser;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
-import com.t.teamten.greenfoodtracker.settingsforuser;
 
 import firebaseuser.Realtime_Pledge_Data;
 
@@ -28,7 +28,7 @@ public class HomeScreen extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private NewsPagerAdapter pagerAdapter;
+    private NewsPageAdapter pagerAdapter;
     private BottomNavigationView bottomNavigationView;
     private FloatingActionButton postButton;
     private Dialog dialog;
@@ -43,7 +43,7 @@ public class HomeScreen extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tablayout);
 
-        pagerAdapter = new NewsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        pagerAdapter = new NewsPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
 
         viewPager = findViewById(R.id.viewPager);
         tabLayout.setupWithViewPager(viewPager);
@@ -54,7 +54,7 @@ public class HomeScreen extends AppCompatActivity {
 
         dialog = new Dialog(this);
 
-        postButton = (FloatingActionButton) findViewById(R.id.postButton);
+        postButton = findViewById(R.id.postButton);
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation_view);
+        bottomNavigationView = findViewById(R.id.navigation_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -82,7 +82,7 @@ public class HomeScreen extends AppCompatActivity {
                         break;
                     case R.id.About:
                         Toast.makeText(HomeScreen.this,"Settings",Toast.LENGTH_SHORT).show();
-                        Intent intent2 = new Intent(HomeScreen.this,settingsforuser.class);
+                        Intent intent2 = new Intent(HomeScreen.this,SettingsForUser.class);
                         startActivity(intent2);
                         break;
                     case R.id.Pledge:

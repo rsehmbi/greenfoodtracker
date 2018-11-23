@@ -2,7 +2,6 @@
 package com.t.teamten.greenfoodtracker.calcactivities;
 
 import android.app.Activity;
-import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 

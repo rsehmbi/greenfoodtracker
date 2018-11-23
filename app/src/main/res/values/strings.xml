@@ -25,19 +25,19 @@
 
 
     <string name="result2_intro">You can choose a meal plan to reduce CO2e!</string>
-    <string name="heading">click here to learn more about meal plans</string>
+    <string name="heading">Click here to learn more about meal plans</string>
     <string name="meal1">Meat-Eater Plan</string>
     <string name="meal2">Low Meat Plan</string>
     <string name="meal3">Plant-based Plan</string>
-    <string name="mealPlansInfo">Plan1: Meat_Eater Plan: changing 50% of lamb and beef to chicken\n
-        Plan2: Low Meat Plan: changing 50% of lamb and beef to vegetable\n
-        Plan3: Plant-Based plan: change all meat to vegetable
+    <string name="mealPlansInfo">Plan 1: Meat_Eater Plan: Change 50% of lamb and beef to chicken\n
+        Plan 2: Low Meat Plan: Change 50% of lamb and beef to vegetable\n
+        Plan 3: Plant-Based plan: Change all meat to vegetable
     </string>
     <string name="goBack">Go Back To Home Page</string>
     <string name="sharedPledge">Share Pledge</string>
     <string name="send_to_pledge">Pledge this amount</string>
     <string name="text_shown_1">This is equivalent to :</string>
-    <string name="text_shown_2">Choose another meal plan, you can save our planet</string>
+    <string name="text_shown_2">Choose another meal plan, you can save our planet!</string>
     <string name="text_shown_3">Driving </string>
     <string name="text_shown_4">km on road</string>
     <string name="text_shown_5">Keep air conditioning on for </string>
@@ -45,7 +45,7 @@
     <string name="text_shown_7">This is your CO2 emission based on your current diet</string>
     <string name="button_text_shown_1">Click here to choose another plan</string>
 
-    <string name="first_name">First _Name</string>
+    <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="age">Age</string>
     <string name="city">Your City</string>
@@ -59,7 +59,7 @@
         <item>Metro Vancouver</item>
         <item>Vancouver</item>
         <item>Burnaby</item>
-        <item>Coquiltlam</item>
+        <item>Coquitlam</item>
         <item>Surrey</item>
         <item>Richmond</item>
         <item>Langley</item>
@@ -111,9 +111,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_add_meal">Add a Meal!</string>
 
-    <!-- Strings related to Settings -->
-
-    <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
@@ -121,7 +118,7 @@
         based on your message history
     </string>
 
-    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_title_display_name">Display Name</string>
     <string name="pref_default_display_name">John Smith</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>

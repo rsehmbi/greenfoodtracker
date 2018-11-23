@@ -1,10 +1,10 @@
 package com.t.teamten.greenfoodtracker;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,14 +16,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.t.teamten.greenfoodtracker.calcactivities.CalcActivity;
 import com.t.teamten.greenfoodtracker.homescreenactivity.HomeScreen;
+import com.t.teamten.greenfoodtracker.loginactivities.AboutActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FactsActivity;
 import com.t.teamten.greenfoodtracker.loginactivities.FirebaseLogin;
-import com.t.teamten.greenfoodtracker.loginactivities.aboutactivity;
 
 import firebaseuser.Realtime_Pledge_Data;
 
 //setting:about,manage account, delete user...
-public class settingsforuser extends AppCompatActivity {
+public class SettingsForUser extends AppCompatActivity {
     FirebaseAuth mAuth;
     float x1,x2,y1,y2;
     //Setting page so that the user can Signout or delete his account or he can manage his account.
@@ -41,28 +41,28 @@ public class settingsforuser extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.Calculator:
-                        Toast.makeText(settingsforuser.this,"Calculator",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(settingsforuser.this,CalcActivity.class);
+                        Toast.makeText(SettingsForUser.this,"Calculator",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SettingsForUser.this,CalcActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.Facts:
-                        Toast.makeText(settingsforuser.this,"Facts",Toast.LENGTH_SHORT).show();
-                        Intent intent3 = new Intent(settingsforuser.this,FactsActivity.class);
+                        Toast.makeText(SettingsForUser.this,"Facts",Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(SettingsForUser.this,FactsActivity.class);
                         startActivity(intent3);
                         break;
                     case R.id.About:
-                        Toast.makeText(settingsforuser.this,"Settings",Toast.LENGTH_SHORT).show();
-                        Intent intent2 = new Intent(settingsforuser.this,settingsforuser.class);
+                        Toast.makeText(SettingsForUser.this,"Settings",Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(SettingsForUser.this,SettingsForUser.class);
                         startActivity(intent2);
                         break;
                     case R.id.Pledge:
-                        Toast.makeText(settingsforuser.this,"Pledge",Toast.LENGTH_SHORT).show();
-                        Intent movetoPledge = new Intent(settingsforuser.this, Realtime_Pledge_Data.class);
+                        Toast.makeText(SettingsForUser.this,"Pledge",Toast.LENGTH_SHORT).show();
+                        Intent movetoPledge = new Intent(SettingsForUser.this, Realtime_Pledge_Data.class);
                         startActivity(movetoPledge);
                         break;
                     case R.id.Newsfeed:
-                        Toast.makeText(settingsforuser.this,"HomeScreen",Toast.LENGTH_SHORT).show();
-                        Intent movetoHomeScreen = new Intent (settingsforuser.this,HomeScreen.class);
+                        Toast.makeText(SettingsForUser.this,"HomeScreen",Toast.LENGTH_SHORT).show();
+                        Intent movetoHomeScreen = new Intent (SettingsForUser.this,HomeScreen.class);
                         startActivity(movetoHomeScreen);
                         break;
                 }
@@ -72,34 +72,34 @@ public class settingsforuser extends AppCompatActivity {
 
 
     }
-    public void movetoaboutactivity(View view) {
-        Intent movetoaboutactivity = new Intent(settingsforuser.this,aboutactivity.class);
-        startActivity(movetoaboutactivity);
+    public void moveToAboutActivity(View view) {
+        Intent toAboutActivity = new Intent(SettingsForUser.this,AboutActivity.class);
+        startActivity(toAboutActivity);
     }
 
-    public void signoutprofile(View view) {
+    public void signoutProfile(View view) {
         FirebaseAuth.getInstance().signOut();
-        Intent movetologin = new Intent(settingsforuser.this, FirebaseLogin.class);
+        Intent movetologin = new Intent(SettingsForUser.this, FirebaseLogin.class);
         startActivity(movetologin);
         finish();
     }
 
-    public void deletetheuseraccount(View view) {
+    public void deleteUserAccount(View view) {
         FirebaseUser currentuser = FirebaseAuth.getInstance().getCurrentUser();
         currentuser.delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(settingsforuser.this, "Userdeleted", Toast.LENGTH_LONG).show();
-                            Intent movetoLoginScreen = new Intent(settingsforuser.this, FirebaseLogin.class);
+                            Toast.makeText(SettingsForUser.this, "Userdeleted", Toast.LENGTH_LONG).show();
+                            Intent movetoLoginScreen = new Intent(SettingsForUser.this, FirebaseLogin.class);
                             startActivity(movetoLoginScreen);
                         }
                     }
                 });
     }
 
-    public void manageaccount(View view) {
+    public void manageAccount(View view) {
         Intent movetomanageactivity = new Intent(this, ManageAccount.class);
         startActivity(movetomanageactivity);
     }
@@ -114,7 +114,7 @@ public class settingsforuser extends AppCompatActivity {
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
                 if(x1 < x2){
-                    Intent i = new Intent(settingsforuser.this,FactsActivity.class);
+                    Intent i = new Intent(SettingsForUser.this,FactsActivity.class);
                     startActivity(i);
                 }else if(x1 > x2){
 

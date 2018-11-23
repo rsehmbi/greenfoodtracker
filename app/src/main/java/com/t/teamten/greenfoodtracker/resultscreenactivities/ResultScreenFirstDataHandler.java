@@ -20,7 +20,7 @@ public class ResultScreenFirstDataHandler {
     }
 
 
-    public double total_emission(CalculatorActivityData userInput, FoodData foodData) {
+    public double totalEmission(CalculatorActivityData userInput, FoodData foodData) {
         double total = 0.0;
         for (int i = 0; i < userInput.getArrayListSize(); i++) {
             total = total + calculations(userInput, foodData.getFoodList()).get(i);
@@ -29,7 +29,7 @@ public class ResultScreenFirstDataHandler {
         return total;
     }
 
-    public double total_emission(ArrayList<String> array_name,ArrayList<Integer>array_data, FoodData foodData) {
+    public double totalEmission(ArrayList<String> array_name, ArrayList<Integer>array_data, FoodData foodData) {
         double total = 0.0;
         for (int i = 0; i < array_data.size(); i++) {
             total = total + calculations(array_name,array_data, foodData.getFoodList()).get(i);
@@ -48,51 +48,39 @@ public class ResultScreenFirstDataHandler {
     }
 
     public ArrayList<Double> calculations(CalculatorActivityData userInput, List<Food> listOfFoods) {
-        double data_to_add;
+        double dataToAdd;
         double food;
-        double total_input = 0;
+        double totalInput = 0;
         ArrayList<Double> Data = new ArrayList<>();
         for (int i = 0; i < userInput.getArrayListSize(); i++)
-            total_input = Double.valueOf((Integer) userInput.getPairAtIndex(i).second) + total_input;
+            totalInput = Double.valueOf((Integer) userInput.getPairAtIndex(i).second) + totalInput;
         for (int i = 0; i < userInput.getArrayListSize(); i++)
         {
             double input_freq = Double.valueOf((Integer)userInput.getPairAtIndex(i).second);
             food = getCarbonConsumptionFromName(listOfFoods, userInput.getPairAtIndex(i).first.toString());
-            data_to_add = 1.8 * (input_freq / total_input) * 365 * food; // calculates the co2 impact, assume each person's intake 1.8kg
-            Data.add(data_to_add);
+            dataToAdd = 1.8 * (input_freq / totalInput) * 365 * food; // calculates the co2 impact, assume each person's intake 1.8kg
+            Data.add(dataToAdd);
         }
         return Data;
     }
 
     public ArrayList<Double> calculations(ArrayList<String> array_name,ArrayList<Integer>array_data, List<Food> listOfFoods) {
-        double data_to_add;
+        double dataToAdd;
         double food;
-        double total_input = 0;
+        double totalInput = 0;
         ArrayList<Double> Data = new ArrayList<>();
         for (int i = 0; i < array_data.size(); i++)
-            total_input = array_data.get(i) + total_input;
+            totalInput = array_data.get(i) + totalInput;
         for (int i = 0; i < array_data.size(); i++)
         {
             double input_freq = array_data.get(i);
             food = getCarbonConsumptionFromName(listOfFoods, array_name.get(i));
-            data_to_add = 1.8 * (input_freq / total_input) * 365 * food; // calculates the co2 impact, assume each person's intake 1.8kg
-            Data.add(data_to_add);
+            dataToAdd = 1.8 * (input_freq / totalInput) * 365 * food; // calculates the co2 impact, assume each person's intake 1.8kg
+            Data.add(dataToAdd);
         }
         return Data;
     }
 
 
-   /* public ArrayList<Double> calculations(CalculatorActivityData userInput, List<Food> listOfFoods) {
-        double data_to_add;
-        double food;
-        ArrayList<Double> Data = new ArrayList<>();
-        for (int i = 0; i < userInput.getArrayListSize(); i++) {
-            double input_percentage = Double.valueOf((Integer)userInput.getPairAtIndex(i).second);
-            food = getCarbonConsumptionFromName(listOfFoods, userInput.getPairAtIndex(i).first.toString());
-            data_to_add = 1.8 * (input_percentage / 100) * 365 * food; // calculates the co2 impact, assume each person's intake 1.8kg
-            Data.add(data_to_add);
-        }
-        return Data;
-    }*/
 
 }
