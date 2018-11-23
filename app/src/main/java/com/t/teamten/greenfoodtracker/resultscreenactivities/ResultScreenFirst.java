@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import firebaseuser.Realtime_Pledge_Data;
+import firebaseuser.RealtimePledgeData;
 import foodandco2.FoodData;
 import lecho.lib.hellocharts.model.PieChartData;
 import lecho.lib.hellocharts.model.SliceValue;
@@ -273,7 +273,7 @@ public class ResultScreenFirst extends AppCompatActivity {
                 String uid = mUser.getUid();
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 mDatabase.child("users").child(uid).child("pledge").setValue(totalSaved.toString());
-                Intent intent = new Intent(ResultScreenFirst.this, Realtime_Pledge_Data.class);
+                Intent intent = new Intent(ResultScreenFirst.this, RealtimePledgeData.class);
                 startActivity(intent);
             }
 

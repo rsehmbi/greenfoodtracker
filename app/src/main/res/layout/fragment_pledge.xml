@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".pledgeposts.PledgeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pledgeListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="605dp"
         android:scrollbars="vertical" />
-</LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/pledgeFloatingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/pledgeListView">
+
+    </android.support.design.widget.FloatingActionButton>
+</android.support.design.widget.CoordinatorLayout>

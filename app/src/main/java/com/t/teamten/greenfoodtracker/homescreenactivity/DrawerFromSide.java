@@ -44,14 +44,14 @@ import com.t.teamten.greenfoodtracker.resultscreenactivities.SocialMediaActivity
 
 import java.util.Objects;
 
-import firebaseuser.Realtime_Pledge_Data;
+import firebaseuser.RealtimePledgeData;
 import firebaseuser.User;
 
 public class DrawerFromSide extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private NewsPageAdapter pagerAdapter;
+    private NewsPagerAdapter pagerAdapter;
     private FloatingActionButton postButton;
     private String userId;
     private ProfileIconList iconList;
@@ -85,7 +85,7 @@ public class DrawerFromSide extends AppCompatActivity
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.setContentView(R.layout.activity_add_meal_acitivty);
+                dialog.setContentView(R.layout.fragment_add_meal);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
@@ -105,15 +105,16 @@ public class DrawerFromSide extends AppCompatActivity
         icon = headerView.findViewById(R.id.imageicon);
         displayName();
 
-        viewPager = findViewById(R.id.viewPager2);
-        tabLayout = findViewById(R.id.tablayout2);
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
 
-        pagerAdapter = new NewsPageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        pagerAdapter = new NewsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
 
         tabLayout.getTabAt(0).setText(R.string.meals);
         tabLayout.getTabAt(1).setText(R.string.pledges);
+        tabLayout.getTabAt(2).setText(R.string.my_meals);
     }
 
     private void displayName() {
@@ -223,7 +224,7 @@ public class DrawerFromSide extends AppCompatActivity
         {
             Toast.makeText(DrawerFromSide.this, "This is Home Page ", Toast.LENGTH_LONG).show();
         } else if (id == R.id.PledgeID) {
-            Intent moveToPledgePage = new Intent (DrawerFromSide.this, Realtime_Pledge_Data.class);
+            Intent moveToPledgePage = new Intent (DrawerFromSide.this, RealtimePledgeData.class);
             startActivity(moveToPledgePage);
         }else if (id == R.id.CalculatorID) {
             Intent moveToCalc = new Intent(DrawerFromSide.this, CalcActivity.class);

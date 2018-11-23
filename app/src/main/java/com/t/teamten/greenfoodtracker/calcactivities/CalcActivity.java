@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import firebaseuser.Realtime_Pledge_Data;
+import firebaseuser.RealtimePledgeData;
 import userdata.UserData;
 
 public class CalcActivity extends AppCompatActivity {
@@ -38,15 +38,15 @@ public class CalcActivity extends AppCompatActivity {
     private LinkedList<SeekBar> hiddenSeekbarQueue;
     private UserData userdata;
     float x1, x2, y1, y2;
-    int count_of_items_selected;
-    String[] Full_Spinner_Selection;
+    int countOfItemsSelected;
+    String[] fullSpinnerSelection;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        count_of_items_selected = 0;
+        countOfItemsSelected = 0;
         //queue implemented as java's linkedlist data type.
         hiddenSpinnerQueue = new LinkedList<>();
         hiddenSeekbarQueue = new LinkedList<>();
@@ -56,7 +56,7 @@ public class CalcActivity extends AppCompatActivity {
         mAddButton = findViewById(R.id.addButton);
         mSubtractButton = findViewById(R.id.removeButton);
 
-        Full_Spinner_Selection = getResources().getStringArray(R.array.food_array);
+        fullSpinnerSelection = getResources().getStringArray(R.array.food_array);
         final Context context = this.getApplicationContext();
 
         for (int i = mSeekbarArray.size() - 1; i > 0; i--) { //starts at 1, ignores the first
@@ -88,8 +88,8 @@ public class CalcActivity extends AppCompatActivity {
                     spinnerFront.setVisibility(View.VISIBLE);
 
                 }
-                count_of_items_selected++;
-                Pop_Seleted_Item();
+                countOfItemsSelected++;
+                Pop_Selected_Item();
 
             }
 
@@ -108,10 +108,10 @@ public class CalcActivity extends AppCompatActivity {
                     }
 
                 }
-                if (count_of_items_selected!=0)
+                if (countOfItemsSelected !=0)
                 {
-                    count_of_items_selected--;
-                    Adding_Non_Seleted_Item();
+                    countOfItemsSelected--;
+                    Adding_Non_Selected_Item();
                 }
             }
 
@@ -170,7 +170,7 @@ public class CalcActivity extends AppCompatActivity {
                 if (x1 < x2) {
 
                 } else if (x1 > x2) {
-                    Intent i = new Intent(CalcActivity.this, Realtime_Pledge_Data.class);
+                    Intent i = new Intent(CalcActivity.this, RealtimePledgeData.class);
                     startActivity(i);
                 }
                 break;
@@ -179,56 +179,56 @@ public class CalcActivity extends AppCompatActivity {
 
     }
 
-    public void Pop_Seleted_Item()
+    public void Pop_Selected_Item()
     {
 
         /*ArrayList<String> Selected_Array = new ArrayList<>();
         ArrayList<String> Updated_Array = new ArrayList<>();
-        for (int i = 0; i< count_of_items_selected; i++)
+        for (int i = 0; i< countOfItemsSelected; i++)
             Selected_Array.add(mSpinnerArray.get(i).getSelectedItem().toString());
-        for (int i = 0; i<Full_Spinner_Selection.length; i++)
+        for (int i = 0; i<fullSpinnerSelection.length; i++)
         {
             int count = 0;
             for (int j = 0; j < Selected_Array.size(); j++)
             {
-                if (Full_Spinner_Selection[i] == Selected_Array.get(j))
+                if (fullSpinnerSelection[i] == Selected_Array.get(j))
                     count++;
             }
             if(count == 0)
-                Updated_Array.add(Full_Spinner_Selection[i]);
+                Updated_Array.add(fullSpinnerSelection[i]);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Updated_Array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        if(count_of_items_selected != 7)
-            mSpinnerArray.get(count_of_items_selected).setAdapter(adapter);*/
+        if(countOfItemsSelected != 7)
+            mSpinnerArray.get(countOfItemsSelected).setAdapter(adapter);*/
 
 
 
     }
-    public void Adding_Non_Seleted_Item()
+    public void Adding_Non_Selected_Item()
     {
 
         /*ArrayList<String> Selected_Array = new ArrayList<>();
         ArrayList<String> Updated_Array = new ArrayList<>();
-        for (int i = 0; i< count_of_items_selected; i++)
+        for (int i = 0; i< countOfItemsSelected; i++)
             Selected_Array.add(mSpinnerArray.get(i).getSelectedItem().toString());
-        for (int i = 0; i<Full_Spinner_Selection.length; i++)
+        for (int i = 0; i<fullSpinnerSelection.length; i++)
         {
             int count = 0;
             for (int j = 0; j < Selected_Array.size(); j++)
             {
-                if (Full_Spinner_Selection[i] == Selected_Array.get(j))
+                if (fullSpinnerSelection[i] == Selected_Array.get(j))
                     count++;
             }
             if(count == 0)
-                Updated_Array.add(Full_Spinner_Selection[i]);
+                Updated_Array.add(fullSpinnerSelection[i]);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Updated_Array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         for (Spinner currentSpinner : mSpinnerArray) { //sets the items to be listed in each drop down menu
             currentSpinner.setAdapter(adapter);
         }
-        /*for(int i = 0; i<count_of_items_selected; i++)
+        /*for(int i = 0; i<countOfItemsSelected; i++)
             mSpinnerArray.get(i)*/
 
 
