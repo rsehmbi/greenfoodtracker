@@ -31,24 +31,23 @@ be promoted over cars, and buildings are changing their heating systems from nat
 to hydroelectric.
 
 Despite these efforts at the governmental level, at the current pace of change, it is unlikely
-we will meet the 2020 target
+we will meet the 2020 target.What else can we do to mitigate climate change? Aside from taking transit, is there anything else we can do as individuals?
 
-. What else can we do to mitigate climate change? Aside from taking transit, is there anything else we can do as individuals?
-
-The carbon impact of food
-Food is generally under-reported as a source of CO2e. For instance in Europe, agriculture
+The carbon impact of Food is generally under-reported as a source of CO2e. For instance in Europe, agriculture
 contributes to 10% of the carbon footprint. In particular, ruminants such as sheep and
 cows produce methane through enteric fermentation (i.e. they pass gas) and produce more
 CO2e than other types of animals. According to the European Commission, the vast
 majority of methane emissions (85%) come from ruminants’ digestion.
 
 A Low Carbon Diet
+
 There are 2.46 million people living in the Metro Vancouver area, and about 90% of them
 eat food that are relatively high in CO2e (i.e., are non-vegetarian). If each of those people,
 for instance, reduced beef/lamb from 35% to 10% and instead ate chicken, Vancouver
 could save 900,000 to 1 million tonnes of CO2e per year.
 
 Green Food Challenge
+
 In this project, we aim to raise awareness and promote behaviour change by running the
 Green Food Challenge. In this challenge, people install a mobile application to learn how
 much their diet produces in terms of CO2e, and discover how much CO2e they (and their
@@ -59,18 +58,21 @@ tonnes of CO2e they save together as a community, as well as share restaurants t
 delicious “low carbon” meals. By incentivizing these CO2e-friendly meals, it is hoped that
 participants learn to sustainably change their eating habits towards a lighter footprint.
 
-3. Specifications
+Specifications
+
 The Green Food Challenge application will be created in 3 phases (sprints):
 1. Green Food Challenge Carbon Calculator
 2. Green Food Challenge Group Pledge
 3. Green Food Challenge Restaurant Guide
 
-3.2 Green Food Challenge Pledge
+Green Food Challenge Pledge
+
 The goal of this phase is to be able to see how others in the community are pledging and
 be able to contribute to the Metro Vancouver CO2e savings, as well as share the challenge
 with their friends through social media.
 
-3.3 Green Food Challenge Restaurant Guide
+Green Food Challenge Restaurant Guide
+
 The goal of this phase is to be able to post pictures and locations of what you are eating
 and see what others are eating, in order to help others in your community find “low
 carbon” places to eat. For example, students could post about the falafel wrap at Donair
