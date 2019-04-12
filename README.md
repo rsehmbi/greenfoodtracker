@@ -1,6 +1,6 @@
-GREEN FOOD TRACKER
+## GREEN FOOD TRACKER
 
-The theme is "Sustainability and Climate Change" and the clients are Dr. Lim & Tilemachos C. along with stakeholders at the City of Vancouver
+## The theme is "Sustainability and Climate Change" and the clients are Dr. Lim & Tilemachos C. along with stakeholders at the City of Vancouver
 
 Link to User Facing Video :https://www.youtube.com/watch?v=twYjJ-1UFtI
 Link to Technical Video :https://www.youtube.com/watch?v=-eHJvARFHN0&t=96s
@@ -15,7 +15,7 @@ the environment. Indeed, Vancouver has spearheaded the Greenest City Action Plan
 specific goals, and one of the goals is for a lighter footprint, reducing Vancouver's carbon
 footprint by 33% over 2006 levels.
 
-What is a carbon footprint?
+## What is a carbon footprint?
 Greenhouse gases, measured in CO2e (CO2 equivalents), are known to directly contribute
 to climate change, and include carbon dioxide, methane, and nitrous oxide. In 2015,
 regional emissions in Metro Vancouver were projected to be 14.9 million tonnes of CO2e,
@@ -23,7 +23,7 @@ between 6-8 tonnes per capita. In other words, we can then say that our personal
 footprint is about 6-8 tonnes of CO2e. However, it is generally estimated that global
 emissions must be reduced to approximately 2 tonnes per capita by 2050.
 
-What contributes to greenhouse gases?
+## What contributes to greenhouse gases?
 There are many CO2e contributors to our carbon footprint, including transportation and
 buildings (commercial, residential) . Municipalities and businesses are currently
 undertaking measures to reduce their footprints. For example, Metro Vancouver transit can
@@ -46,7 +46,7 @@ eat food that are relatively high in CO2e (i.e., are non-vegetarian). If each of
 for instance, reduced beef/lamb from 35% to 10% and instead ate chicken, Vancouver
 could save 900,000 to 1 million tonnes of CO2e per year.
 
-Green Food Challenge
+## Green Food Challenge
 
 In this project, we aim to raise awareness and promote behaviour change by running the
 Green Food Challenge. In this challenge, people install a mobile application to learn how
@@ -58,20 +58,20 @@ tonnes of CO2e they save together as a community, as well as share restaurants t
 delicious “low carbon” meals. By incentivizing these CO2e-friendly meals, it is hoped that
 participants learn to sustainably change their eating habits towards a lighter footprint.
 
-Specifications
+## Specifications
 
 The Green Food Challenge application will be created in 3 phases (sprints):
 1. Green Food Challenge Carbon Calculator
 2. Green Food Challenge Group Pledge
 3. Green Food Challenge Restaurant Guide
 
-Green Food Challenge Pledge
+## Green Food Challenge Pledge
 
 The goal of this phase is to be able to see how others in the community are pledging and
 be able to contribute to the Metro Vancouver CO2e savings, as well as share the challenge
 with their friends through social media.
 
-Green Food Challenge Restaurant Guide
+## Green Food Challenge Restaurant Guide
 
 The goal of this phase is to be able to post pictures and locations of what you are eating
 and see what others are eating, in order to help others in your community find “low
