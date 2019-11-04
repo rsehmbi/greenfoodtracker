@@ -72,9 +72,8 @@ be able to contribute to the Metro Vancouver CO2e savings, as well as share the 
 with their friends through social media.
 
 ## Green Food Challenge Restaurant Guide
-
-The goal of this phase is to be able to post pictures and locations of what you are eating
-and see what others are eating, in order to help others in your community find “low
-carbon” places to eat. For example, students could post about the falafel wrap at Donair
+The goal of this phase is to allow participants to share the locations and pictures of the food they are eating,
+and view what others have shared. Participants can help others in the community find “low
+carbon” options. For example, SFU Burnaby students can post about the falafel wrap at Donair
 Town, the sushi at Togo Sushi, and the Beyond Meat Burger at A&W.
 
