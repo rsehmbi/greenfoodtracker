@@ -47,15 +47,13 @@ for instance, reduced beef/lamb from 35% to 10% and instead ate chicken, Vancouv
 could save 900,000 to 1 million tonnes of CO2e per year.
 
 ## Green Food Challenge
-
-In this project, we aim to raise awareness and promote behaviour change by running the
-Green Food Challenge. In this challenge, people install a mobile application to learn how
-much their diet produces in terms of CO2e, and discover how much CO2e they (and their
-greater community) could save by making dietary adjustments.
+The goal of the Green Food Challenge is to raise awareness about the CO2e impact of food and promote behaviour change.
+The Green Food Challenge mobile application teaches people how much CO2e their diet produces,
+and discover how much CO2e they and their community could save by making dietary adjustments.
 Over the course of the Green Food Challenge, participants track their "green meals",
-containing chicken, seafood or vegetable-based proteins. Participants would see how many
-tonnes of CO2e they save together as a community, as well as share restaurants that offer
-delicious “low carbon” meals. By incentivizing these CO2e-friendly meals, it is hoped that
+containing chicken, seafood or vegetable-based proteins. Participants can see how many
+tonnes of CO2e they save as a community, as well as share restaurants that offer
+delicious “low carbon” meals. By incentivizing these CO2e-friendly meals,
 participants learn to sustainably change their eating habits towards a lighter footprint.
 
 ## Specifications
