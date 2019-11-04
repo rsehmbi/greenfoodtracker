@@ -33,17 +33,17 @@ to hydroelectric.
 Despite these efforts at the governmental level, at the current pace of change, it is unlikely
 we will meet the 2020 target.What else can we do to mitigate climate change? Aside from taking transit, is there anything else we can do as individuals?
 
-The carbon impact of Food is generally under-reported as a source of CO2e. For instance in Europe, agriculture
+## The carbon impact of food
+Food is generally under-reported as a source of CO2e. For instance in Europe, agriculture
 contributes to 10% of the carbon footprint. In particular, ruminants such as sheep and
 cows produce methane through enteric fermentation (i.e. they pass gas) and produce more
 CO2e than other types of animals. According to the European Commission, the vast
 majority of methane emissions (85%) come from ruminants’ digestion.
 
-A Low Carbon Diet
-
+## A Low Carbon Diet
 There are 2.46 million people living in the Metro Vancouver area, and about 90% of them
-eat food that are relatively high in CO2e (i.e., are non-vegetarian). If each of those people,
-for instance, reduced beef/lamb from 35% to 10% and instead ate chicken, Vancouver
+eat food that are relatively high in CO2e (i.e., are non-vegetarian). If each of those people
+reduced their beef or lamb consumption from 35% to 10% and replaced it with chicken, Vancouver
 could save 900,000 to 1 million tonnes of CO2e per year.
 
 ## Green Food Challenge
