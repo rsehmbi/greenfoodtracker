@@ -59,17 +59,14 @@ delicious “low carbon” meals. By incentivizing these CO2e-friendly meals, it
 participants learn to sustainably change their eating habits towards a lighter footprint.
 
 ## Specifications
-
 The Green Food Challenge application will be created in 3 phases (sprints):
 1. Green Food Challenge Carbon Calculator
 2. Green Food Challenge Group Pledge
 3. Green Food Challenge Restaurant Guide
 
 ## Green Food Challenge Pledge
-
-The goal of this phase is to be able to see how others in the community are pledging and
-be able to contribute to the Metro Vancouver CO2e savings, as well as share the challenge
-with their friends through social media.
+The goal of this phase is to allow participants to make a pledge to reduce Metro Vancouver's CO2e emissions,
+see how people in the community are pledging, and share the challenge with others through social media.
 
 ## Green Food Challenge Restaurant Guide
 
