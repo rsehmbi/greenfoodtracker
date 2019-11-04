@@ -1,18 +1,16 @@
 ## GREEN FOOD TRACKER
 
-## The theme is "Sustainability and Climate Change" and the clients are Dr. Lim & Tilemachos C. along with stakeholders at the City of Vancouver
+### The theme is "Sustainability and Climate Change" and the clients are Dr. Lim & Tilemachos C. along with stakeholders at the City of Vancouver
 
 Link to User Facing Video :https://www.youtube.com/watch?v=twYjJ-1UFtI
 Link to Technical Video :https://www.youtube.com/watch?v=-eHJvARFHN0&t=96s
 
-1. Overview
+### 1. Overview
 The Green Food Challenge application aims to help people collectively reduce greenhouse
 gas emissions in Metro Vancouver.
-2. Background
+### 2. Background
 As Canadians, we often think of ourselves as surrounded by nature and thoughtful about
-the environment. Indeed, Vancouver has spearheaded the Greenest City Action Plan since
-2011, with the goal of becoming the greenest city in the world by 2020. Of the plan’s 10
-specific goals, and one of the goals is for a lighter footprint, reducing Vancouver's carbon
+the environment. Since 2011, Vancouver has spearheaded the Greenest City Action Plan, with the goal of becoming the greenest city in the world by 2020. One of the plan's ten goals is to have a lighter footprint by reducing Vancouver's carbon
 footprint by 33% over 2006 levels.
 
 ## What is a carbon footprint?
