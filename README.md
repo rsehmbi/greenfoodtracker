@@ -14,12 +14,9 @@ the environment. Since 2011, Vancouver has spearheaded the Greenest City Action 
 footprint by 33% over 2006 levels.
 
 ## What is a carbon footprint?
-Greenhouse gases, measured in CO2e (CO2 equivalents), are known to directly contribute
-to climate change, and include carbon dioxide, methane, and nitrous oxide. In 2015,
+Greenhouse gases, measured in CO2e (CO2 equivalents), include carbon dioxide, methane, and nitrous oxide, and are known to directly contribute to climate change. In 2015,
 regional emissions in Metro Vancouver were projected to be 14.9 million tonnes of CO2e,
-between 6-8 tonnes per capita. In other words, we can then say that our personal carbon
-footprint is about 6-8 tonnes of CO2e. However, it is generally estimated that global
-emissions must be reduced to approximately 2 tonnes per capita by 2050.
+between 6-8 tonnes per capita. It is estimated that global emissions must be reduced to approximately 2 tonnes per capita by 2050.
 
 ## What contributes to greenhouse gases?
 There are many CO2e contributors to the carbon footprint, including transportation and
