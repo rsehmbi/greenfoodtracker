@@ -22,14 +22,15 @@ footprint is about 6-8 tonnes of CO2e. However, it is generally estimated that g
 emissions must be reduced to approximately 2 tonnes per capita by 2050.
 
 ## What contributes to greenhouse gases?
-There are many CO2e contributors to our carbon footprint, including transportation and
-buildings (commercial, residential) . Municipalities and businesses are currently
-undertaking measures to reduce their footprints. For example, Metro Vancouver transit can
-be promoted over cars, and buildings are changing their heating systems from natural gas
+There are many CO2e contributors to the carbon footprint, including transportation and
+buildings. Municipalities and businesses are currently
+undertaking measures to reduce their footprints. For example, Metro Vancouver is promoting transit
+over cars, and buildings are changing their heating systems from natural gas
 to hydroelectric.
 
-Despite these efforts at the governmental level, at the current pace of change, it is unlikely
-we will meet the 2020 target.What else can we do to mitigate climate change? Aside from taking transit, is there anything else we can do as individuals?
+Despite these efforts to reduce carbon footprint, at the current rate, Vancouver is unlikely
+to meet its 2020 target. What else can be done to mitigate climate change? Aside from taking transit,
+is there anything else individuals can do?
 
 ## The carbon impact of food
 Food is generally under-reported as a source of CO2e. For instance in Europe, agriculture
