@@ -58,13 +58,3 @@ The Green Food Challenge application will be created in 3 phases (sprints):
 2. Green Food Challenge Group Pledge
 3. Green Food Challenge Restaurant Guide
 
-## Green Food Challenge Pledge
-The goal of this phase is to allow participants to make a pledge to reduce Metro Vancouver's CO2e emissions,
-see how people in the community are pledging, and share the challenge with others through social media.
-
-## Green Food Challenge Restaurant Guide
-The goal of this phase is to allow participants to share the locations and pictures of the food they are eating,
-and view what others have shared. Participants can help others in the community find “low
-carbon” options. For example, SFU Burnaby students can post about the falafel wrap at Donair
-Town, the sushi at Togo Sushi, and the Beyond Meat Burger at A&W.
-
